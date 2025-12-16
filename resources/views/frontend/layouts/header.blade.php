@@ -22,9 +22,9 @@
                 <div class="col-xxl-3 col-xl-4 col-lg-7">
                     <div class="header-info">
                         <ul>
-                            <li><a href="{{ route('dashboard') }}">My Account</a></li>
-                            <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
-                            <li><a href="{{ route('track.order.index') }}">Order Tracking</a></li>
+                            <li><a href="{{ route('dashboard') }}">Mi Cuenta</a></li>
+                            <li><a href="{{ route('wishlist.index') }}">Lista de Deseos</a></li>
+                            <li><a href="{{ route('track.order.index') }}">Seguimiento de Pedido</a></li>
                         </ul>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="col-xxl-3 col-xl-3 col-lg-5">
                     <div class="header-info header-info-right">
                         <ul>
-                            <li>Need help? Call Us: <strong class="text-brand">
+                            <li>¿Necesitas ayuda? Llámanos: <strong class="text-brand">
                                     {{ config('settings.site_phone') }}</strong></li>
                         </ul>
                     </div>
@@ -63,14 +63,14 @@
                     <div class="search-style-2">
                         <form action="{{ route('products.index') }}">
                             <select class="select-active" name="category">
-                                <option value="">All Categories</option>
+                                <option value="">Todas las Categorías</option>
                                 @foreach (getNestedCategories() as $category)
                                     <option @selected(request('category') == $category->slug) value="{{ $category->slug }}">
                                         {{ $category->name }}</option>
                                 @endforeach
 
                             </select>
-                            <input type="text" name="search" placeholder="Search for items..."
+                            <input type="text" name="search" placeholder="Buscar artículos..."
                                 value="{{ request('search') }}" />
                         </form>
                     </div>
@@ -83,7 +83,7 @@
                                         src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-heart.svg') }}" />
                                     <span class="pro-count blue">{{ wishlistCount() }}</span>
                                 </a>
-                                <a href="{{ route('wishlist.index') }}"><span class="lable">Wishlist</span></a>
+                                <a href="{{ route('wishlist.index') }}"><span class="lable">Lista de Deseos</span></a>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="#">
@@ -91,7 +91,7 @@
                                         src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-cart.svg') }}" />
                                     <span class="pro-count blue cart-count">{{ cartCount() }}</span>
                                 </a>
-                                <a href="{{ route('cart.index') }}"><span class="lable">Cart</span></a>
+                                <a href="{{ route('cart.index') }}"><span class="lable">Carrito</span></a>
 
                             </div>
                             <div class="header-action-icon-2">
@@ -99,31 +99,31 @@
                                     <img class="svgInject" alt="ShopX"
                                         src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-user.svg') }}" />
                                 </a>
-                                <a href=""><span class="lable ml-0">Account</span></a>
+                                <a href=""><span class="lable ml-0">Cuenta</span></a>
                                 @if (Auth::guard('web')->check())
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                         <ul>
                                             <li>
                                                 <a href="{{ route('dashboard') }}"><i
-                                                        class="fi fi-rs-user mr-10"></i>Dashboard</a>
+                                                        class="fi fi-rs-user mr-10"></i>Panel de Control</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('profile') }}"><i class="fi fi-rs-user mr-10"></i>My
-                                                    Account</a>
+                                                <a href="{{ route('profile') }}"><i class="fi fi-rs-user mr-10"></i>Mi
+                                                    Cuenta</a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('orders.index') }}"><i
-                                                        class="fi fi-rs-location-alt mr-10"></i>Order
-                                                    Tracking</a>
+                                                        class="fi fi-rs-location-alt mr-10"></i>Seguimiento de
+                                                    Pedidos</a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('wishlist.index') }}"><i
-                                                        class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
+                                                        class="fi fi-rs-heart mr-10"></i>Mi Lista de Deseos</a>
                                             </li>
                                             <li>
                                                 <a href="#"
                                                     onclick="event.preventDefault(); $('.form-logout').submit()"><i
-                                                        class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                                        class="fi fi-rs-sign-out mr-10"></i>Cerrar Sesión</a>
                                             </li>
                                             <form class="form-logout" action="{{ route('logout') }}" method="POST">
                                                 @csrf
@@ -135,11 +135,11 @@
                                         <ul>
                                             <li>
                                                 <a href="{{ route('login') }}"><i
-                                                        class="fi fi-rs-user mr-10"></i>Login</a>
+                                                        class="fi fi-rs-user mr-10"></i>Iniciar Sesión</a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('register') }}"><i
-                                                        class="fi fi-rs-user mr-10"></i>Register</a>
+                                                        class="fi fi-rs-user mr-10"></i>Registrarse</a>
                                             </li>
 
                                         </ul>
@@ -161,7 +161,7 @@
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">
                         <a class="categories-button-active" href="#">
-                            <span class="fi-rs-apps"></span> Trending Categories
+                            <span class="fi-rs-apps"></span> Categorías Populares
                             <i class="fi-rs-angle-down"></i>
                         </a>
                         <div
@@ -202,7 +202,7 @@
                                 </ul>
                             </div>
                             <a href="#" class="more_categories">
-                                view all
+                                ver todo
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
@@ -211,30 +211,28 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a class="active" href="{{ url('/') }}">Home</a>
+                                    <a class="active" href="{{ url('/') }}">Inicio</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('products.index') }}">Products</a>
+                                    <a href="{{ route('products.index') }}">Productos</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('vendors.index') }}">Vendors</a>
+                                    <a href="{{ route('vendors.index') }}">Vendedores</a>
                                 </li>
 
 
                                 <li class="hot-deals">
-                                    <!-- <img src="assets/imgs/theme/icons/icon-hot-white.svg" alt="hot deals"> -->
-                                    <a href="{{ route('flash-sales.index') }}">Flash sale</a>
+                                    <a href="{{ route('flash-sales.index') }}">Venta Flash</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('contact.index') }}">Contact</a>
+                                    <a href="{{ route('contact.index') }}">Contacto</a>
                                 </li>
 
                                 @foreach ($customPages as $page)
                                     <li class="hot-deals">
-                                        <!-- <img src="assets/imgs/theme/icons/icon-hot-white.svg" alt="hot deals"> -->
                                         <a
                                             href="{{ route('custom-page.index', ['slug' => $page->slug]) }}">{{ $page->title }}</a>
                                     </li>
@@ -246,8 +244,8 @@
                 </div>
                 <div class="hotline d-none d-lg-flex">
                     <img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-headphone-white.svg') }}"
-                        alt="hotline" />
-                    <p>{{ config('settings.site_phone') }}<span>24/7 Support Center</span></p>
+                        alt="Línea de atención" />
+                    <p>{{ config('settings.site_phone') }}<span>Soporte 24/7</span></p>
                 </div>
                 <div class="header-action-icon-2 d-block d-lg-none">
                     <div class="burger-icon burger-icon-white">
@@ -274,7 +272,8 @@
                         </div>
                         <div class="header-action-icon-2">
                             <a class="mini-cart-icon" href="{{ route('login') }}">
-                                <img alt="ShopX" src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-user.svg') }}" />                            </a>
+                                <img alt="ShopX" src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-user.svg') }}" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -299,33 +298,32 @@
         <div class="mobile-header-content-area">
             <div class="mobile-search search-style-3 mobile-header-border">
                 <form action="{{ route('products.index') }}">
-                    <input type="text" placeholder="Search for items…" name="search" />
+                    <input type="text" placeholder="Buscar artículos..." name="search" />
                     <button type="submit"><i class="fi-rs-search"></i></button>
                 </form>
             </div>
             <div class="mobile-menu-wrap mobile-header-border">
-                <!-- mobile menu start -->
                 <nav>
                     <ul class="mobile-menu font-heading">
                         <li class="">
-                            <a href="{{ route('home.index') }}">Home</a>
+                            <a href="{{ route('home.index') }}">Inicio</a>
                         </li>
 
                         <li class="">
-                            <a href="{{ route('products.index') }}">Products</a>
+                            <a href="{{ route('products.index') }}">Productos</a>
                         </li>
                         <li class="">
-                            <a href="{{ route('vendors.index') }}">Vendors</a>
+                            <a href="{{ route('vendors.index') }}">Vendedores</a>
                         </li>
                         <li class="">
-                            <a href="{{ route('flash-sales.index') }}">Flash Sale</a>
+                            <a href="{{ route('flash-sales.index') }}">Venta Flash</a>
                         </li>
                         <li class="">
-                            <a href="{{ route('contact.index') }}">Contact</a>
+                            <a href="{{ route('contact.index') }}">Contacto</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="index.html">Categories</a>
+                            <a href="index.html">Categorías</a>
                             <ul class="dropdown">
                                 @foreach (getNestedCategories() as $category)
                                     <li><a
@@ -337,13 +335,12 @@
 
                     </ul>
                 </nav>
-                <!-- mobile menu end -->
-            </div>
+                </div>
             @php
                 $socialLinks = App\Models\SocialLink::whereStatus(true)->get();
             @endphp
             <div class="mobile-social-icon mb-50">
-                <h6 class="mb-15">Follow Us</h6>
+                <h6 class="mb-15">Síguenos</h6>
                 @foreach ($socialLinks as $socialLink)
                     <a href="{{ $socialLink->url }}"><img src="{{ asset($socialLink->icon) }}"
                             alt="" /></a>
