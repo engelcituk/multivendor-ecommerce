@@ -19,7 +19,7 @@
 
 <body>
     <!-- BEGIN GLOBAL THEME SCRIPT -->
-    <script src="./dist/js/tabler-theme.min.js?1750026890"></script>
+    <!-- <script src="./dist/js/tabler-theme.min.js?1750026890"></script> -->
     <!-- END GLOBAL THEME SCRIPT -->
     <div class="page page-center">
         <div class="container container-tight py-4">
