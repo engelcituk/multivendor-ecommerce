@@ -5,13 +5,13 @@
         $cartSubTotal = 0;
     @endphp
 
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Cart']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Carrito']]" />
     <div class="container mb-60 mt-55">
         <div class="row">
             <div class="col-lg-8 mb-40">
-                <h1 class="heading-2 mb-10">Your Cart</h1>
+                <h1 class="heading-2 mb-10">Tu carrito</h1>
                 <div class="d-flex flex-wrap justify-content-between">
-                    <h6 class="text-body">There are <span class="text-brand">{{ cartCount() }}</span> products in your cart
+                    <h6 class="text-body">Hay <span class="text-brand">{{ cartCount() }}</span> productos en tu carrito
                     </h6>
                     {{-- <h6 class="text-body"><a href="#" class="text-muted"><i class="fi-rs-trash mr-5"></i>Clear
                             Cart</a></h6> --}}
@@ -24,11 +24,11 @@
                     <table class="table table-wishlist">
                         <thead>
                             <tr class="main-heading">
-                                <th  colspan="2">Product</th>
-                                <th>Unit Price</th>
-                                <th>Quantity</th>
+                                <th  colspan="2">Producto</th>
+                                <th>Precio unitario</th>
+                                <th>Cantidad</th>
                                 <th>Subtotal</th>
-                                <th class="end">Remove</th>
+                                <th class="end">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody class="cart-items">
@@ -57,7 +57,7 @@
                                         $cartSubTotal += $price['price'] * $cartItem->quantity;
                                     @endphp
                                     @if ($price['in_stock'])
-                                        <td class="price" data-title="Price">
+                                        <td class="price" data-title="Precio">
 
                                             @if ($price['old_price'])
                                                 <h4 class="text-body">$ {{ $price['price'] }}</h4>
@@ -82,21 +82,21 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="price" data-title="Price">
+                                        <td class="price" data-title="Precio">
                                             <h4 class="text-brand">$ {{ $price['price'] * $cartItem->quantity }} </h4>
                                         </td>
                                     @else
                                         <td colspan="3">
-                                            <h4 class="text-brand">Out of stock</h4>
+                                            <h4 class="text-brand">Agotado</h4>
                                         </td>
                                     @endif
-                                    <td class="action text-center" data-title="Remove"><a
+                                    <td class="action text-center" data-title="Eliminar"><a
                                             href="{{ route('cart.destroy', $cartItem->id) }}"
                                             class="text-body delete-item"><i class="fi-rs-trash"></i></a></td>
                                 </tr>
                             @empty
                                 <tr class="pt-30">
-                                    <td colspan="6" class="text-center">Cart is empty</td>
+                                    <td colspan="6" class="text-center">El carrito está vacío</td>
                                     </td>
                                 </tr>
                             @endforelse
@@ -106,15 +106,15 @@
                 </div>
                 <div class="divider-2 mb-30"></div>
                 <div class="cart-action d-flex justify-content-between">
-                    <a class="btn" href="{{ route('products.index') }}"><i class="fi-rs-arrow-left mr-10"></i>Continue Shopping</a>
+                    <a class="btn" href="{{ route('products.index') }}"><i class="fi-rs-arrow-left mr-10"></i>Seguir comprando</a>
                 </div>
 
             </div>
             <div class="col-xl-4">
                 @if(cartCount() > 0)
                 <div class="p-40">
-                    <h4 class="mb-10">Apply Coupon</h4>
-                    <p class="mb-30"><span class="font-lg text-muted">Using A Promo Code?</p>
+                    <h4 class="mb-10">Aplicar cupón</h4>
+                    <p class="mb-30"><span class="font-lg text-muted">¿Tienes un código promocional?</p>
                     <form action="#" class="coupon-form">
                         @csrf
                         <div class="d-flex justify-content-between">
@@ -122,10 +122,10 @@
                                 value="{{ session()->has('coupon') ? session('coupon')['code'] : old('coupon_code') }}">
                             @if (session()->has('coupon'))
                                 <button class="btn bg-danger remove-coupon" type="button"><i
-                                        class="fi-rs-cross mr-10"></i>Remove</button>
+                                        class="fi-rs-cross mr-10"></i>Eliminar</button>
                             @else
                                 <button class="btn coupon-btn" type="submit"><i
-                                        class="fi-rs-label mr-10"></i>Apply</button>
+                                        class="fi-rs-label mr-10"></i>Aplicar</button>
                             @endif
                         </div>
                     </form>
@@ -154,7 +154,7 @@
                                     @endphp
                                     <tr>
                                         <td class="cart_total_label">
-                                            <h6 class="text-muted">Discount <span class="coupon-info">
+                                            <h6 class="text-muted">Descuento <span class="coupon-info">
                                                     @if (session('coupon')['coupon_type'] == 'fixed')
                                                         (fixed)
                                                     @else
@@ -182,7 +182,7 @@
                                 @else
                                     <tr>
                                         <td class="cart_total_label">
-                                            <h6 class="text-muted">Discount <span class="coupon-info"></span></h6>
+                                            <h6 class="text-muted">Descuento <span class="coupon-info"></span></h6>
                                         </td>
                                         <td class="cart_total_amount">
                                             <h5 class="text-heading text-end discount">$0</h4>
@@ -203,7 +203,7 @@
                         </table>
                     </div>
                     @if(cartCount() > 0)
-                    <a href="{{ route('checkout.index') }}" class="btn w-100">Proceed To CheckOut<i
+                    <a href="{{ route('checkout.index') }}" class="btn w-100">Continuar al pago<i
                             class="fi-rs-sign-out ml-15"></i></a>
                     @endif
                 </div>

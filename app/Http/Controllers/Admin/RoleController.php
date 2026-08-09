@@ -83,7 +83,7 @@ class RoleController extends Controller implements HasMiddleware
     public function update(Request $request, Role $role)
     {
         if ($role->name == 'Super Admin') {
-            AlertService::error('You can not update Super Admin role.');
+            AlertService::error('No puedes modificar el rol de Super Admin.');
             return to_route('admin.role.index');
         }
 
@@ -106,7 +106,7 @@ class RoleController extends Controller implements HasMiddleware
     public function destroy(Role $role): JsonResponse
     {
         if ($role->name == 'Super Admin') {
-            return response()->json(['status' => 'error', 'message' => 'You can not delete Super Admin role.']);
+            return response()->json(['status' => 'error', 'message' => 'No puedes eliminar el rol de Super Admin.']);
         }
 
         try {
@@ -120,7 +120,7 @@ class RoleController extends Controller implements HasMiddleware
 
             AlertService::deleted();
 
-            return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+            return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
         } catch (\Throwable $th) {
             DB::rollBack();
             Log::error('Role Delete Error: ', $th);

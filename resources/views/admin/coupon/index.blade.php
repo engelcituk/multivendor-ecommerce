@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Coupons</h3>
+                <h3 class="card-title">Todos los cupones</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.coupons.create') }}" class="btn btn-primary">Create Coupon</a>
+                    <a href="{{ route('admin.coupons.create') }}" class="btn btn-primary">Crear cupón</a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -14,14 +14,14 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Code</th>
-                                <th>Amount</th>
-                                <th>Type</th>
-                                <th>Used</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Status</th>
+                                <th>N.º</th>
+                                <th>Código</th>
+                                <th>Importe</th>
+                                <th>Tipo</th>
+                                <th>Usado</th>
+                                <th>Fecha de inicio</th>
+                                <th>Fecha de finalización</th>
+                                <th>Estado</th>
                                 <th class="w-8"></th>
                             </tr>
                         </thead>
@@ -36,9 +36,9 @@
                                     <td class="text-secondary">{{ $coupon->start_date }}</td>
                                     <td class="text-secondary">{{ $coupon->end_date }}</td>
                                     @if ($coupon->is_active)
-                                        <td class="text-secondary"><span class="badge bg-success-lt">Active</span></td>
+                                        <td class="text-secondary"><span class="badge bg-success-lt">Activo</span></td>
                                     @else
-                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactive</span></td>
+                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactivo</span></td>
                                     @endif
                                     <td>
                                         <a href="{{ route('admin.coupons.edit', $coupon) }}"><i class="ti ti-edit"></i></a>
@@ -49,7 +49,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center">No Coupons</td>
+                                    <td colspan="9" class="text-center">No hay cupones</td>
                                 </tr>
                             @endforelse
 

@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create User</h3>
+                <h3 class="card-title">Crear usuario</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.role-users.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('admin.role-users.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Name</label>
+                                <label class="form-label required">Nombre</label>
                                 <input type="text" class="form-control" name="name" placeholder="" value="">
                                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
                             </div>
@@ -23,14 +23,14 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Email</label>
+                                <label class="form-label required">Correo electrónico</label>
                                 <input type="text" class="form-control" name="email" placeholder="" value="">
                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Password</label>
+                                <label class="form-label required">Contraseña</label>
                                 <input type="text" class="form-control" name="password" placeholder="" value="">
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
@@ -38,7 +38,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Confirm Password</label>
+                                <label class="form-label required">Confirmar contraseña</label>
                                 <input type="text" class="form-control" name="password_confirmation" placeholder="" value="">
                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                             </div>
@@ -46,9 +46,9 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Role</label>
+                                <label class="form-label required">Rol</label>
                                 <select name="role" id="" class="form-control">
-                                    <option value="">Select</option>
+                                    <option value="">Seleccionar</option>
                                     @foreach($roles as $role)
                                         @if($role->name == 'Super Admin') @continue @endif
                                         <option value="{{ $role->id }}">{{ $role->name }}</option>
@@ -62,7 +62,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('form').submit()">Create</button>
+                <button class="btn btn-primary mt-3" onclick="$('form').submit()">Crear</button>
             </div>
         </div>
     </div>

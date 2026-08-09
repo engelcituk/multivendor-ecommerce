@@ -85,7 +85,7 @@ class VendorProductController extends Controller
                 'id' => $product->id,
                 'redirect_url' => route('vendor.products.edit', $product->id) . '#product-images',
                 'status' => 'success',
-                'message' => 'Product created successfully'
+                'message' => 'Producto creado correctamente'
             ]);
         } else {
 
@@ -93,7 +93,7 @@ class VendorProductController extends Controller
                 'id' => $product->id,
                 'redirect_url' => route('vendor.digital-products.edit', $product->id) . '#product-images',
                 'status' => 'success',
-                'message' => 'Product created successfully'
+                'message' => 'Producto creado correctamente'
             ]);
         }
     }
@@ -191,7 +191,7 @@ class VendorProductController extends Controller
         $maxSizeMb = 1000;
         $maxSizeBytes = $maxSizeMb * 1024 * 1024;
         if (filesize($finalPath) > $maxSizeBytes) {
-            return response()->json(['status' => 'error', 'message' => 'File size limit exceeded'], 413);
+            return response()->json(['status' => 'error', 'message' => 'El archivo excede el tamaño permitido'], 413);
         }
 
         // mime validation
@@ -243,7 +243,7 @@ class VendorProductController extends Controller
         ];
 
         if (!in_array($mimeType, $allowedMimeTypes)) {
-            return response()->json(['status' => 'error', 'message' => 'Invalid file type'], 400);
+            return response()->json(['status' => 'error', 'message' => 'Tipo de archivo no válido'], 400);
         }
 
         return true;
@@ -273,7 +273,7 @@ class VendorProductController extends Controller
                 Storage::disk('local')->delete($productFile->path);
             }
             $productFile->delete();
-            return response()->json(['status' => 'success', 'message' => 'File deleted successfully']);
+            return response()->json(['status' => 'success', 'message' => 'Archivo eliminado correctamente']);
         } catch (\Exception $e) {
             logger('Failed to delete file: ' . $e);
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
@@ -316,7 +316,7 @@ class VendorProductController extends Controller
         return response()->json([
             'id' => $product->id,
             'status' => 'success',
-            'message' => 'Product updated successfully',
+            'message' => 'Producto actualizado correctamente',
             'redirect_url' => route('vendor.products.index')
         ]);
     }
@@ -341,7 +341,7 @@ class VendorProductController extends Controller
             'status' => 'success',
             'id' => $productImage->id,
             'path' => asset($filePath),
-            'message' => 'Image uploaded successfully'
+            'message' => 'Imagen subida correctamente'
         ]);
     }
 
@@ -353,7 +353,7 @@ class VendorProductController extends Controller
 
         $this->deleteFile($image->path);
         $image->delete();
-        return response()->json(['status' => 'success', 'message' => 'Image deleted successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Imagen eliminada correctamente']);
     }
 
     function imagesReorder(Request $request)
@@ -481,7 +481,7 @@ class VendorProductController extends Controller
         }
 
         return response()->json([
-            'message' => 'Attribute generated successfully',
+            'message' => 'Atributo generado correctamente',
             'html' => $html,
             'variantHtml' => $variantHtml
         ]);
@@ -518,7 +518,7 @@ class VendorProductController extends Controller
             }
 
             return response()->json([
-                'message' => 'Attribute deleted successfully',
+                'message' => 'Atributo eliminado correctamente',
                 'html' => $html,
                 'variantHtml' => $variantHtml
             ]);
@@ -644,7 +644,7 @@ class VendorProductController extends Controller
         $variant->is_active = $request->variant_is_active;
         $variant->save();
 
-        return response()->json(['message' => 'Variant updated successfully']);
+        return response()->json(['message' => 'Variante actualizada correctamente']);
     }
 
     function clearExistingVariants(Product $product)
@@ -662,11 +662,11 @@ class VendorProductController extends Controller
 
         if (Auth::user()->store->id == $product->store_id) {
             $product->delete();
-            notyf()->success('Product deleted successfully');
-            return response()->json(['status' => 'success', 'message' => 'Product deleted successfully']);
+            notyf()->success('Producto eliminado correctamente');
+            return response()->json(['status' => 'success', 'message' => 'Producto eliminado correctamente']);
         }
 
-        notyf()->error('You do not have permission to delete this product');
-        return response()->json(['status' => 'error', 'message' => 'You do not have permission to delete this product']);
+        notyf()->error('No tienes permiso para eliminar este producto');
+        return response()->json(['status' => 'error', 'message' => 'No tienes permiso para eliminar este producto']);
     }
 }

@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Withdraw Method</h3>
+                <h3 class="card-title">Actualizar método de retiro</h3>
                 <div class="card-actions">
-                    <a href="{{ route('vendor.withdraw-methods.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('vendor.withdraw-methods.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -17,9 +17,9 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Gateway</label>
+                                <label class="form-label required">Pasarela</label>
                                 <select name="gateway" class="form-control" id="gateway">
-                                    <option value="">Select Gateway</option>
+                                    <option value="">Seleccionar pasarela</option>
                                     @foreach ($withdrawMethods as $method)
                                         <option @selected($method->id == $withdraw_method->withdraw_method_id) value="{{ $method->id }}">{{ $method->name }}</option>
                                     @endforeach
@@ -39,7 +39,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Description</label>
+                                <label class="form-label required">Descripción</label>
                                 <textarea name="description" id="editor">{{ $withdraw_method->description }}</textarea>
                                 <x-input-error :messages="$errors->get('description')" class="mt-2" />
                             </div>
@@ -51,7 +51,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.withdraw-method-form').submit()">Update</button>
+                <button class="btn btn-primary mt-3" onclick="$('.withdraw-method-form').submit()">Actualizar</button>
             </div>
         </div>
     </div>

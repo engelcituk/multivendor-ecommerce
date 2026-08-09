@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Vendors']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Vendedores']]" />
 
 <div class="page-content pt-70">
             <div class="container">
@@ -9,13 +9,13 @@
                     <div class="col-12">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p>We have <strong class="text-brand">{{ count($vendors) }}</strong> vendors now</p>
+                                <p>Actualmente tenemos <strong class="text-brand">{{ count($vendors) }}</strong> vendedores</p>
                             </div>
                             {{-- <div class="sort-by-product-area">
                                 <div class="sort-by-cover mr-10">
                                     <div class="sort-by-product-wrap">
                                         <div class="sort-by">
-                                            <span><i class="fi-rs-apps"></i>Show:</span>
+                                            <span><i class="fi-rs-apps"></i>Mostrar:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
                                             <span> 50 <i class="fi-rs-angle-small-down"></i></span>
@@ -27,26 +27,26 @@
                                             <li><a href="#">100</a></li>
                                             <li><a href="#">150</a></li>
                                             <li><a href="#">200</a></li>
-                                            <li><a href="#">All</a></li>
+                                            <li><a href="#">Todos</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="sort-by-cover">
                                     <div class="sort-by-product-wrap">
                                         <div class="sort-by">
-                                            <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
+                                            <span><i class="fi-rs-apps-sort"></i>Ordenar por:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span> Featured <i class="fi-rs-angle-small-down"></i></span>
+                                            <span> Destacados <i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="active" href="#">Mall</a></li>
-                                            <li><a href="#">Featured</a></li>
-                                            <li><a href="#">Preferred</a></li>
-                                            <li><a href="#">Total items</a></li>
-                                            <li><a href="#">Avg. Rating</a></li>
+                                            <li><a class="active" href="#">Centro comercial</a></li>
+                                            <li><a href="#">Destacados</a></li>
+                                            <li><a href="#">Preferido</a></li>
+                                            <li><a href="#">Total de artículos</a></li>
+                                            <li><a href="#">Calificación promedio</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                     </a>
                                 </div>
                                 {{-- <div class=" product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Mall</span>
+                                    <span class="hot">Centro comercial</span>
                                 </div> --}}
                             </div>
                             <div class="vendor-content-wrap">
@@ -91,12 +91,12 @@
                                 </div>
                                 <div class="vendor-info mb-30">
                                     <ul class="contact-infor text-muted">
-                                        <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-location.svg') }}" alt=""><strong>Address: </strong> <span>{{ $vendor?->store?->address }}</span></li>
+                                        <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-location.svg') }}" alt=""><strong>Dirección: </strong> <span>{{ $vendor?->store?->address }}</span></li>
                                         <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}" alt=""><strong>Call
                                                 Us:</strong><span> {{ $vendor?->store?->phone }}</span></li>
                                     </ul>
                                 </div>
-                                <a href="{{ route('vendors.show', $vendor->id) }}" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
+                                <a href="{{ route('vendors.show', $vendor->id) }}" class="btn btn-xs">Visitar tienda <i class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
                     </div>

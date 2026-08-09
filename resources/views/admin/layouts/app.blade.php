@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Dashboard</title>
+    <title>Panel</title>
     <!-- BEGIN PAGE LEVEL STYLES -->
     {{-- <link href="./dist/libs/jsvectormap/dist/jsvectormap.css?1750026893" rel="stylesheet" /> --}}
     <!-- END PAGE LEVEL STYLES -->
@@ -51,7 +51,7 @@
                             <ul class="list-inline list-inline-dots mb-0">
                                 <li class="list-inline-item">
                                     Copyright &copy; 2025
-                                    <a href="https://www.shakilahmeed.com" class="link-secondary">Shakil Ahmed</a>. All
+                                    <a href="https://www.shakilahmeed.com" class="link-secondary">Shakil Ahmed</a>. Todos
                                     rights reserved.
                                 </li>
                                 <li class="list-inline-item">

@@ -22,6 +22,6 @@ class DatabaseClearController extends Controller
             File::cleanDirectory(public_path('uploads'));
             File::put(public_path('uploads') . DIRECTORY_SEPARATOR . '.gitkeep', '');
         }
-        return response()->json(['success' => true, 'message' => 'Database cleared successfully']);
+        return response()->json(['success' => true, 'message' => 'Base de datos limpiada correctamente']);
     }
 }

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Login']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Iniciar sesión']]" />
 
     <div class="page-content pt-150 pb-135">
         <div class="container">
@@ -14,12 +14,12 @@
                             <div class="login_wrap widget-taber-content background-white">
                                 <div class="padding_eight_all bg-white">
                                     <div class="heading_s1 mb-4">
-                                        <h4 class="mb-5">Kyc Verification</h4>
+                                        <h4 class="mb-5">Verificación KYC</h4>
                                     </div>
                                     <form method="post" action="{{ route('kyc.store') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="" class="font-weight-bold">Full Name <span
+                                            <label for="" class="font-weight-bold">Nombre completo <span
                                                     class="text-danger">*</span></label>
                                             <input type="text" required="" name="full_name"
                                                 placeholder="" />
@@ -28,7 +28,7 @@
 
 
                                         <div class="form-group">
-                                            <label for="" class="font-weight-bold">Date of birth <span
+                                            <label for="" class="font-weight-bold">Fecha de nacimiento <span
                                                     class="text-danger">*</span></label>
                                             <input type="text" required="" name="date_of_birth"
                                                 placeholder="1990/7/9" class="datepicker" />
@@ -36,18 +36,18 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="" class="font-weight-bold">Gender <span
+                                            <label for="" class="font-weight-bold">Género <span
                                                     class="text-danger">*</span></label>
                                             <select name="gender" id="" class="form-control">
-                                                <option value="">Select</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
+                                                <option value="">Seleccionar</option>
+                                                <option value="male">Hombre</option>
+                                                <option value="female">Mujer</option>
                                             </select>
                                             <x-input-error :messages="$errors->get('gender')" class="mt-2" />
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="" class="font-weight-bold">Full Address <span
+                                            <label for="" class="font-weight-bold">Dirección completa <span
                                                     class="text-danger">*</span></label>
                                             <input type="text" required="" name="full_address"
                                                 placeholder="" />
@@ -55,19 +55,19 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="" class="font-weight-bold">Document Type <span
+                                            <label for="" class="font-weight-bold">Tipo de documento <span
                                                     class="text-danger">*</span></label>
                                             <select name="document_type" id="" class="form-control">
-                                                <option value="">Select</option>
-                                                <option value="id_card">ID Card</option>
-                                                <option value="passport">Passport</option>
-                                                <option value="driving_license">Driving License</option>
+                                                <option value="">Seleccionar</option>
+                                                <option value="id_card">Identificación oficial</option>
+                                                <option value="passport">Pasaporte</option>
+                                                <option value="driving_license">Licencia de conducir</option>
                                             </select>
                                             <x-input-error :messages="$errors->get('document_type')" class="mt-2" />
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="" class="font-weight-bold">Document Scan Copy <span
+                                            <label for="" class="font-weight-bold">Copia digital del documento <span
                                                     class="text-danger">*</span></label>
 
                                             <input type="file" required="" name="document_scan_copy" />
@@ -76,7 +76,7 @@
 
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-heading btn-block hover-up"
-                                                name="">Submit</button>
+                                                name="">Enviar</button>
                                         </div>
                                     </form>
                                 </div>

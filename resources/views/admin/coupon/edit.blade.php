@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Coupon</h3>
+                <h3 class="card-title">Actualizar cupón</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.coupons.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('admin.coupons.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label class="form-label required">Code</label>
+                                <label class="form-label required">Código</label>
                                 <input type="text" class="form-control" name="code" placeholder="" value="{{ $coupon->code }}">
                                 <x-input-error :messages="$errors->get('code')" class="mt-2" />
                             </div>
@@ -24,7 +24,7 @@
 
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label class="form-label required">Value</label>
+                                <label class="form-label required">Valor</label>
                                 <input type="text" class="form-control" name="value" placeholder="" value="{{ $coupon->value }}">
                                 <x-input-error :messages="$errors->get('value')" class="mt-2" />
                             </div>
@@ -32,10 +32,10 @@
 
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label class="form-label required">Is Percentage</label>
+                                <label class="form-label required">Es porcentaje</label>
                                 <select name="is_percent" id="" class="form-control">
                                     <option @selected($coupon->is_percent) value="0">No</option>
-                                    <option @selected($coupon->is_percent) value="1">Yes</option>
+                                    <option @selected($coupon->is_percent) value="1">Sí</option>
                                 </select>
                                 <x-input-error :messages="$errors->get('is_percent')" class="mt-2" />
                             </div>
@@ -43,7 +43,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">Minimum Spend</label>
+                                <label class="form-label required">Compra mínima</label>
                                 <input type="text" class="form-control" name="minimum_spend" placeholder=""
                                     value="{{ $coupon->minimum_spend }}">
                                 <x-input-error :messages="$errors->get('minimum_spend')" class="mt-2" />
@@ -52,7 +52,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">Maximum Spend</label>
+                                <label class="form-label required">Compra máxima</label>
                                 <input type="text" class="form-control" name="maximum_spend" placeholder=""
                                     value="{{ $coupon->maximum_spend }}">
                                 <x-input-error :messages="$errors->get('maximum_spend')" class="mt-2" />
@@ -61,7 +61,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">Usage Limit Per Couon</label>
+                                <label class="form-label required">Límite de uso por cupón</label>
                                 <input type="text" class="form-control" name="usage_limit_per_coupon" placeholder=""
                                     value="{{ $coupon->usage_limit_per_coupon }}">
                                 <x-input-error :messages="$errors->get('usage_limit_per_coupon')" class="mt-2" />
@@ -70,7 +70,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">Usage Limit Per Customer</label>
+                                <label class="form-label required">Límite de uso por cliente</label>
                                 <input type="text" class="form-control" name="usage_limit_per_customer" placeholder=""
                                     value="{{ $coupon->usage_limit_per_customer }}">
                                 <x-input-error :messages="$errors->get('usage_limit_per_customer')" class="mt-2" />
@@ -79,7 +79,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">Start Date</label>
+                                <label class="form-label required">Fecha de inicio</label>
                                 <input type="text" class="form-control datepicker" name="start_date" placeholder=""
                                     value="{{ $coupon->start_date }}">
                                 <x-input-error :messages="$errors->get('start_date')" class="mt-2" />
@@ -88,7 +88,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">End Date</label>
+                                <label class="form-label required">Fecha de finalización</label>
                                 <input type="text" class="form-control datepicker" name="end_date" placeholder=""
                                     value="{{ $coupon->end_date }}">
                                 <x-input-error :messages="$errors->get('end_date')" class="mt-2" />
@@ -100,7 +100,7 @@
                                 <label class="form-check form-switch form-switch-3">
                                     <input class="form-check-input" @checked($coupon->is_active) type="checkbox" checked="" name="is_active"
                                         id="status" value="1">
-                                    <span class="form-check-label">Active</span>
+                                    <span class="form-check-label">Activo</span>
                                 </label>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Update</button>
+                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Actualizar</button>
             </div>
         </div>
     </div>

@@ -69,7 +69,7 @@
         }
 
         .image-preview-loader::after {
-            content: "Uploading...";
+            content: "Subiendo...";
             color: #666;
         }
 
@@ -97,16 +97,16 @@
                 <div class="col-md-8">
                     <div class="card mb-3">
                         {{-- <div class="card-header">
-                        <h3 class="card-title">Create Roles</h3>
+                        <h3 class="card-title">Crear roles</h3>
                         <div class="card-actions">
-                            <a href="{{ route('vendor.role.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('vendor.role.index') }}" class="btn btn-primary">Volver</a>
                         </div>
                     </div> --}}
                         <div class="card-body">
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Name</label>
+                                    <label class="form-label required">Nombre</label>
                                     <input type="text" class="form-control" name="name" id="name" placeholder="" value="">
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                 </div>
@@ -122,7 +122,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Short Description</label>
+                                    <label class="form-label required">Descripción breve</label>
                                     <textarea name="short_description" id="short-editor"></textarea>
                                     <x-input-error :messages="$errors->get('short_description')" class="mt-2" />
                                 </div>
@@ -130,7 +130,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Content</label>
+                                    <label class="form-label required">Contenido</label>
                                     <textarea name="content" id="editor"></textarea>
                                     <x-input-error :messages="$errors->get('content')" class="mt-2" />
                                 </div>
@@ -154,14 +154,14 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label">Price</label>
+                                        <label class="form-label">Precio</label>
                                         <input type="text" class="form-control" name="price" value="">
                                         <x-input-error :messages="$errors->get('price')" class="mt-2" />
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label">Special Price</label>
+                                        <label class="form-label">Precio especial</label>
                                         <input type="text" class="form-control" name="special_price" value="">
                                         <x-input-error :messages="$errors->get('special_price')" class="mt-2" />
                                     </div>
@@ -169,7 +169,7 @@
 
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">From Date</label>
+                                        <label class="form-label">Fecha inicial</label>
                                         <input type="text" class="form-control datepicker" name="from_date"
                                             value="">
                                         <x-input-error :messages="$errors->get('from_date')" class="mt-2" />
@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">To Date</label>
+                                        <label class="form-label">Fecha final</label>
                                         <input type="text" class="form-control datepicker" name="to_date" value=""
                                             id="datepicker-tow">
                                         <x-input-error :messages="$errors->get('to_date')" class="mt-2" />
@@ -190,14 +190,14 @@
                                             <label class="form-check">
                                                 <input class="form-check-input manage-stock-check" name="manage_stock"
                                                     type="checkbox">
-                                                <span class="form-check-label">Manage Stock</span>
+                                                <span class="form-check-label">Administrar inventario</span>
                                             </label>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12 manage-stock d-none">
                                         <div class="mb-3">
-                                            <label class="form-label">Quantity</label>
+                                            <label class="form-label">Cantidad</label>
                                             <input type="text" class="form-control" name="quantity" value="">
                                             <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                                         </div>
@@ -207,7 +207,7 @@
                                 <div class="rwo">
                                     <div class="card mb-3">
                                         <div class="card-header">
-                                            <h3 class="card-title">Stock Status</h3>
+                                            <h3 class="card-title">Estado del inventario</h3>
                                         </div>
                                         <div class="card-body">
                                             <div class="col-md-12">
@@ -215,12 +215,12 @@
                                                     <label class="form-check">
                                                         <input class="form-check-input" type="radio"
                                                             name="stock_status" checked="" value="in_stock">
-                                                        <span class="form-check-label">In Stock</span>
+                                                        <span class="form-check-label">Disponible</span>
                                                     </label>
                                                     <label class="form-check">
                                                         <input class="form-check-input" type="radio"
                                                             name="stock_status" checked="" value="out_of_stock">
-                                                        <span class="form-check-label">Out Of Stock</span>
+                                                        <span class="form-check-label">Agotado</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -234,15 +234,15 @@
                 <div class="col-md-4">
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Status</h3>
+                            <h3 class="card-title">Estado</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <select name="status" class="form-control" id="">
-                                        <option value="active">Active</option>
-                                        <option value="inactive">Inactive</option>
-                                        <option value="draft">Draft</option>
+                                        <option value="active">Activo</option>
+                                        <option value="inactive">Inactivo</option>
+                                        <option value="draft">Borrador</option>
                                     </select>
                                     <x-input-error :messages="$errors->get('status')" class="mt-2" />
                                 </div>
@@ -254,14 +254,14 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Is Featured</h3>
+                            <h3 class="card-title">Es destacado</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-check form-switch form-switch-3">
                                         <input class="form-check-input" type="checkbox" name="is_featured">
-                                        <span class="form-check-label">Enable</span>
+                                        <span class="form-check-label">Habilitar</span>
                                     </label>
                                     <x-input-error :messages="$errors->get('is_featured')" class="mt-2" />
                                 </div>
@@ -272,7 +272,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Categories</h3>
+                            <h3 class="card-title">Categorías</h3>
                         </div>
                         <div class="card-body" style="height: 400px; overflow-y: scroll;">
                             <div class="col-md-12">
@@ -337,13 +337,13 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Brand</h3>
+                            <h3 class="card-title">Marca</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <select name="brand" class="form-control select2" id="">
-                                        <option value="">Select a brand</option>
+                                        <option value="">Seleccionar una marca</option>
                                         @foreach ($brands as $brand)
                                             <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                         @endforeach
@@ -357,18 +357,18 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Label</h3>
+                            <h3 class="card-title">Etiqueta</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-check">
                                         <input class="form-check-input" type="checkbox" name="is_hot">
-                                        <span class="form-check-label">Hot</span>
+                                        <span class="form-check-label">Popular</span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="checkbox" name="is_new">
-                                        <span class="form-check-label">New</span>
+                                        <span class="form-check-label">Nuevo</span>
                                     </label>
                                     <x-input-error :messages="$errors->get('brand')" class="mt-2" />
                                 </div>
@@ -378,7 +378,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Tags</h3>
+                            <h3 class="card-title">Etiquetas</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
@@ -402,7 +402,7 @@
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3 row">
-                                    <button class="btn btn-primary mt-3" type="submit">Create</button>
+                                    <button class="btn btn-primary mt-3" type="submit">Crear</button>
                                 </div>
                             </div>
                         </div>

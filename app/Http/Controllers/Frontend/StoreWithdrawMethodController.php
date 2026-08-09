@@ -95,6 +95,6 @@ class StoreWithdrawMethodController extends Controller
 
         $withdraw_method->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

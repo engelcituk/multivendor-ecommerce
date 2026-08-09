@@ -28,6 +28,6 @@ class ContactMessageController extends Controller implements HasMiddleware
     function destroy(Contact $contact_message): JsonResponse
     {
         $contact_message->delete();
-        return response()->json(['status' => 'success', 'message' => 'Message deleted successfully.']);
+        return response()->json(['status' => 'success', 'message' => 'Mensaje eliminado correctamente.']);
     }
 }

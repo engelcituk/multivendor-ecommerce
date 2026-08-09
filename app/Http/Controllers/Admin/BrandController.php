@@ -104,6 +104,6 @@ class BrandController extends Controller implements HasMiddleware
 
         $brand->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Brand deleted successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Marca eliminada correctamente']);
     }
 }

@@ -100,6 +100,6 @@ class SocialLinkController extends Controller implements HasMiddleware
     public function destroy(SocialLink $social_link): JsonResponse
     {
         $social_link->delete();
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

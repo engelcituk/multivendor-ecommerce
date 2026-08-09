@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Page</h3>
+                <h3 class="card-title">Actualizar página</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.custom-pages.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('admin.custom-pages.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Title</label>
+                                <label class="form-label required">Título</label>
                                 <input type="text" class="form-control" name="title" placeholder="" value="{{ $custom_page->title }}">
                                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
                             </div>
@@ -24,7 +24,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Content</label>
+                                <label class="form-label required">Contenido</label>
                                 <textarea name="content" id="editor">{!! $custom_page->content !!}</textarea>
                                 <x-input-error :messages="$errors->get('content')" class="mt-2" />
                             </div>
@@ -36,7 +36,7 @@
                                 <label class="form-check form-switch form-switch-3">
                                     <input class="form-check-input" type="checkbox" @checked($custom_page->is_active) name="is_active"
                                         id="status" value="1">
-                                    <span class="form-check-label">Active</span>
+                                    <span class="form-check-label">Activo</span>
                                 </label>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Update</button>
+                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Actualizar</button>
             </div>
         </div>
     </div>

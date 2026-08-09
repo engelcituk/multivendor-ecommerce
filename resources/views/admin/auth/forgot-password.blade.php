@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Forget Password</title>
+    <title>Olvidé mi contraseña</title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="{{ asset('assets/admin/dist/css/tabler.css') }}" rel="stylesheet" />
     <!-- END GLOBAL MANDATORY STYLES -->
@@ -40,7 +40,7 @@
                     <form action="{{ route('admin.password.email') }}" method="POST" autocomplete="off" novalidate>
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">Email address</label>
+                            <label class="form-label">Correo electrónico</label>
                             <input type="email" name="email" :value="old('email')" class="form-control"
                                 placeholder="your@email.com" autocomplete="off" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />

@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Database Clear</h3>
+                <h3 class="card-title">Limpieza de la base de datos</h3>
             </div>
             <div class="card-body p-0">
                 <div class="alert alert-important alert-warning" role="alert">
@@ -19,11 +19,11 @@
                         </svg>
                     </div>
                     <div>
-                        <h4 class="alert-heading">Warning :</h4>
+                        <h4 class="alert-heading">Advertencia:</h4>
                         <div class="alert-description">
-                            <p>Please know that this action will wipe your database. please proceed with caution!</p>
+                            <p>Esta acción borrará el contenido de la base de datos. Procede con precaución.</p>
                             <div>
-                                <a href="" class="btn btn-danger wipe-database">Wipe Database</a>
+                                <a href="" class="btn btn-danger wipe-database">Vaciar base de datos</a>
                             </div>
                         </div>
                     </div>
@@ -39,13 +39,13 @@
             $('.wipe-database').on('click', function(e) {
                 e.preventDefault();
                 Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
+                    title: "¿Estás seguro?",
+                    text: "No podrás revertir esta acción.",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
+                    confirmButtonText: "Sí, eliminar"
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({

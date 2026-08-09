@@ -41,7 +41,7 @@ class NewsletterController extends Controller implements HasMiddleware
             }
         });
 
-        AlertService::created('Newsletter sent successfully');
+        AlertService::created('Boletín enviado correctamente');
         return redirect()->back();
     }
 }

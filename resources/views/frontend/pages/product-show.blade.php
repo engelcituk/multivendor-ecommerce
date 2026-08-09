@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Products']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Productos']]" />
     <div class="container mb-30">
         <div class="row">
             <div class="col-xl-12">
@@ -118,8 +118,8 @@
                                     <div class="product-extra-link2">
                                         <button type="submit" data-variant="" data-id="{{ $product->id }}"
                                             data-modal="false" class="button button-add-to-cart add_to_cart"><i
-                                                class="fi-rs-shopping-cart"></i>Add to cart</button>
-                                        <a aria-label="Add To Wishlist" class="action-btn hover-up wishlist-btn" data-id="{{ $product->id }}"
+                                                class="fi-rs-shopping-cart"></i>Agregar al carrito</button>
+                                        <a aria-label="Agregar a favoritos" class="action-btn hover-up wishlist-btn" data-id="{{ $product->id }}"
                                             href="" ><i class="fi-rs-heart"></i></a>
 
                                     </div>
@@ -140,14 +140,14 @@
                                                 {{ $loop->last ? '' : ', ' }}
                                             @endforeach
                                         </li>
-                                        <li>Stock:<span class="in-stock text-brand ml-5"><span class="stock-qty">
+                                        <li>Inventario:<span class="in-stock text-brand ml-5"><span class="stock-qty">
                                                     @if ($product->manage_stock == 1)
                                                         {{ $product->qty }}
                                                     @else
                                                         Unlimited
                                                     @endif
                                                 </span>
-                                                Items In Stock</span>
+                                                artículos disponibles</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -160,12 +160,12 @@
                             <ul class="nav nav-tabs text-uppercase">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="Description-tab" data-bs-toggle="tab"
-                                        href="#Description">Description</a>
+                                        href="#Description">Descripción</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" id="Vendor-info-tab" data-bs-toggle="tab"
-                                        href="#Vendor-info">Vendor</a>
+                                        href="#Vendor-info">Vendedor</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">Reviews
@@ -197,18 +197,18 @@
                                     <ul class="contact-infor mb-50">
                                         @if ($product->store->address)
                                             <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-location.svg') }}"
-                                                    alt="" /><strong>Address: </strong>
+                                                    alt="" /><strong>Dirección: </strong>
                                                 <span>{{ $product->store->address }}</span>
                                             </li>
                                         @endif
                                         @if ($product->store->phone)
                                             <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}"
-                                                    alt="" /><strong>Phone:</strong><span>
+                                                    alt="" /><strong>Teléfono:</strong><span>
                                                     {{ $product->store->phone }} </span></li>
                                         @endif
                                         @if ($product->store->email)
                                             <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}"
-                                                    alt="" /><strong>Phone:</strong><span>
+                                                    alt="" /><strong>Teléfono:</strong><span>
                                                     {{ $product->store->email }} </span></li>
                                         @endif
                                     </ul>
@@ -220,7 +220,7 @@
                                     <div class="comments-area">
                                         <div class="row">
                                             <div class="col-lg-8">
-                                                <h4 class="mb-30">Customer Reviews</h4>
+                                                <h4 class="mb-30">Reseñas de clientes</h4>
                                                 <div class="comment-list">
                                                     @forelse($reviews as $review)
                                                     <div class="single-comment justify-content-between d-flex mb-30">
@@ -245,13 +245,13 @@
                                                         </div>
                                                     </div>
                                                     @empty
-                                                    <div class="alert alert-warning">No reviews found</div>
+                                                    <div class="alert alert-warning">No se encontraron reseñas</div>
                                                     @endforelse
                                                 </div>
                                                 {{ $reviews->links() }}
                                             </div>
                                             <div class="col-lg-4">
-                                                <h4 class="mb-30">Customer reviews</h4>
+                                                <h4 class="mb-30">Reseñas de clientes</h4>
 
                                                 <div class="d-flex mb-30">
                                                     <div class="product-rate d-inline-block mr-15">
@@ -276,7 +276,7 @@
                                     </div>
                                     <!--comment form-->
                                     <div class="comment-form">
-                                        <h4 class="mb-15">Add a review</h4>
+                                        <h4 class="mb-15">Agregar una reseña</h4>
                                         <div class="product-rate d-inline-block mb-30"></div>
                                         <div class="row">
                                             @if(Auth::guard('web')->check())
@@ -305,14 +305,14 @@
 
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="submit" class="button button-contactForm">Submit
-                                                            Review</button>
+                                                        <button type="submit" class="button button-contactForm">Enviar
+                                                            Reseña</button>
                                                     </div>
                                                 </form>
                                             </div>
                                             @else
                                             <div class="alert alert-warning col-lg-8 col-md-12">
-                                                <p class="mb-0">Please <a href="{{ route('login') }}">login</a> to write a review.</p>
+                                                <p class="mb-0">Por favor, <a href="{{ route('login') }}">inicia sesión</a> para escribir una reseña.</p>
                                             </div>
                                             @endif
                                         </div>
@@ -323,7 +323,7 @@
                     </div>
                     <div class="row mt-70">
                         <div class="col-12">
-                            <h2 class="section-title style-1 mb-30">Related products</h2>
+                            <h2 class="section-title style-1 mb-30">Productos relacionados</h2>
                         </div>
                         <div class="col-12">
                             <div class="row related-products">
@@ -412,7 +412,7 @@
                     if (matchingVariant.in_stock == 0 || matchingVariant.in_stock == null || matchingVariant
                         .quantity < 1 && matchingVariant.manage_stock == 1) {
                         html = `<div class="product-price primary-color float-left">
-                            <span class="current-price text-brand">Out Of Stock</span>
+                            <span class="current-price text-brand">Agotado</span>
                         </div>`
 
                         $('.product-price').replaceWith(html);
@@ -465,7 +465,7 @@
                     method: "POST",
                     data: $(this).serialize(),
                     beforeSend: function() {
-                        $('.button-contactForm').text('Submitting...');
+                        $('.button-contactForm').text('Enviando...');
                     },
                     success: function(response) {
                         if (response.status == 'success') {
@@ -482,7 +482,7 @@
                         });
                     },
                     complete: function() {
-                        $('.button-contactForm').text('Submit Review');
+                        $('.button-contactForm').text('Enviar reseña');
                     }
                 })
             });

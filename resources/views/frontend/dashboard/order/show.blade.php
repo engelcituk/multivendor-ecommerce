@@ -4,7 +4,7 @@
 <div class="tab-pane fade active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
     <div class="card">
         <div class="card-header p-0 d-print-none">
-            <h3 class="mb-0">Your Orders</h3>
+            <h3 class="mb-0">Tus pedidos</h3>
         </div>
          <div class="card-body p-0">
                 <div class="page-wrapper">
@@ -30,7 +30,7 @@
                                                 d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z">
                                             </path>
                                         </svg>
-                                        Print Invoice
+                                        Print Factura
                                     </button>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                            <p class="h3">Billing Information</p>
+                                            <p class="h3">Información de facturación</p>
                                             <address>
                                                 @php
                                                     $billingInfo = $order->billing_info;
@@ -61,7 +61,7 @@
                                             </address>
                                         </div>
                                         <div class="col-6 text-end">
-                                            <p class="h3">Shipping Information</p>
+                                            <p class="h3">Información de envío</p>
                                             <address>
                                                 @if ($shippingInfo)
                                                     {{ $shippingInfo['first_name'] }} {{ $shippingInfo['last_name'] }}
@@ -87,9 +87,9 @@
                                         <div class="col-12 my-5">
                                             <p class="text-bold" style="font-size: 20px; font-weight: 600; color:black">Invoice #{{ $order->id }}</p>
                                             <div class="d-flex gap-2 flex-column">
-                                                <span>Transaction ID: {{ $order->transaction_id }}</span>
-                                                <span>Payment Method: {{ $order->payment_method }}</span>
-                                                <span>Order Date: {{ date('Y-m-d', strtotime($order->created_at)) }}</span>
+                                                <span>ID de transacción: {{ $order->transaction_id }}</span>
+                                                <span>Método de pago: {{ $order->payment_method }}</span>
+                                                <span>Fecha del pedido: {{ date('Y-m-d', strtotime($order->created_at)) }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -97,10 +97,10 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center" style="width: 1%"></th>
-                                                <th>Product</th>
-                                                <th class="text-center" style="width: 5%">Qnt</th>
+                                                <th>Producto</th>
+                                                <th class="text-center" style="width: 5%">Cant.</th>
                                                 <th class="text-end" style="width: 10%">Unit ({{ $order->currency }})</th>
-                                                <th class="text-end" style="width: 10%">Amount ({{ $order->currency }})
+                                                <th class="text-end" style="width: 10%">Importe ({{ $order->currency }})
                                                 </th>
                                             </tr>
                                         </thead>
@@ -131,16 +131,16 @@
                                                 <td class="text-end">{{ $subtotal }}</td>
                                             </tr>
                                             <tr>
-                                                <td colspan="4" class="strong text-end">Discount</td>
+                                                <td colspan="4" class="strong text-end">Descuento</td>
                                                 <td class="text-end">{{ $order?->discount ?? 0 }}</td>
                                             </tr>
                                             <tr>
-                                                <td colspan="4" class="strong text-end">Shipping</td>
+                                                <td colspan="4" class="strong text-end">Envío</td>
                                                 <td class="text-end">{{ $order->shipping_charge ?? 0 }}</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="font-weight-bold text-uppercase text-end">Total
-                                                    Amount</td>
+                                                    Importe</td>
                                                 <td class="font-weight-bold text-end">{{ $order->currency }}
                                                     {{ $order->total }}</td>
                                             </tr>

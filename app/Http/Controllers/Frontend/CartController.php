@@ -42,7 +42,7 @@ class CartController extends Controller
         // check user login
         if (!user()) {
             throw ValidationException::withMessages([
-                'message' => 'Please login to add product to cart'
+                'message' => 'Inicia sesión para agregar el producto al carrito'
             ]);
         }
 
@@ -51,7 +51,7 @@ class CartController extends Controller
         // $productInfo = $product->getVariantOrProductPriceAndStock($variantId);
         // dd($productInfo);
         // if(!$productInfo['in_stock']) {
-        //     throw ValidationException::withMessages(["Product out of stock"]);
+        //     throw ValidationException::withMessages(["Producto agotado"]);
         // }
 
 
@@ -76,7 +76,7 @@ class CartController extends Controller
             ->exists()) {
                 return response()->json([
                     'status' => 'error',
-                    'message' => 'Product already added to cart'
+                    'message' => 'El producto ya está en el carrito'
                 ], 409);
             }
 
@@ -84,7 +84,7 @@ class CartController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Product added to cart successfully',
+            'message' => 'Producto agregado al carrito correctamente',
             'cart_count' => cartCount(),
             'show_modal' => false
         ]);
@@ -95,12 +95,12 @@ class CartController extends Controller
         if($variantId) {
             $variant = $product->variants()->find($variantId);
             if(!$variant || !$variant->in_stock || ($variant->manage_stock && $variant->qty < $quantity)) {
-                abort(422, 'Product out of stock');
+                abort(422, 'Producto agotado');
             }
 
             if(!$product->primaryVariant) {
                 if(!$product->in_stock || ($product->manage_stock && $product->qty < $quantity)) {
-                    abort(422, 'Product out of stock');
+                    abort(422, 'Producto agotado');
                 }
             }
         }
@@ -128,7 +128,7 @@ class CartController extends Controller
 
         if(!$productPriceAndQty['in_stock']){
             return response()->json([
-                'message' => 'Product out of stock'
+                'message' => 'Producto agotado'
             ], 422);
         }
 
@@ -139,14 +139,14 @@ class CartController extends Controller
             $cartItems = Cart::with('product')->where('user_id', user()->id)->get();
             $cartHtml = view('components.frontend.cart-item', compact('cartItems'))->render();
             return response()->json([
-                'message' => 'Cart updated successfully',
+                'message' => 'Carrito actualizado correctamente',
                 'html' => $cartHtml,
                 'cart_sub_total' => $this->cartSubTotal()
             ], 200);
         }
 
         return response()->json([
-            'message' => 'Product out of stock'
+            'message' => 'Producto agotado'
         ], 422);
 
     }
@@ -168,11 +168,11 @@ class CartController extends Controller
     {
         $cartItem = Cart::findOrFail($id);
         $cartItem->delete();
-        AlertService::updated('Cart item deleted successfully');
+        AlertService::updated('Producto eliminado del carrito correctamente');
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Cart item deleted successfully',
+            'message' => 'Producto eliminado del carrito correctamente',
         ], 200);
     }
 
@@ -207,24 +207,24 @@ class CartController extends Controller
             'coupon_type' => $coupon->is_percent ? '%' : 'fixed',
             'coupon_value' => $coupon->value,
             'total' => $total,
-            'message' => 'Coupon code applied successfully',
+            'message' => 'Cupón aplicado correctamente',
         ], 200);
     }
 
     function validateCoupon($coupon, $cartTotal)
     {
 
-        if(!$coupon) return ['error' => 'Invalid coupon code'];
+        if(!$coupon) return ['error' => 'El cupón no es válido'];
 
-        if(!$coupon->is_active) return ['error' => 'Coupon code is not active'];
+        if(!$coupon->is_active) return ['error' => 'El cupón no está activo'];
 
-        if(Carbon::now()->lt($coupon->start_date) || Carbon::now()->gt($coupon->end_date)) return ['error' => 'Coupon is expired or not yet valid.'];
+        if(Carbon::now()->lt($coupon->start_date) || Carbon::now()->gt($coupon->end_date)) return ['error' => 'El cupón venció o todavía no es válido.'];
 
-        if($cartTotal < $coupon->minimum_spend) return ['error' => 'Minimum spend not reached.'];
+        if($cartTotal < $coupon->minimum_spend) return ['error' => 'No se alcanzó la compra mínima.'];
 
-        if($cartTotal > $coupon->maximum_spend) return ['error' => 'Maximum spend exceeded.'];
+        if($cartTotal > $coupon->maximum_spend) return ['error' => 'Se excedió la compra máxima.'];
 
-        if($coupon->used >= $coupon->usage_limit_per_coupon) return ['error' => 'Coupon usage limit exceeded.'];
+        if($coupon->used >= $coupon->usage_limit_per_coupon) return ['error' => 'Se excedió el límite de uso del cupón.'];
 
         // check can user user the coupon
 
@@ -236,7 +236,7 @@ class CartController extends Controller
         Session::forget('coupon');
         return response()->json([
             'status' => 'success',
-            'message' => 'Coupon code removed successfully',
+            'message' => 'Cupón eliminado correctamente',
         ], 200);
     }
 }

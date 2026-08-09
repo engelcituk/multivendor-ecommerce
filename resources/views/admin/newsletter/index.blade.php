@@ -9,7 +9,7 @@
                         <div class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse-1-tabs" aria-expanded="true">
-                                Send Newsletter
+                                Enviar boletín
                                 <div class="accordion-button-toggle">
                                     <!-- Download SVG icon from http://tabler.io/icons/icon/chevron-down -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -26,17 +26,17 @@
                                <form action="{{ route('admin.newsletter.send') }}" method="POST" >
                                 @csrf
                                 <div class="from-group">
-                                    <label for="subject" class="form-label">Subject</label>
+                                    <label for="subject" class="form-label">Asunto</label>
                                     <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject">
                                     <x-input-error for="subject" class="mt-2" :messages="$errors->get('subject')" />
                                 </div>
                                 <div class="from-group mt-3">
-                                    <label for="message" class="form-label">Message</label>
+                                    <label for="message" class="form-label">Mensaje</label>
                                     <textarea name="message" id="editor" class="form-control" placeholder="Message"></textarea>
                                     <x-input-error for="message" class="mt-2" :messages="$errors->get('message')" />
                                 </div>
                                 <div class="from-group mt-3">
-                                    <button class="btn btn-primary" type="submit">Send Newsletter</button>
+                                    <button class="btn btn-primary" type="submit">Enviar boletín</button>
                                 </div>
                                </form>
                             </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Subscribers</h3>
+                <h3 class="card-title">Suscriptores</h3>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -57,9 +57,9 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Email</th>
-                                    <th>Status</th>
-                                    <th>Created At</th>
+                                    <th>Correo electrónico</th>
+                                    <th>Estado</th>
+                                    <th>Fecha de creación</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -70,9 +70,9 @@
                                         <td>{{ $subscriber->email }}</td>
                                         <td>
                                             @if ($subscriber->is_verified)
-                                                <span class="badge bg-success-lt">Verified</span>
+                                                <span class="badge bg-success-lt">Verificado</span>
                                             @else
-                                                <span class="badge bg-danger-lt">Unverified</span>
+                                                <span class="badge bg-danger-lt">No verificado</span>
                                             @endif
                                         </td>
                                         <td>{{ date('Y-m-d h:i A', strtotime($subscriber->created_at)) ?? 'N/A' }}</td>
@@ -80,7 +80,7 @@
 
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="text-center">No data found</td>
+                                        <td colspan="6" class="text-center">No se encontraron datos</td>
                                         </td>
                                     </tr>
                                 @endforelse

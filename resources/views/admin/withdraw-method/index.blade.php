@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Withdraw Methods</h3>
+                <h3 class="card-title">Todos los métodos de retiro</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.withdraw-methods.create') }}" class="btn btn-primary">Create Method</a>
+                    <a href="{{ route('admin.withdraw-methods.create') }}" class="btn btn-primary">Crear método</a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -14,11 +14,11 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Name</th>
-                                <th>Minimum Amount</th>
-                                <th>Maximum Amount</th>
-                                <th>Status</th>
+                                <th>N.º</th>
+                                <th>Nombre</th>
+                                <th>Importe mínimo</th>
+                                <th>Importe máximo</th>
+                                <th>Estado</th>
                                 <th class="w-8"></th>
                             </tr>
                         </thead>
@@ -31,9 +31,9 @@
                                     <td>{{ $withdrawMethod->maximum_amount }}</td>
                                     <td>
                                         @if($withdrawMethod->is_active == 1)
-                                            <span class="badge bg-success-lt">Active</span>
+                                            <span class="badge bg-success-lt">Activo</span>
                                         @else
-                                            <span class="badge bg-danger-lt">Inactive</span>
+                                            <span class="badge bg-danger-lt">Inactivo</span>
                                         @endif
                                     </td>
                                     <td>
@@ -43,7 +43,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5" class="text-center">No Methods Available</td>
+                                    <td colspan="5" class="text-center">No hay métodos disponibles</td>
                                 </tr>
                             @endforelse
 

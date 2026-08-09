@@ -2,8 +2,8 @@
 
 @section('dashboard_contents')
     <div class="wsus__shipping_address mb_40">
-        <h4>Update Address
-            <a href="{{ route('address.index') }}" class="btn btn-primary">Back</a>
+        <h4>Actualizar Dirección
+            <a href="{{ route('address.index') }}" class="btn btn-primary">Volver</a>
         </h4>
 
         <div class=" login_form" id="loginform">
@@ -62,7 +62,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <select name="country" class="form-control select-active" id="">
-                                    <option value="">Country</option>
+                                    <option value="">País</option>
                                     @foreach (config('countries') as $country)
                                         <option @selected($address->country == $country) value="{{ $country }}">{{ $country }}</option>
                                     @endforeach
@@ -79,9 +79,9 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <select name="is_default" class="form-control">
-                                    <option value="">Is Default</option>
+                                    <option value="">Es predeterminada</option>
                                     <option @selected($address->is_default == 0) value="0">No</option>
-                                    <option @selected($address->is_default == 1) value="1">Yes</option>
+                                    <option @selected($address->is_default == 1) value="1">Sí</option>
                                 </select>
                                 <x-input-error :messages="$errors->get('is_default')" class="mt-2" />
                             </div>
@@ -89,7 +89,7 @@
 
                     </div>
                     <div class="form-group mb-0">
-                        <button class="btn btn-md">Save</button>
+                        <button class="btn btn-md">Guardar</button>
                     </div>
                 </form>
             </div>

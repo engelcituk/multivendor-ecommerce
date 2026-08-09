@@ -4,7 +4,7 @@
 @php
     $contactSection = \App\Models\ContactSectionSetting::first();
 @endphp
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Contact']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Contacto']]" />
     <div class="page-content pt-70">
         <div class="container">
             <div class="row">
@@ -26,8 +26,8 @@
                                         <div class="contact_box">
                                             <h4 class="mb-15 text-brand">{{ $contactSection?->title_one }}</h4>
                                             <p>{{ $contactSection?->address_one ?? 'N/A' }}</p>
-                                            <p><b>Phone:</b> {{ $contactSection?->phone_one ?? 'N/A' }}</p>
-                                            <p><b>Email:</b> {{ $contactSection?->email_one ?? 'N/A' }}</p>
+                                            <p><b>Teléfono:</b> {{ $contactSection?->phone_one ?? 'N/A' }}</p>
+                                            <p><b>Correo electrónico:</b> {{ $contactSection?->email_one ?? 'N/A' }}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -36,8 +36,8 @@
                                         <div class="contact_box">
                                             <h4 class="mb-15 text-brand">{{ $contactSection?->title_two}}</h4>
                                             <p>{{ $contactSection?->address_two?? 'N/A' }}</p>
-                                            <p><b>Phone:</b> {{ $contactSection?->phone_two ?? 'N/A' }}</p>
-                                            <p><b>Email:</b> {{ $contactSection?->email_two ?? 'N/A' }}</p>
+                                            <p><b>Teléfono:</b> {{ $contactSection?->phone_two ?? 'N/A' }}</p>
+                                            <p><b>Correo electrónico:</b> {{ $contactSection?->email_two ?? 'N/A' }}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -46,8 +46,8 @@
                                         <div class="contact_box">
                                             <h4 class="mb-15 text-brand">{{ $contactSection?->title_three}}</h4>
                                             <p>{{ $contactSection?->address_three ?? 'N/A' }}</p>
-                                            <p><b>Phone:</b> {{ $contactSection?->phone_three ?? 'N/A' }}</p>
-                                            <p><b>Email:</b> {{ $contactSection?->email_three ?? 'N/A' }}</p>
+                                            <p><b>Teléfono:</b> {{ $contactSection?->phone_three ?? 'N/A' }}</p>
+                                            <p><b>Correo electrónico:</b> {{ $contactSection?->email_three ?? 'N/A' }}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -57,8 +57,8 @@
                                 <div class="row justify-content-center">
                                     <div class="col-xl-12">
                                         <div class="contact-from-area padding-20-row-col">
-                                            <h5 class="text-brand mb-10">Contact form</h5>
-                                            <h2 class="mb-10">Drop Us a Line</h2>
+                                            <h5 class="text-brand mb-10">Formulario de contacto</h5>
+                                            <h2 class="mb-10">Escríbenos</h2>
                                             <p class="text-muted mb-30 font-sm">Your email address will not be
                                                 published.
                                                 Required fields are marked *</p>
@@ -74,7 +74,7 @@
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="input-style mb-20">
-                                                            <input name="email" placeholder="Your Email" type="email" />
+                                                            <input name="email" placeholder="Tu correo electrónico" type="email" />
                                                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                                         </div>
                                                     </div>
@@ -90,7 +90,7 @@
                                                             <textarea rows="6" name="message" placeholder="Message"></textarea>
                                                             <x-input-error :messages="$errors->get('message')" class="mt-2" />
                                                         </div>
-                                                        <button class="btn" type="submit">Send message</button>
+                                                        <button class="btn" type="submit">Enviar mensaje</button>
                                                     </div>
                                                 </div>
                                             </form>

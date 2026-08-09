@@ -123,9 +123,9 @@ class HomeController extends Controller
         $review->review = $request->review;
         $review->save();
 
-        AlertService::created('Product Review Added Successfully');
+        AlertService::created('Reseña del producto agregada correctamente');
 
-        return response()->json(['status' => 'success', 'message' => 'Product Review Added Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Reseña del producto agregada correctamente']);
     }
 
     function customPage(string $slug): View

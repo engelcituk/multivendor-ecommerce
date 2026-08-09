@@ -8,7 +8,7 @@
                     <div class="col-12">
                         <div class="section-title wow animate__animated animate__fadeIn">
                             <h3>{{ $category->name }}</h3>
-                            <a class="view_all_btn" href="{{ route('products.index', ['category' => $category->slug]) }}">View All <i
+                            <a class="view_all_btn" href="{{ route('products.index', ['category' => $category->slug]) }}">Ver todo <i
                                     class="fa-solid fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>

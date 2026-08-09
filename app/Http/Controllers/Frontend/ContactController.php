@@ -26,7 +26,7 @@ class ContactController extends Controller
         // send mail to admin
         Mail::to(config('settings.site_email'))->send(new GenericMail($request->subject, $request->message, $request->email));
         Contact::create($request->validated());
-        AlertService::created('Your message has been sent successfully. We will get back to you soon.');
+        AlertService::created('Tu mensaje se envió correctamente. Nos comunicaremos contigo pronto.');
 
         return redirect()->route('contact.index');
 

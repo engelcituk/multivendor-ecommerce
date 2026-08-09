@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Profile</h3>
+                <h3 class="card-title">Actualizar perfil</h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('vendor.profile.update') }}" method="POST" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
                         <div class="col-md-9">
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Name</label>
+                                    <label class="form-label required">Nombre</label>
                                     <input type="text" class="form-control" name="name" placeholder=""
                                         value="{{ user()->name }}">
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -29,7 +29,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Email</label>
+                                    <label class="form-label required">Correo electrónico</label>
                                     <input type="email" class="form-control" name="email" placeholder=""
                                         value="{{ user()->email }}">
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -37,14 +37,14 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Account</button>
+                    <button type="submit" class="btn btn-primary">Actualizar cuenta</button>
                 </form>
             </div>
         </div>
 
         <div class="card mt-5">
             <div class="card-header">
-                <h3 class="card-title">Update Password</h3>
+                <h3 class="card-title">Actualizar contraseña</h3>
             </div>
             <div class="card-body">
                 <form method="post" action="{{ route('vendor.profile-password.update') }}">
@@ -54,14 +54,14 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Current password</label>
+                                <label class="form-label required">Contraseña actual</label>
                                 <input type="password" class="form-control" name="current_password" placeholder="">
                                 <x-input-error :messages="$errors->get('current_password')" class="mt-2" />
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Password</label>
+                                <label class="form-label required">Contraseña</label>
                                 <input type="password" class="form-control" name="password" placeholder="">
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
@@ -69,7 +69,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Confirm password</label>
+                                <label class="form-label required">Confirmar contraseña</label>
                                 <input type="password" class="form-control" name="password_confirmation" placeholder="">
                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                             </div>
@@ -77,7 +77,7 @@
 
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-primary"
-                                value="Submit">Update Password</button>
+                                value="Submit">Actualizar contraseña</button>
                         </div>
                     </div>
                 </form>
@@ -93,8 +93,8 @@
                 input_field: "#image-upload", // Default: .image-upload
                 preview_box: "#image-preview", // Default: .image-preview
                 label_field: "#image-label", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
         });

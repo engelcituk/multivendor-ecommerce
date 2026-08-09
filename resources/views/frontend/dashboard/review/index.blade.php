@@ -5,7 +5,7 @@
 <div class="tab-pane fade active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
     <div class="card">
         <div class="card-header p-0">
-            <h3 class="mb-0">Your Reviews</h3>
+            <h3 class="mb-0">Tus reseñas</h3>
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -13,10 +13,10 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th style="width: 300px">Product</th>
-                            <th>Rating</th>
-                            <th>Review</th>
-                            <th>Date</th>
+                            <th style="width: 300px">Producto</th>
+                            <th>Calificación</th>
+                            <th>Reseña</th>
+                            <th>Fecha</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -26,7 +26,7 @@
                  </div>
                  <div class="col-md-6 col-sm-12 col-xs-12">
                      <div class="detail-info pr-30 pl-30">
-                         <span class="stock-status out-stock"> Sale Off </span>
+                         <span class="stock-status out-stock"> Oferta </span>
                          <h2 class="title-detail">{{ $product->name }}</h2>
                          <div class="product-detail-rating">
                              <div class="product-rate-cover text-end">
@@ -108,7 +108,7 @@
                              </div>
                              <div class="product-extra-link2">
                                  <button type="submit" class="button button-add-to-cart add_to_cart" data-variant="" data-id="{{ $product->id }}" data-modal="false" ><i
-                                         class="fi-rs-shopping-cart" ></i>Add to cart</button>
+                                         class="fi-rs-shopping-cart" ></i>Agregar al carrito</button>
 
                              </div>
                          </div>
@@ -128,14 +128,14 @@
                                          {{ $loop->last ? '' : ', ' }}
                                      @endforeach
                                  </li>
-                                 <li>Stock:<span class="in-stock text-brand ml-5"><span class="stock-qty">
+                                 <li>Inventario:<span class="in-stock text-brand ml-5"><span class="stock-qty">
                                              @if ($product->manage_stock == 1)
                                                  {{ $product->qty }}
                                              @else
                                                  Unlimited
                                              @endif
                                          </span>
-                                         Items In Stock</span>
+                                         artículos disponibles</span>
                                  </li>
                              </ul>
                          </div>

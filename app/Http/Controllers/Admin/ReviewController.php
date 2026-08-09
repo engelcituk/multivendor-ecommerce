@@ -19,6 +19,6 @@ class ReviewController extends Controller
     function destroy(ProductReview $review) : JsonResponse
     {
         $review->delete();
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

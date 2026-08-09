@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Product Tags</h3>
+                <h3 class="card-title">Etiquetas del producto</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.tags.create') }}" class="btn btn-primary">Create Tag</a>
+                    <a href="{{ route('admin.tags.create') }}" class="btn btn-primary">Crear etiqueta</a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -14,9 +14,9 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Name</th>
-                                <th>Status</th>
+                                <th>N.º</th>
+                                <th>Nombre</th>
+                                <th>Estado</th>
                                 <th class="w-100px"></th>
                             </tr>
                         </thead>
@@ -27,9 +27,9 @@
                                     <td>{{ $tag->name }}</td>
                                     <td>
                                         @if($tag->is_active == 1)
-                                        <span class="badge bg-primary-lt">Active</span></td>
+                                        <span class="badge bg-primary-lt">Activo</span></td>
                                         @else
-                                        <span class="badge bg-danger-lt">Inactive</span></td>
+                                        <span class="badge bg-danger-lt">Inactivo</span></td>
                                         @endif
                                     <td>
                                         <a href="{{ route('admin.tags.edit', $tag) }}"><i class="ti ti-edit"></i></a>
@@ -38,7 +38,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" class="text-center">No Data Available</td>
+                                    <td colspan="4" class="text-center">No hay datos disponibles</td>
                                 </tr>
                             @endforelse
 

@@ -1,10 +1,10 @@
             <div class="col-lg-3 col-xxl-2 primary-sidebar sticky-sidebar">
 
-                <div class="sidebar_filter d-lg-none">filter</div>
+                <div class="sidebar_filter d-lg-none">filtrar</div>
 
                 <div class="sidebar_wraper">
                     <div class="sidebar-widget widget-category-2 mb-30">
-                        <h5 class="section-title style-1 mb-30">Category</h5>
+                        <h5 class="section-title style-1 mb-30">Categoría</h5>
 
                         <ul class="main_category">
                             {{-- @dd($categories) --}}
@@ -39,7 +39,7 @@
                     </div>
                     <!-- Fillter By Price -->
                     <div class="sidebar-widget price_range range mb-30">
-                        <h5 class="section-title style-1 mb-30">Fill by price</h5>
+                        <h5 class="section-title style-1 mb-30">Filtrar por precio</h5>
                         <form action="{{ url()->current() }}" method="get">
                             @if(request('category'))
                                 <input type="hidden" name="category" value="{{ request('category') }}">
@@ -48,10 +48,10 @@
                                 <div class="price-filter-inner">
                                     <div id="slider-range" class="mb-20"></div>
                                     <div class="d-flex justify-content-between">
-                                        <div class="caption">From: <strong id="slider-range-value1"
+                                        <div class="caption">De: <strong id="slider-range-value1"
                                                 class="text-brand"></strong>
                                         </div>
-                                        <div class="caption">To: <strong id="slider-range-value2"
+                                        <div class="caption">Para: <strong id="slider-range-value2"
                                                 class="text-brand"></strong>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="list-group">
                                 <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900">Brands</label>
+                                    <label class="fw-900">Marcas</label>
                                     <div class="custome-checkbox">
                                         @foreach ($brands as $brand)
                                             <input @checked(in_array($brand->id, request('brands') ?? [])) class="form-check-input" type="checkbox"
@@ -74,7 +74,7 @@
                                             <br />
                                         @endforeach
                                     </div>
-                                    <label class="fw-900 mt-15">Tags</label>
+                                    <label class="fw-900 mt-15">Etiquetas</label>
                                     <div class="custome-checkbox">
                                         @foreach ($tags as $tag)
                                             <input @checked(in_array($tag->id, request('tags') ?? [])) class="form-check-input" type="checkbox"
@@ -92,7 +92,7 @@
                             </div>
                             <button type="submit" href="shop-grid-right.html" class="btn btn-sm btn-default"><i
                                     class="fi-rs-filter mr-5"></i>
-                                Filter</button>
+                                Filtrar</button>
                         </form>
                     </div>
 

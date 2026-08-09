@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Register']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Registro']]" />
 
     <div class="page-content pt-150 pb-140">
         <div class="container">
@@ -12,26 +12,26 @@
                             <div class="login_wrap widget-taber-content background-white">
                                 <div class="padding_eight_all bg-white">
                                     <div class="heading_s1">
-                                        <h2 class="mb-5">Create an Account</h2>
-                                        <p class="mb-30">Already have an account? <a href="{{ route('login') }}">Login</a>
+                                        <h2 class="mb-5">Crear una cuenta</h2>
+                                        <p class="mb-30">¿Ya tienes una cuenta? <a href="{{ route('login') }}">Login</a>
                                         </p>
                                     </div>
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
 
                                         <div class="form-group">
-                                            <input type="text" required="" name="name" placeholder="Name"
+                                            <input type="text" required="" name="name" placeholder="Nombre"
                                                 value="{{ old('name') }}" />
                                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="email" required="" name="email" placeholder="Email"
+                                            <input type="email" required="" name="email" placeholder="Correo electrónico"
                                                 value="{{ old('email') }}" />
                                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                         </div>
                                         <div class="form-group">
-                                            <input required="" type="password" name="password" placeholder="Password" />
+                                            <input required="" type="password" name="password" placeholder="Contraseña" />
                                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                         </div>
                                         <div class="form-group">
@@ -46,20 +46,20 @@
                                                     name="user_type" id="exampleRadios3" checked="" value="user" />
                                                 <label class="form-check-label" for="exampleRadios3"
                                                     data-bs-toggle="collapse" data-target="#bankTranfer"
-                                                    aria-controls="bankTranfer">I am a customer</label>
+                                                    aria-controls="bankTranfer">Soy cliente</label>
                                             </div>
                                             <div class="custome-radio">
                                                 <input class="form-check-input" required="" type="radio"
                                                     name="user_type" id="exampleRadios4" checked="" value="vendor" />
                                                 <label class="form-check-label" for="exampleRadios4"
                                                     data-bs-toggle="collapse" data-target="#checkPayment"
-                                                    aria-controls="checkPayment">I am a vendor</label>
+                                                    aria-controls="checkPayment">Soy vendedor</label>
                                             </div>
                                         </div>
                                         <div class="form-group mb-0">
                                             <button type="submit"
                                                 class="btn btn-fill-out btn-block hover-up font-weight-bold"
-                                                name="login">Submit &amp; Register</button>
+                                                name="login">Enviar y registrarme</button>
                                         </div>
                                     </form>
                                 </div>

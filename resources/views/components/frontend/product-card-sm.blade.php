@@ -25,7 +25,7 @@
                     <span>${{ $price['price'] }}</span>
                 @endif
             @else
-                <span class="text-danger">Out of stock</span>
+                <span class="text-danger">Agotado</span>
             @endif
         </div>
     </div>

@@ -2,8 +2,8 @@
 
 @section('dashboard_contents')
     <div class="wsus__shipping_address mb_40">
-        <h4>Billing Address
-            <a href="{{ route('address.index') }}" class="btn btn-primary">Back</a>
+        <h4>Billing Dirección
+            <a href="{{ route('address.index') }}" class="btn btn-primary">Volver</a>
         </h4>
 
         {{-- <div class="row">
@@ -92,7 +92,7 @@
 
         <div class=" login_form" id="loginform">
             <div class="panel-body">
-                <h4>Add New Address</h4>
+                <h4>Agregar nueva dirección</h4>
                 <form action="{{ route('address.store') }}" method="POST">
                     @csrf
                     <div class="row mt-20">
@@ -146,7 +146,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <select name="country" class="form-control select-active" id="">
-                                    <option value="">Country</option>
+                                    <option value="">País</option>
                                     @foreach (config('countries') as $country)
                                         <option value="{{ $country }}">{{ $country }}</option>
                                     @endforeach
@@ -163,9 +163,9 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <select name="is_default" class="form-control">
-                                    <option value="">Is Default</option>
+                                    <option value="">Es predeterminada</option>
                                     <option value="0">No</option>
-                                    <option value="1">Yes</option>
+                                    <option value="1">Sí</option>
                                 </select>
                                 <x-input-error :messages="$errors->get('is_default')" class="mt-2" />
                             </div>
@@ -173,7 +173,7 @@
 
                     </div>
                     <div class="form-group mb-0">
-                        <button class="btn btn-md">Save</button>
+                        <button class="btn btn-md">Guardar</button>
                     </div>
                 </form>
             </div>

@@ -10,8 +10,8 @@
             <p>
                 From your account dashboard. you can easily check &amp; view your <a href="{{ route('orders.index') }}">recent
                     orders</a>,<br />
-                manage your <a href="{{ route('address.index') }}">shipping and billing addresses</a> and <a href="{{ route('profile') }}">edit your password
-                    and account details.</a>
+                administrar tus <a href="{{ route('address.index') }}">direcciones de envío y facturación</a> y <a href="{{ route('profile') }}">cambiar tu contraseña
+                    y account details.</a>
             </p>
         </div>
     </div>
@@ -20,42 +20,42 @@
             <div class="dashboard_card blue">
                 <span><i class="fa-solid fa-cart-shopping"></i></span>
                 <h3>{{ $totalOrders }}</h3>
-                <p>Total Order</p>
+                <p>Total de pedidos</p>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="dashboard_card red">
                 <span><i class="fa-solid fa-xmark"></i></span>
                 <h3>{{ $totalCanceledOrders }}</h3>
-                <p>Cancel Order</p>
+                <p>Cancelar pedido</p>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="dashboard_card orange">
                 <span><i class="fa-solid fa-spinner"></i></span>
                 <h3>{{ $totalPendingOrders }}</h3>
-                <p>Pending Order</p>
+                <p>Pedido pendiente</p>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="dashboard_card green">
                 <span><i class="fa-solid fa-star"></i></span>
                 <h3>{{ $totalReviews }}</h3>
-                <p>Total Reviews</p>
+                <p>Total de reseñas</p>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="dashboard_card pink">
                 <span><i class="fa-solid fa-location-dot"></i></span>
                 <h3>{{ $totalAddresses }}</h3>
-                <p>Total Addresses</p>
+                <p>Total de direcciones</p>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="dashboard_card purple">
                 <span><i class="fi-rs-shopping-bag"></i></span>
                 <h3>{{ $totalWishlists }}</h3>
-                <p>Total Wishlist</p>
+                <p>Total de favoritos</p>
             </div>
         </div>
     </div>

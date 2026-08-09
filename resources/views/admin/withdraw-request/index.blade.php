@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Withdraw Requests</h3>
+                <h3 class="card-title">Todas las solicitudes de retiro</h3>
 
             </div>
 
@@ -13,12 +13,12 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Store</th>
-                                <th>Amount</th>
-                                <th>Payment Method</th>
-                                <th>Details</th>
-                                <th>Status</th>
+                                <th>N.º</th>
+                                <th>Tienda</th>
+                                <th>Importe</th>
+                                <th>Método de pago</th>
+                                <th>Detalles</th>
+                                <th>Estado</th>
                                 <th class="w-8"></th>
                             </tr>
                         </thead>
@@ -31,11 +31,11 @@
                                     <td>{{ $withdrawRequest->payment_method }}</td>
                                     <td>
                                         @if ($withdrawRequest->status == 'pending')
-                                            <span class="badge bg-warning-lt">Pending</span>
+                                            <span class="badge bg-warning-lt">Pendiente</span>
                                         @elseif($withdrawRequest->status == 'paid')
-                                            <span class="badge bg-success-lt">Paid</span>
+                                            <span class="badge bg-success-lt">Pagado</span>
                                         @else
-                                            <span class="badge bg-danger-lt">Rejected</span>
+                                            <span class="badge bg-danger-lt">Rechazado</span>
                                         @endif
                                     </td>
                                     <td>{{ date('Y-m-d', strtotime($withdrawRequest->created_at)) }}</td>
@@ -50,7 +50,7 @@
 
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center">No Withdraw Requests</td>
+                                    <td colspan="9" class="text-center">No hay solicitudes de retiro</td>
                                 </tr>
                             @endforelse
 

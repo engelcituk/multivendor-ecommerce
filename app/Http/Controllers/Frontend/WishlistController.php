@@ -33,16 +33,16 @@ class WishlistController extends Controller
         if (Wishlist::where('user_id', user()->id)->where('product_id', $request->product_id)->exists()) {
             $wishlist = Wishlist::where('user_id', user()->id)->where('product_id', $request->product_id)->first();
             $wishlist->delete();
-            return response()->json(['status' => 'success', 'message' => 'Product removed from your wishlist', 'type' => 'remove']);
+            return response()->json(['status' => 'success', 'message' => 'Producto eliminado de tu lista de deseos', 'type' => 'remove']);
         } else {
             $wishlist = new Wishlist();
             $wishlist->user_id = user()->id;
             $wishlist->product_id = $request->product_id;
             $wishlist->save();
-            return response()->json(['status' => 'success', 'message' => 'Product added to your wishlist', 'type' => 'add']);
+            return response()->json(['status' => 'success', 'message' => 'Producto agregado a tu lista de deseos', 'type' => 'add']);
         }
 
-        throw ValidationException::withMessages(['error' => 'Something went wrong, please try again later']);
+        throw ValidationException::withMessages(['error' => 'Ocurrió un error. Inténtalo de nuevo más tarde.']);
 
     }
 
@@ -56,6 +56,6 @@ class WishlistController extends Controller
         }
 
         $wishlist->delete();
-        return response()->json(['status' => 'success', 'message' => 'Product removed from your wishlist']);
+        return response()->json(['status' => 'success', 'message' => 'Producto eliminado de tu lista de deseos']);
     }
 }

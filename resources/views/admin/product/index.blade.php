@@ -4,15 +4,15 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Products</h3>
+                <h3 class="card-title">Todos los productos</h3>
                 <div class="card-actions">
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Create Product
+                            Crear producto
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('admin.products.create', ['type' => 'physical']) }}">Physical</a></li>
+                            <li><a class="dropdown-item" href="{{ route('admin.products.create', ['type' => 'physical']) }}">Físico</a></li>
                             <li><a class="dropdown-item" href="{{ route('admin.products.create', ['type' => 'digital']) }}">Digital</a></li>
                         </ul>
                     </div>
@@ -23,16 +23,16 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Image</th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Stock Status</th>
-                                <th>Quantity</th>
-                                <th>Created At</th>
-                                <th>Approved</th>
-                                <th>Status</th>
-                                <th>Store</th>
+                                <th>N.º</th>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Estado del inventario</th>
+                                <th>Cantidad</th>
+                                <th>Fecha de creación</th>
+                                <th>Aprobado</th>
+                                <th>Estado</th>
+                                <th>Tienda</th>
                                 <th class="w-1"></th>
                             </tr>
                         </thead>
@@ -85,15 +85,15 @@
                                     <td>
                                         @if ($product->primaryVariant)
                                             @if ($product->primaryVariant?->in_stock == 1)
-                                                <small class="text-success">In Stock</small>
+                                                <small class="text-success">Disponible</small>
                                             @else
-                                                <small class="text-danger">Out of Stock</small>
+                                                <small class="text-danger">Agotado</small>
                                             @endif
                                         @else
                                             @if ($product->in_stock == 1)
-                                                <small class="text-success">In Stock</small>
+                                                <small class="text-success">Disponible</small>
                                             @else
-                                                <small class="text-danger">Out of Stock</small>
+                                                <small class="text-danger">Agotado</small>
                                             @endif
                                         @endif
                                     </td>
@@ -117,22 +117,22 @@
                                     </td>
                                     <td>
                                         @if ($product->approved_status == 'pending')
-                                            <span class="badge bg-warning-lt">Active</span>
+                                            <span class="badge bg-warning-lt">Activo</span>
                                         @elseif ($product->approved_status == 'approved')
-                                            <span class="badge bg-success-lt">Approved</span>
+                                            <span class="badge bg-success-lt">Aprobado</span>
                                         @elseif($product->approved_status == 'rejected')
-                                            <span class="badge bg-danger-lt">Rejected</span>
+                                            <span class="badge bg-danger-lt">Rechazado</span>
                                         @endif
                                     </td>
                                     <td>
                                         @if ($product->status == 'active')
-                                            <span class="badge bg-success-lt">Active</span>
+                                            <span class="badge bg-success-lt">Activo</span>
                                         @elseif ($product->status == 'inactive')
-                                            <span class="badge bg-secondary-lt">Inactive</span>
+                                            <span class="badge bg-secondary-lt">Inactivo</span>
                                         @elseif($product->status == 'pending')
-                                            <span class="badge bg-warning-lt">Pending</span>
+                                            <span class="badge bg-warning-lt">Pendiente</span>
                                         @elseif($product->status == 'draft')
-                                            <span class="badge bg-secondary-lt">Draft</span>
+                                            <span class="badge bg-secondary-lt">Borrador</span>
                                         @endif
                                     </td>
                                     <td>
@@ -149,7 +149,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="10" class="text-center">No Items</td>
+                                    <td colspan="10" class="text-center">No hay elementos</td>
                                 </tr>
                             @endforelse
 

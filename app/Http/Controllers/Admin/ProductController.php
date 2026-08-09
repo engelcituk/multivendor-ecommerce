@@ -92,7 +92,7 @@ class ProductController extends Controller implements HasMiddleware
                 'id' => $product->id,
                 'redirect_url' => route('admin.products.edit', $product->id) . '#product-images',
                 'status' => 'success',
-                'message' => 'Product created successfully'
+                'message' => 'Producto creado correctamente'
             ]);
         } else {
 
@@ -100,7 +100,7 @@ class ProductController extends Controller implements HasMiddleware
                 'id' => $product->id,
                 'redirect_url' => route('admin.digital-products.edit', $product->id) . '#product-images',
                 'status' => 'success',
-                'message' => 'Product created successfully'
+                'message' => 'Producto creado correctamente'
             ]);
         }
     }
@@ -192,7 +192,7 @@ class ProductController extends Controller implements HasMiddleware
         $maxSizeMb = 1000;
         $maxSizeBytes = $maxSizeMb * 1024 * 1024;
         if (filesize($finalPath) > $maxSizeBytes) {
-            return response()->json(['status' => 'error', 'message' => 'File size limit exceeded'], 413);
+            return response()->json(['status' => 'error', 'message' => 'El archivo excede el tamaño permitido'], 413);
         }
 
         // mime validation
@@ -244,7 +244,7 @@ class ProductController extends Controller implements HasMiddleware
         ];
 
         if (!in_array($mimeType, $allowedMimeTypes)) {
-            return response()->json(['status' => 'error', 'message' => 'Invalid file type'], 400);
+            return response()->json(['status' => 'error', 'message' => 'Tipo de archivo no válido'], 400);
         }
 
         return true;
@@ -271,7 +271,7 @@ class ProductController extends Controller implements HasMiddleware
                 Storage::disk('local')->delete($productFile->path);
             }
             $productFile->delete();
-            return response()->json(['status' => 'success', 'message' => 'File deleted successfully']);
+            return response()->json(['status' => 'success', 'message' => 'Archivo eliminado correctamente']);
         } catch (\Exception $e) {
             logger('Failed to delete file: ' . $e);
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
@@ -313,7 +313,7 @@ class ProductController extends Controller implements HasMiddleware
         return response()->json([
             'id' => $product->id,
             'status' => 'success',
-            'message' => 'Product updated successfully',
+            'message' => 'Producto actualizado correctamente',
             'redirect_url' => route('admin.products.index')
         ]);
     }
@@ -337,7 +337,7 @@ class ProductController extends Controller implements HasMiddleware
             'status' => 'success',
             'id' => $productImage->id,
             'path' => asset($filePath),
-            'message' => 'Image uploaded successfully'
+            'message' => 'Imagen subida correctamente'
         ]);
     }
 
@@ -346,7 +346,7 @@ class ProductController extends Controller implements HasMiddleware
         $image = ProductImage::findOrFail($id);
         $this->deleteFile($image->path);
         $image->delete();
-        return response()->json(['status' => 'success', 'message' => 'Image deleted successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Imagen eliminada correctamente']);
     }
 
     function imagesReorder(Request $request)
@@ -462,7 +462,7 @@ class ProductController extends Controller implements HasMiddleware
         }
 
         return response()->json([
-            'message' => 'Attribute generated successfully',
+            'message' => 'Atributo generado correctamente',
             'html' => $html,
             'variantHtml' => $variantHtml
         ]);
@@ -497,7 +497,7 @@ class ProductController extends Controller implements HasMiddleware
             }
 
             return response()->json([
-                'message' => 'Attribute deleted successfully',
+                'message' => 'Atributo eliminado correctamente',
                 'html' => $html,
                 'variantHtml' => $variantHtml
             ]);
@@ -619,7 +619,7 @@ class ProductController extends Controller implements HasMiddleware
         $variant->is_active = $request->variant_is_active;
         $variant->save();
 
-        return response()->json(['message' => 'Variant updated successfully']);
+        return response()->json(['message' => 'Variante actualizada correctamente']);
     }
 
     function clearExistingVariants(Product $product)
@@ -636,11 +636,11 @@ class ProductController extends Controller implements HasMiddleware
     {
         if (Auth::user()->hasRole('Super Admin') || hasPermission(['Product Management'])) {
             $product->delete();
-            notyf()->success('Product deleted successfully');
-            return response()->json(['status' => 'success', 'message' => 'Product deleted successfully']);
+            notyf()->success('Producto eliminado correctamente');
+            return response()->json(['status' => 'success', 'message' => 'Producto eliminado correctamente']);
         }
 
-        notyf()->error('You do not have permission to delete this product');
-        return response()->json(['status' => 'error', 'message' => 'You do not have permission to delete this product']);
+        notyf()->error('No tienes permiso para eliminar este producto');
+        return response()->json(['status' => 'error', 'message' => 'No tienes permiso para eliminar este producto']);
     }
 }

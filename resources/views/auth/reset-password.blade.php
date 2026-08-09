@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Login']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Iniciar sesión']]" />
 
     <div class="page-content pt-150 pb-135">
         <div class="container">
@@ -12,26 +12,26 @@
                             <div class="login_wrap widget-taber-content background-white">
                                 <div class="padding_eight_all bg-white">
                                     <div class="heading_s1">
-                                        <h4 class="mb-5">Reset Password</h3>
+                                        <h4 class="mb-5">Restablecer contraseña</h3>
                                     </div>
                                     <form method="POST" action="{{ route('password.store') }}">
                                         @csrf
                                         <!-- Password Reset Token -->
                                         <input type="hidden" name="token" value="{{ $request->route('token') }}">
                                         <div class="form-group">
-                                            <input type="email" required="" name="email" placeholder="Your Email *"
+                                            <input type="email" required="" name="email" placeholder="Tu correo electrónico *"
                                                 value="{{ old('email', $request->email) }}" />
                                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                         </div>
 
                                         <div class="form-group">
-                                            <input required="" type="password" name="password" placeholder="Password" />
+                                            <input required="" type="password" name="password" placeholder="Contraseña" />
                                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                         </div>
 
                                         <div class="form-group">
                                             <input required="" type="password" name="password_confirmation"
-                                                placeholder="Confirm Password" />
+                                                placeholder="Confirmar contraseña" />
                                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                         </div>
 

@@ -34,22 +34,22 @@
                                 <ul class="font-sm">
                                     <li><img class="mr-5"
                                             src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-location.svg') }}"
-                                            alt=""><strong>Address: </strong> <span>{{ $store->address }}</span>
+                                            alt=""><strong>Dirección: </strong> <span>{{ $store->address }}</span>
                                     </li>
                                     <li><img class="mr-5"
                                             src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}"
-                                            alt=""><strong>Call Us:</strong><span> {{ $store->phone }}</span>
+                                            alt=""><strong>Llámanos:</strong><span> {{ $store->phone }}</span>
                                     </li>
                                     <li><img class="mr-5"
                                             src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}"
-                                            alt=""><strong>Email:</strong><span> {{ $store->email }}</span>
+                                            alt=""><strong>Correo electrónico:</strong><span> {{ $store->email }}</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         {{-- <div class="col-lg-4">
                             <div class="follow-social">
-                                <h6 class="mb-15 text-white">Follow Us</h6>
+                                <h6 class="mb-15 text-white">Síguenos</h6>
                                 <ul class="social-network">
                                     <li class="hover-up">
                                         <a href="#">

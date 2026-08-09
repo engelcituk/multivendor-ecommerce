@@ -57,7 +57,7 @@ class UserRoleController extends Controller implements HasMiddleware
         $role = Role::findOrFail($request->role);
 
         if ($role->name == 'Super Admin') {
-            AlertService::error('You can not create Super Admin user.');
+            AlertService::error('No puedes crear un usuario Super Admin.');
             return to_route('admin.role-users.index');
         }
 
@@ -91,7 +91,7 @@ class UserRoleController extends Controller implements HasMiddleware
     public function update(Request $request, Admin $role_user)
     {
         if ($role_user->hasRole('Super Admin')) {
-            AlertService::error('You can not update Super Admin user.');
+            AlertService::error('No puedes modificar un usuario Super Admin.');
             return to_route('admin.role-users.index');
         }
 
@@ -103,7 +103,7 @@ class UserRoleController extends Controller implements HasMiddleware
         $role = Role::findOrFail($request->role);
 
         if ($role->name == 'Super Admin') {
-            AlertService::error('You can not create Super Admin user.');
+            AlertService::error('No puedes crear un usuario Super Admin.');
             return to_route('admin.role-users.index');
         }
 
@@ -132,7 +132,7 @@ class UserRoleController extends Controller implements HasMiddleware
     public function destroy(Admin $role_user): JsonResponse
     {
         if ($role_user->hasRole('Super Admin')) {
-            return response()->json(['status' => 'error', 'message' => 'You can not update Super Admin user.']);
+            return response()->json(['status' => 'error', 'message' => 'No puedes modificar un usuario Super Admin.']);
         }
 
         try {
@@ -145,7 +145,7 @@ class UserRoleController extends Controller implements HasMiddleware
 
             AlertService::deleted();
 
-            return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+            return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
         } catch (\Throwable $th) {
             Log::error('Role Delete Error: ', $th);
             return response()->json(['status' => 'error', 'message' => $th->getMessage()]);

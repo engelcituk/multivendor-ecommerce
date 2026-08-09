@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Flash Sale Items</h3>
+                <h3 class="card-title">Actualizar productos de la oferta relámpago</h3>
                 <div class="card-actions">
                 </div>
             </div>
@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">Sale Start</label>
+                                <label class="form-label required">Inicio de la oferta</label>
                                 <input type="text" class="form-control datepicker" name="sale_start" placeholder=""
                                     value="{{ $flashSale?->sale_start }}">
                                 <x-input-error :messages="$errors->get('sale_start')" class="mt-2" />
@@ -23,7 +23,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label required">Sale End</label>
+                                <label class="form-label required">Fin de la oferta</label>
                                 <input type="text" class="form-control datepicker" name="sale_end" placeholder=""
                                     value="{{ $flashSale?->sale_end }}">
                                 <x-input-error :messages="$errors->get('sale_end')" class="mt-2" />
@@ -33,7 +33,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Sale Products</label>
+                                <label class="form-label required">Productos en oferta</label>
                                 <select name="products[]" class="form-control product-select" id="" multiple>
                                     @foreach ($products as $product)
                                         <option selected value="{{ $product->id }}"
@@ -51,7 +51,7 @@
                                 <label class="form-check form-switch form-switch-3">
                                     <input class="form-check-input" type="checkbox" checked="" name="status"
                                         id="status" value="1">
-                                    <span class="form-check-label">Active</span>
+                                    <span class="form-check-label">Activo</span>
                                 </label>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Update</button>
+                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Actualizar</button>
             </div>
         </div>
     </div>
@@ -93,7 +93,7 @@
                     },
                     cache: true
                 },
-                placeholder: 'Search for a repository',
+                placeholder: 'Buscar un producto',
                 minimumInputLength: 1,
                 templateResult: formatRepo,
                 templateSelection: formatRepoSelection,

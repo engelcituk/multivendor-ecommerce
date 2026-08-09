@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create Roles</h3>
+                <h3 class="card-title">Crear roles</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.role.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('admin.role.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label required">Role Name</label>
+                            <label class="form-label required">Nombre del rol</label>
                             <input type="text" class="form-control" name="role" placeholder=""
                                 value="">
                             <x-input-error :messages="$errors->get('role')" class="mt-2" />
@@ -40,7 +40,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('form').submit()">Create</button>
+                <button class="btn btn-primary mt-3" onclick="$('form').submit()">Crear</button>
             </div>
         </div>
     </div>

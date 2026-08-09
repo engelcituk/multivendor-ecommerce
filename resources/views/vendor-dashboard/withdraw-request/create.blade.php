@@ -22,7 +22,7 @@
                             <div class="col">
                                 <div class="font-weight-medium">{{ config('settings.site_currency') }} {{ $currentBalance }}
                                 </div>
-                                <div class="text-secondary">Current Balance</div>
+                                <div class="text-secondary">Saldo actual</div>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                             <div class="col">
                                 <div class="font-weight-medium">{{ config('settings.site_currency') }} {{ $pendingBalance }}
                                 </div>
-                                <div class="text-secondary">Pending Balance</div>
+                                <div class="text-secondary">Saldo pendiente</div>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                             <div class="col">
                                 <div class="font-weight-medium">{{ config('settings.site_currency') }} {{ $totalWithdraw }}
                                 </div>
-                                <div class="text-secondary">Total Withdraw</div>
+                                <div class="text-secondary">Total retirado</div>
                             </div>
                         </div>
                     </div>
@@ -82,9 +82,9 @@
 
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create Withdraw Request</h3>
+                <h3 class="card-title">Crear solicitud de retiro</h3>
                 <div class="card-actions">
-                    <a href="{{ route('vendor.withdraw-requests.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('vendor.withdraw-requests.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -93,7 +93,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Withdraw Amount</label>
+                                <label class="form-label required">Importe del retiro</label>
                                 <input type="text" class="form-control" name="amount" value="">
                                 <x-input-error :messages="$errors->get('amount')" class="mt-2" />
                             </div>
@@ -101,9 +101,9 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Withdraw Method</label>
+                                <label class="form-label required">Método de retiro</label>
                                 <select name="method" class="form-control">
-                                    <option value="">Select Gateway</option>
+                                    <option value="">Seleccionar pasarela</option>
                                     @foreach ($withdrawMethods as $method)
                                         <option value="{{ $method->id }}">{{ $method->withdrawMethod->name }}</option>
                                     @endforeach
@@ -118,7 +118,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.withdraw-method-form').submit()">Create</button>
+                <button class="btn btn-primary mt-3" onclick="$('.withdraw-method-form').submit()">Crear</button>
             </div>
         </div>
     </div>

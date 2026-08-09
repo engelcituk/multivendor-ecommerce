@@ -87,6 +87,6 @@ class CustomPageController extends Controller implements HasMiddleware
         $custom_page->delete();
 
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Custom page deleted successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Página personalizada eliminada correctamente']);
     }
 }

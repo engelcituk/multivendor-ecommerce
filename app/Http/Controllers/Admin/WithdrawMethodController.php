@@ -75,6 +75,6 @@ class WithdrawMethodController extends Controller implements HasMiddleware
     {
         $withdrawMethod->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

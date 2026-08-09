@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Popular Category</h3>
+                <h3 class="card-title">Actualizar categoría popular</h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.popular-categories.store') }}" method="POST" class="coupon-form">
@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Categories</label>
+                                <label class="form-label required">Categorías</label>
                                 <select name="categories[]" id="" class="form-control select2" multiple>
                                     @foreach (getNestedCategories() as $category)
                                         <option @selected(in_array($category->id, $categories)) value="{{ $category->id }}">{{ $category->name }}</option>
@@ -28,7 +28,7 @@
                                         @endif
                                     @endforeach
                                 </select>
-                                <span class="text-muted">The selected categories products will be shown on top products section in home page</span>
+                                <span class="text-muted">Los productos de las categorías seleccionadas aparecerán en la sección de productos destacados de la página de inicio</span>
                                 <x-input-error :messages="$errors->get('code')" class="mt-2" />
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Update</button>
+                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Actualizar</button>
             </div>
         </div>
     </div>

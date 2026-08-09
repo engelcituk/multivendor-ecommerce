@@ -4,7 +4,7 @@
     <div class="tab-pane fade active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
         <div class="card">
             <div class="card-header p-0 d-print-none">
-                <h3 class="mb-0">Your Purchased Product</h3>
+                <h3 class="mb-0">Tu producto comprado</h3>
             </div>
             <div class="card-body p-0">
                 <div class="page-wrapper">
@@ -28,11 +28,11 @@
                                     <div class="row">
                                         <table class="order_table table m-0 mt-20">
                                             <tr>
-                                                <td>Product Name</td>
+                                                <td>Nombre del producto</td>
                                                 <td>{{ $product->name }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Store Name</td>
+                                                <td>Nombre de la tienda</td>
                                                 <td>{{ $product->store->name }}</td>
                                             </tr>
                                         </table>
@@ -40,10 +40,10 @@
                                         <table class="order_table table m-0 mt-20">
                                             <thead>
                                                 <tr>
-                                                    <th>Filename</th>
-                                                    <th>Extension</th>
-                                                    <th>Size</th>
-                                                    <th>Action</th>
+                                                    <th>Nombre del archivo</th>
+                                                    <th>Extensión</th>
+                                                    <th>Tamaño</th>
+                                                    <th>Acción</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -53,7 +53,7 @@
                                                             <td>{{ $file->filename }}</td>
                                                             <td>{{ $file->extension }}</td>
                                                             <td>{{ calculateFileSize($file->size) }}</td>
-                                                            <td><a href="{{ route('purchased.products.download', ['product' => $product->id, 'file' => $file->id]) }}">Download</a></td>
+                                                            <td><a href="{{ route('purchased.products.download', ['product' => $product->id, 'file' => $file->id]) }}">Descargar</a></td>
 
                                                         </tr>
                                                     @endforeach

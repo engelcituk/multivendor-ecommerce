@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Products']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Productos']]" />
     <div class="container mt-70 mb-60">
         <div class="row">
 
@@ -10,13 +10,13 @@
             <div class="col-lg-9 col-xxl-10">
                 <div class="shop-product-fillter">
                     <div class="totall-product">
-                        <p>We found <strong class="text-brand">{{ $products->total() }}</strong> items for you!</p>
+                        <p>Encontramos <strong class="text-brand">{{ $products->total() }}</strong> artículos para ti.</p>
                     </div>
                     <div class="sort-by-product-area">
                         {{-- <div class="sort-by-cover mr-10">
                             <div class="sort-by-product-wrap">
                                 <div class="sort-by">
-                                    <span><i class="fi-rs-apps"></i>Show:</span>
+                                    <span><i class="fi-rs-apps"></i>Mostrar:</span>
                                 </div>
                                 <div class="sort-by-dropdown-wrap">
                                     <span> 50 <i class="fi-rs-angle-small-down"></i></span>
@@ -28,26 +28,26 @@
                                     <li><a href="#">100</a></li>
                                     <li><a href="#">150</a></li>
                                     <li><a href="#">200</a></li>
-                                    <li><a href="#">All</a></li>
+                                    <li><a href="#">Todos</a></li>
                                 </ul>
                             </div>
                         </div> --}}
                         {{-- <div class="sort-by-cover">
                             <div class="sort-by-product-wrap">
                                 <div class="sort-by">
-                                    <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
+                                    <span><i class="fi-rs-apps-sort"></i>Ordenar por:</span>
                                 </div>
                                 <div class="sort-by-dropdown-wrap">
-                                    <span> Featured <i class="fi-rs-angle-small-down"></i></span>
+                                    <span> Destacados <i class="fi-rs-angle-small-down"></i></span>
                                 </div>
                             </div>
                             <div class="sort-by-dropdown">
                                 <ul>
-                                    <li><a class="active" href="#">Featured</a></li>
-                                    <li><a href="#">Price: Low to High</a></li>
-                                    <li><a href="#">Price: High to Low</a></li>
-                                    <li><a href="#">Release Date</a></li>
-                                    <li><a href="#">Avg. Rating</a></li>
+                                    <li><a class="active" href="#">Destacados</a></li>
+                                    <li><a href="#">Precio: menor a mayor</a></li>
+                                    <li><a href="#">Precio: mayor a menor</a></li>
+                                    <li><a href="#">Fecha de lanzamiento</a></li>
+                                    <li><a href="#">Calificación promedio</a></li>
                                 </ul>
                             </div>
                         </div> --}}
@@ -57,7 +57,7 @@
                     @forelse($products as $product)
                         <x-frontend.product-card :product="$product" />
                     @empty
-                        <p>No product found</p>
+                        <p>No se encontraron productos</p>
                     @endforelse
                 </div>
                 <!--product grid-->
@@ -233,7 +233,7 @@
         //                 if (matchingVariant.in_stock == 0 || matchingVariant.in_stock == null || matchingVariant
         //                     .quantity < 1 && matchingVariant.manage_stock == 1) {
         //                     html = `<div class="product-price modal-price primary-color float-left">
-        //                     <span class="current-price text-brand">Out Of Stock</span>
+        //                     <span class="current-price text-brand">Agotado</span>
         //                 </div>`
 
         //                     $('.modal-price').replaceWith(html);

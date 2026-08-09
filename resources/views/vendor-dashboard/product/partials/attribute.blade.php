@@ -23,14 +23,14 @@
                 @csrf
             <div class="row">
                 <div class="col-md-6">
-                    <label for="" class="form-label">Name</label>
+                    <label for="" class="form-label">Nombre</label>
                     <input type="text" class="form-control" value="{{ $attribute->name }}" name="attribute_name">
                     <input type="hidden" value="{{ $attribute->id }}" name="attribute_id">
                 </div>
                 <div class="col-md-6">
-                    <label for="" class="form-label">Type</label>
+                    <label for="" class="form-label">Tipo</label>
                     <select name="attribute_type" class="form-control main-type" id="">
-                        <option value="text" @selected($attribute->type == 'text')>Text</option>
+                        <option value="text" @selected($attribute->type == 'text')>Texto</option>
                         <option value="color" @selected($attribute->type == 'color')>Color</option>
                     </select>
                 </div>
@@ -39,8 +39,8 @@
                 style="{{ count($attribute->values) ? '' : 'display: none;' }}">
                 <thead>
                     <tr>
-                        <th>Label</th>
-                        <th class="value-header">Value</th>
+                        <th>Etiqueta</th>
+                        <th class="value-header">Valor</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,8 +79,8 @@
                 </tbody>
             </table>
             <div class="mt-2">
-                <button class="btn btn-sm btn-primary add-row-btn" type="button">Add Row</button>
-                <button class="btn btn-sm btn-success save-btn" type="button">Save</button>
+                <button class="btn btn-sm btn-primary add-row-btn" type="button">Agregar fila</button>
+                <button class="btn btn-sm btn-success save-btn" type="button">Guardar</button>
             </div>
         </form>
         </div>

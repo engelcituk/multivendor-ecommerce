@@ -91,6 +91,6 @@ class TagController extends Controller implements HasMiddleware
     {
         $tag->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Tag deleted successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Etiqueta eliminada correctamente']);
     }
 }

@@ -45,7 +45,7 @@ class StoreWithdrawRequestController extends Controller
         $requestedAmount = $request->amount;
 
         if (StoreWithdrawalRequest::whereStoreId(user()->store->id)->whereStatus('pending')->exists()) {
-            AlertService::error('You have a pending withdraw request. You cannot create another until it is processed by admin.');
+            AlertService::error('Tienes una solicitud de retiro pendiente. No puedes crear otra hasta que el administrador la procese.');
             return back();
         }
 
@@ -70,7 +70,7 @@ class StoreWithdrawRequestController extends Controller
         $withdrawRequest->status = 'pending';
         $withdrawRequest->save();
 
-        AlertService::created('Withdraw request created successfully.');
+        AlertService::created('Solicitud de retiro creada correctamente.');
         return redirect()->route('vendor.withdraw-requests.index');
     }
 
@@ -80,6 +80,6 @@ class StoreWithdrawRequestController extends Controller
 
         $withdraw_request->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

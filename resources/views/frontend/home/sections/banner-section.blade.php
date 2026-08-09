@@ -8,7 +8,7 @@
                                 <h4>
                                    {{ data_get($ads, 'banner_one.0.title', '') }}
                                 </h4>
-                                <a href="{{ data_get($ads, 'banner_one.0.url', '') }}" class="btn btn-xs">Shop Now <i
+                                <a href="{{ data_get($ads, 'banner_one.0.url', '') }}" class="btn btn-xs">Comprar ahora <i
                                         class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
@@ -20,7 +20,7 @@
                                 <h4>
                                     {{ data_get($ads, 'banner_two.0.title', '') }}
                                 </h4>
-                                <a href="{{ data_get($ads, 'banner_two.0.url', '') }}" class="btn btn-xs">Shop Now <i
+                                <a href="{{ data_get($ads, 'banner_two.0.url', '') }}" class="btn btn-xs">Comprar ahora <i
                                         class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                             <img src="{{ asset(data_get($ads, 'banner_three.0.image', '')) }}" alt="" />
                             <div class="banner-text">
                                 <h4>{{ data_get($ads, 'banner_three.0.title', '') }}</h4>
-                                <a href="{{ data_get($ads, 'banner_three.0.url', '') }}" class="btn btn-xs">Shop Now <i
+                                <a href="{{ data_get($ads, 'banner_three.0.url', '') }}" class="btn btn-xs">Comprar ahora <i
                                         class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>

@@ -85,6 +85,6 @@ class OfferSliderController extends Controller implements HasMiddleware
     {
         $offer_slider->delete();
 
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

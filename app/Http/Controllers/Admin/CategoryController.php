@@ -71,7 +71,7 @@ class CategoryController extends Controller implements HasMiddleware
 
         $category = Category::create($data);
 
-        return response()->json(['success' => true, 'message' => 'Category created successfully', 'category' => $category]);
+        return response()->json(['success' => true, 'message' => 'Categoría creada correctamente', 'category' => $category]);
     }
 
     function update(Request $request, int $id)
@@ -117,7 +117,7 @@ class CategoryController extends Controller implements HasMiddleware
 
         $category->update($data);
 
-        return response()->json(['success' => true, 'message' => 'Category updated successfully', 'category' => $category, 'type' => 'update']);
+        return response()->json(['success' => true, 'message' => 'Categoría actualizada correctamente', 'category' => $category, 'type' => 'update']);
     }
 
     function updateOrder(Request $request)
@@ -128,7 +128,7 @@ class CategoryController extends Controller implements HasMiddleware
                 $this->updateTree($tree, null);
             });
 
-            return response()->json(['success' => true, 'message' => 'Category order updated successfully']);
+            return response()->json(['success' => true, 'message' => 'Orden de categorías actualizado correctamente']);
         } catch (\Throwable $th) {
             Log::error('Category Order Update Error: ', $th);
             return response()->json(['success' => false, 'message' => $th->getMessage()], 500);
@@ -164,7 +164,7 @@ class CategoryController extends Controller implements HasMiddleware
         }
 
         $category->delete();
-        return response()->json(['success' => true, 'message' => 'Category deleted successfully']);
+        return response()->json(['success' => true, 'message' => 'Categoría eliminada correctamente']);
     }
 
 

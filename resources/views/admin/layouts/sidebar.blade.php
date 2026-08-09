@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- BEGIN NAVBAR TOGGLER -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu"
-            aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="sidebar-menu" aria-expanded="false" aria-label="Alternar navegación">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- END NAVBAR TOGGLER -->
@@ -63,7 +63,7 @@
                 </div>
                 <div class="nav-item dropdown d-none d-md-flex">
                     <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
-                        aria-label="Show notifications" data-bs-auto-close="outside" aria-expanded="false">
+                        aria-label="Mostrar notificaciones" data-bs-auto-close="outside" aria-expanded="false">
                         <!-- Download SVG icon from http://tabler.io/icons/icon/bell -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -199,7 +199,7 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 p-0 px-2" data-bs-toggle="dropdown"
-                    aria-label="Open user menu">
+                    aria-label="Abrir menú de usuario">
                     <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)">
                     </span>
                     <div class="d-none d-xl-block ps-2">
@@ -260,7 +260,7 @@
                         </div>
                     </li>
                 @endif
-                @if (hasPermission(['Category Management', 'Tags Management', 'Brand Management']))
+                @if (hasPermission(['Categoría Management', 'Etiquetas Management', 'Marca Management']))
                     <li
                         class="nav-item dropdown {{ setActive(['admin.products.*', 'admin.categories.*', 'admin.brands.*', 'admin.tags.*', 'admin.reviews.*']) }}">
                         <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
@@ -273,7 +273,7 @@
                         <div
                             class="dropdown-menu {{ setActive(['admin.products.*', 'admin.categories.*', 'admin.brands.*', 'admin.tags.*', 'admin.reviews.*'], 'show') }}">
                             <div class="dropdown-menu-columns">
-                                @if (hasPermission(['Category Management']))
+                                @if (hasPermission(['Categoría Management']))
                                     <div class="dropdown-menu-column">
                                         <a class="dropdown-item {{ setActive(['admin.products.*']) }}"
                                             href="{{ route('admin.products.index') }}">
@@ -283,7 +283,7 @@
                                 @endif
 
 
-                                @if (hasPermission(['Category Management']))
+                                @if (hasPermission(['Categoría Management']))
                                     <div class="dropdown-menu-column">
                                         <a class="dropdown-item {{ setActive(['admin.categories.*']) }}"
                                             href="{{ route('admin.categories.index') }}">
@@ -292,7 +292,7 @@
                                     </div>
                                 @endif
 
-                                @if (hasPermission(['Tags Management']))
+                                @if (hasPermission(['Etiquetas Management']))
                                     <div class="dropdown-menu-column">
                                         <a class="dropdown-item {{ setActive(['admin.tags.*']) }}"
                                             href="{{ route('admin.tags.index') }}">
@@ -301,7 +301,7 @@
                                     </div>
                                 @endif
 
-                                @if (hasPermission(['Brand Management']))
+                                @if (hasPermission(['Marca Management']))
                                     <div class="dropdown-menu-column">
                                         <a class="dropdown-item {{ setActive(['admin.brands.*']) }}"
                                             href="{{ route('admin.brands.index') }}">
@@ -313,7 +313,7 @@
 
 
 
-                                @if (hasPermission(['Brand Management']))
+                                @if (hasPermission(['Marca Management']))
                                     <div class="dropdown-menu-column">
                                         <a class="dropdown-item {{ setActive(['admin.reviews.*']) }}"
                                             href="{{ route('admin.reviews.index') }}">
@@ -327,7 +327,7 @@
                     </li>
                 @endif
 
-                @if (hasPermission(['Order Management']))
+                @if (hasPermission(['Pedido Management']))
                     <li class="nav-item dropdown {{ setActive(['admin.orders.*']) }}">
                         <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                             data-bs-auto-close="false" role="button" aria-expanded="false">
@@ -392,7 +392,7 @@
                                 <div class="dropdown-menu-column">
                                     <a class="dropdown-item"
                                         href="{{ route('admin.orders.index', ['status' => 'canceled']) }}">
-                                        Cancelado
+                                        Cancelarado
                                     </a>
                                 </div>
                             </div>
@@ -610,7 +610,7 @@
                     </li>
                 @endif
 
-                @if (hasPermission(['Role Management', 'Role User Management']))
+                @if (hasPermission(['Rol Management', 'Rol Usuario Management']))
                     <li class="nav-item dropdown {{ setActive(['admin.role.*', 'admin.role-users.*']) }}">
                         <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                             data-bs-auto-close="false" role="button" aria-expanded="false">
@@ -622,7 +622,7 @@
                         <div
                             class="dropdown-menu {{ setActive(['admin.role.*', 'admin.role-users.*'], 'show') }}">
                             <div class="dropdown-menu-columns">
-                                @if (hasPermission(['Role Management']))
+                                @if (hasPermission(['Rol Management']))
                                     <div class="dropdown-menu-column">
                                         <a class="dropdown-item {{ setActive(['admin.role.*']) }}"
                                             href="{{ route('admin.role.index') }}">
@@ -631,7 +631,7 @@
                                     </div>
                                 @endif
 
-                                @if (hasPermission(['Role User Management']))
+                                @if (hasPermission(['Rol Usuario Management']))
                                     <div class="dropdown-menu-column">
                                         <a class="dropdown-item {{ setActive(['admin.role-users.*']) }}"
                                             href="{{ route('admin.role-users.index') }}">
@@ -645,7 +645,7 @@
                     </li>
                 @endif
 
-                @if (hasPermission(['Settings Management']))
+                @if (hasPermission(['Configuración Management']))
                     <li class="nav-item">
                         <a class="nav-link {{ setActive(['admin.settings.*']) }}"
                             href="{{ route('admin.database-clear.index') }}">
@@ -656,7 +656,7 @@
                 @endif
 
 
-                @if (hasPermission(['Settings Management']))
+                @if (hasPermission(['Configuración Management']))
                     <li class="nav-item">
                         <a class="nav-link {{ setActive(['admin.settings.*']) }}"
                             href="{{ route('admin.settings.index') }}">
@@ -681,7 +681,7 @@
     <div class="container-xl">
         <!-- BEGIN NAVBAR TOGGLER -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
-            aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbar-menu" aria-expanded="false" aria-label="Alternar navegación">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- END NAVBAR TOGGLER -->
@@ -720,7 +720,7 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 p-0 px-2" data-bs-toggle="dropdown"
-                    aria-label="Open user menu">
+                    aria-label="Abrir menú de usuario">
                     <span class="avatar avatar-sm"
                         style="background-image: url({{ asset(auth('admin')->user()->avatar) }})">
                     </span>

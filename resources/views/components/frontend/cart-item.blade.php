@@ -25,7 +25,7 @@
       @endphp
 
       @if($price['in_stock'])
-      <td class="price" data-title="Price">
+      <td class="price" data-title="Precio">
 
           @if ($price['old_price'])
               <h4 class="text-body">$ {{ $price['price'] }}</h4>
@@ -46,13 +46,13 @@
               </div>
           </div>
       </td>
-      <td class="price" data-title="Price">
+      <td class="price" data-title="Precio">
           <h4 class="text-brand">$ {{ $price['price'] * $cartItem->quantity }} </h4>
       </td>
       @else
-      <td colspan="3"><h4 class="text-brand">Out of stock</h4></td>
+      <td colspan="3"><h4 class="text-brand">Agotado</h4></td>
       @endif
-      <td class="action text-center" data-title="Remove"><a href="#" class="text-body"><i
+      <td class="action text-center" data-title="Eliminar"><a href="#" class="text-body"><i
                   class="fi-rs-trash"></i></a></td>
   </tr>
 @endforeach

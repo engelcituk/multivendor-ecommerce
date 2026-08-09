@@ -87,6 +87,6 @@ class CouponController extends Controller implements HasMiddleware
     {
         $coupon->delete();
 
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

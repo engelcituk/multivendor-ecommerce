@@ -68,7 +68,7 @@
                             <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}"
                                     alt="" /><strong>Llámanos:</strong><span>{{ config('settings.site_phone') }}</span></li>
                             <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-email-2.svg') }}"
-                                    alt="" /><strong>Email:</strong><span>{{ config('settings.site_email') }}</span></li>
+                                    alt="" /><strong>Correo electrónico:</strong><span>{{ config('settings.site_email') }}</span></li>
                             <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-clock.svg') }}"
                                     alt="" /><strong>Horario:</strong><span>{{ config('settings.site_hours') }}</span>
                             </li>

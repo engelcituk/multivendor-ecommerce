@@ -19,7 +19,7 @@ class CheckoutController extends Controller
     function index() : View | RedirectResponse
     {
         if(cartTotal() == 0) {
-            AlertService::error('Your cart is empty please add some products.');
+            AlertService::error('Tu carrito está vacío. Agrega algunos productos.');
             return redirect()->route('products.index');
         }
 

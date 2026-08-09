@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Simple Transactional Email</title>
+    <title>Correo transaccional</title>
     <style media="all" type="text/css">
     /* -------------------------------------
     GLOBAL RESETS
@@ -321,13 +321,13 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block">
-                    <span class="apple-link">Company Inc, 7-11 Commercial Ct, Belfast BT1 2NB</span>
-                    <br> Don't like these emails? <a href="http://htmlemail.io/blog">Unsubscribe</a>.
+                    <span class="apple-link">Equipo de atención al cliente</span>
+                    <br> ¿No quieres recibir estos correos? <a href="http://htmlemail.io/blog">Cancelar suscripción</a>.
                   </td>
                 </tr>
                 <tr>
                   <td class="content-block powered-by">
-                    Powered by <a href="http://htmlemail.io">HTMLemail.io</a>
+                    Desarrollado con <a href="http://htmlemail.io">HTMLemail.io</a>
                   </td>
                 </tr>
               </table>

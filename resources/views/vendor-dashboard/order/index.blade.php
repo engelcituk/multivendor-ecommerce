@@ -4,19 +4,19 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Orders</h3>
+                <h3 class="card-title">Todos los pedidos</h3>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>Order Id</th>
-                                <th>User</th>
-                                <th>Amount</th>
-                                <th>Payment Status</th>
-                                <th>Status</th>
-                                <th>Created At</th>
+                                <th>ID del pedido</th>
+                                <th>Usuario</th>
+                                <th>Importe</th>
+                                <th>Estado del pago</th>
+                                <th>Estado</th>
+                                <th>Fecha de creación</th>
                                 <th class="w-8"></th>
                             </tr>
                         </thead>
@@ -41,15 +41,15 @@
                                     </td>
                                     <td>
                                         @if ($order->payment_status == 'paid')
-                                            <span class="badge bg-success-lt">Paid</span>
+                                            <span class="badge bg-success-lt">Pagado</span>
                                         @elseif($order->payment_status == 'pending')
-                                            <span class="badge bg-warning-lt">Pending</span>
+                                            <span class="badge bg-warning-lt">Pendiente</span>
                                         @else
-                                            <span class="badge bg-danger-lt">Failed</span>
+                                            <span class="badge bg-danger-lt">Fallido</span>
                                         @endif
                                     </td>
                                     <td>
-                                        <span class="badge bg-info-lt">{{ $order->order_status }}</span>
+                                        <span class="badge bg-info-lt">{{ __('statuses.' . $order->order_status) }}</span>
                                     </td>
                                     <td>
                                         {{ date('Y-m-d', strtotime($order->created_at)) }}
@@ -61,7 +61,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center">No Orders</td>
+                                    <td colspan="9" class="text-center">No hay pedidos</td>
                                 </tr>
                             @endforelse
 

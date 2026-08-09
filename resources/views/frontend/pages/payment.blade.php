@@ -5,7 +5,7 @@
         <div class="wsus__payment_area">
             <div class="row">
                 <div class="col-12 col-xl-8 wow fadeInUp">
-                    <h4>Select Payment </h4>
+                    <h4>Seleccionar forma de pago </h4>
                     <div class="row mt-10">
                         <div class="col-6 col-md-4 col-lg-3 col-xl-3 wow fadeInUp">
                             <a href="{{ route('paypal.payment') }}" class="wsus__payment_method">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-xl-4">
                     <div class="wsus__billing_summary">
-                        <h4>Billing Summery</h4>
+                        <h4>Resumen de facturación</h4>
                         @foreach ($groupedCartItems as $key => $cartItems)
                             <h5 class="vendor_name">{{ $cartItems['store']->name }}</h5>
                             <ul class="wsus__billing_product">
@@ -64,11 +64,11 @@
                                 $cartDiscount = cartDiscount();
                             @endphp
 
-                            <h3>Sub Total <span>$ {{ $cartSubTotal }}</span></h3>
-                            <p>Shipping Charge <span class="">$ <span
+                            <h3>Subtotal <span>$ {{ $cartSubTotal }}</span></h3>
+                            <p>Costo de envío <span class="">$ <span
                                         class="shipping_charge">{{ $shippingCharge }}</span></span>
                             </p>
-                            <p>Discount <span>$ {{ $cartDiscount }}</span></p>
+                            <p>Descuento <span>$ {{ $cartDiscount }}</span></p>
                         </div>
                         <h5>Total <span>$ <span
                                     class="grand_total">{{ $cartSubTotal + $shippingCharge - $cartDiscount }}</span></span>
@@ -89,24 +89,24 @@
                             wear for whatever athletic pursuit you're embarking on.</p>
 
                         <ul class="modal_iteam">
-                            <li>One popular belief, Lorem Ipsum is not simply random.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>To popular belief, Lorem Ipsum is not simply random.</li>
+                            <li>Contrario a la creencia popular, Lorem Ipsum no es un texto aleatorio.</li>
+                            <li>Encuentra productos de calidad para cada momento.</li>
+                            <li>Contrario a la creencia popular, Lorem Ipsum no es un texto aleatorio.</li>
                         </ul>
                         <form class="modal_form">
                             <div class="single_form">
-                                <label>Enter Something</label>
-                                <input type="text" placeholder="Enter Something">
+                                <label>Escribe algo</label>
+                                <input type="text" placeholder="Escribe algo">
                             </div>
                             <div class="single_form">
-                                <label>Enter Something</label>
-                                <textarea rows="3" placeholder="Enter Something"></textarea>
+                                <label>Escribe algo</label>
+                                <textarea rows="3" placeholder="Escribe algo"></textarea>
                             </div>
                         </form>
                         <div class="modal-footer">
                             <button type="button" class="modal_closs_btn btn hover-up"
-                                data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn hover-up">Submit</button>
+                                data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn hover-up">Enviar</button>
                         </div>
                     </div>
                 </div>

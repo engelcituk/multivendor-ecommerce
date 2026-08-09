@@ -4,9 +4,9 @@
     <div class="container mb-60 mt-60">
         <div class="row">
             <div class="col-lg-8 mb-40">
-                <h1 class="heading-2 mb-10">Checkout</h1>
+                <h1 class="heading-2 mb-10">Finalizar compra</h1>
                 <div class="d-flex justify-content-between">
-                    <h6 class="text-body">There are <span class="text-brand">{{ cartCount() }}</span> products in your cart</h6>
+                    <h6 class="text-body">Hay <span class="text-brand">{{ cartCount() }}</span> productos en tu carrito</h6>
                 </div>
             </div>
         </div>
@@ -15,12 +15,12 @@
             <div class="col-xl-8">
 
                 <div class="wsus__shipping_address mb_40">
-                    <h4>Billing Address
+                    <h4>Billing Dirección
                     </h4>
 
                     @if (user()->addresses->count() == 0)
-                        <div class="alert alert-warning mt-20">You don't have any address. Please add your address. <a
-                                href="{{ route('address.create') }}"> <b>(Create Address)</b></a></div>
+                        <div class="alert alert-warning mt-20">No tienes ninguna dirección. Agrega una dirección. <a
+                                href="{{ route('address.create') }}"> <b>(Crear dirección)</b></a></div>
                     @endif
 
 
@@ -41,7 +41,7 @@
                                         <a href="javascript:;">{{ $address->email }}</a>
                                         <a href="javascript:;">{{ $address->phone }}</a>
                                         @if ($address->is_default == 1)
-                                            <span class="text-success">(Default)</span>
+                                            <span class="text-success">(Predeterminada)</span>
                                         @endif
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <div id="collapseAddress" class="different_address collapse in">
-                                <h4>Shipping Details</h4>
+                                <h4>Datos de envío</h4>
                                 <div class="row mb-50">
                                     @foreach (user()->addresses as $address)
                                         <div class="col-md-6 col-lg-4 col-xl-4">
@@ -84,7 +84,7 @@
                                                     <a href="javascript:;">{{ $address->email }}</a>
                                                     <a href="javascript:;">{{ $address->phone }}</a>
                                                     @if ($address->is_default == 1)
-                                                        <span class="text-success">(Default)</span>
+                                                        <span class="text-success">(Predeterminada)</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -99,7 +99,7 @@
             </div>
             <div class="col-xl-4">
                 <div class="wsus__billing_summary">
-                    <h4>Billing Summery</h4>
+                    <h4>Resumen de facturación</h4>
                     @foreach ($groupedCartItems as $key => $cartItems)
                         <h5 class="vendor_name">{{ $cartItems['store']->name }}</h5>
                         <ul class="wsus__billing_product">
@@ -129,7 +129,7 @@
 
                     <div class="wsus__total_price">
 
-                        <h4>Shipping Method</h4>
+                        <h4>Método de envío</h4>
                         <div>
                             @foreach ($shippingMethods as $shippingMethod)
                                 <div class="card mb-1">
@@ -150,7 +150,7 @@
                         <hr>
                         {{-- <form method="post" class="apply-coupon mb-10">
                                 <input type="text" placeholder="Enter Coupon Code...">
-                                <button class="btn  btn-md" name="login">Apply Coupon</button>
+                                <button class="btn  btn-md" name="login">Aplicar cupón</button>
                             </form> --}}
                         {{-- <div class="show_coupon">
                                 <p>Coupon code
@@ -162,13 +162,13 @@
                             $cartSubTotal = cartTotal();
                             $cartDiscount = cartDiscount();
                         @endphp
-                        <h3>Sub Total <span>$ {{ $cartSubTotal }}</span></h3>
-                        <p>Shipping Charge <span class="">$ <span class="shipping_charge">00.00</span></span></p>
-                        <p>Discount <span>$ {{ $cartDiscount }}</span></p>
+                        <h3>Subtotal <span>$ {{ $cartSubTotal }}</span></h3>
+                        <p>Costo de envío <span class="">$ <span class="shipping_charge">00.00</span></span></p>
+                        <p>Descuento <span>$ {{ $cartDiscount }}</span></p>
                     </div>
-                    <h5>Sub Total <span>$ <span class="grand_total">{{ $cartSubTotal - $cartDiscount }}</span></span></h5>
+                    <h5>Subtotal <span>$ <span class="grand_total">{{ $cartSubTotal - $cartDiscount }}</span></span></h5>
                     <div class="my-4">
-                        <button class="btn w-100 hover-up make-payment-button">Payment</button>
+                        <button class="btn w-100 hover-up make-payment-button">Pagar</button>
                     </div>
                 </div>
             </div>
@@ -199,17 +199,17 @@
 
                 // check shipping method is selected
                 if (!$('.shipping_method:checked').length > 0) {
-                    notyf.error('Please select a shipping method');
+                    notyf.error('Selecciona un método de envío');
                 }
 
                 // check shipping address is selected
                 if (!$('.billing_address:checked').length > 0) {
-                    notyf.error('Please select a billing address');
+                    notyf.error('Selecciona una dirección de facturación');
                 }
 
                 if ($('.ship_to_different_address').is(':checked') && (!$('.shipping_address:checked')
                         .length > 0)) {
-                    notyf.error('Please select a shipping address');
+                    notyf.error('Selecciona una dirección de envío');
                 }
 
 

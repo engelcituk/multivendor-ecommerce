@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header d-print-none">
-                <h3 class="card-title">Order Details</h3>
+                <h3 class="card-title">Detalles del pedido</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.orders.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('admin.orders.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -16,7 +16,7 @@
                         <div class="container-xl">
                             <div class="row g-2 align-items-center">
                                 <div class="col">
-                                    <h2 class="page-title">Invoice</h2>
+                                    <h2 class="page-title">Factura</h2>
                                 </div>
                                 <!-- Page title actions -->
                                 <div class="col-auto ms-auto d-print-none">
@@ -33,7 +33,7 @@
                                                 d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z">
                                             </path>
                                         </svg>
-                                        Print Invoice
+                                        Print Factura
                                     </button>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                            <p class="h3">Billing Information</p>
+                                            <p class="h3">Información de facturación</p>
                                             <address>
                                                 @php
                                                     $billingInfo = $order->billing_info;
@@ -64,7 +64,7 @@
                                             </address>
                                         </div>
                                         <div class="col-6 text-end">
-                                            <p class="h3">Shipping Information</p>
+                                            <p class="h3">Información de envío</p>
                                             <address>
                                                 @if ($shippingInfo)
                                                     {{ $shippingInfo['first_name'] }} {{ $shippingInfo['last_name'] }}
@@ -90,9 +90,9 @@
                                         <div class="col-12 my-5">
                                             <h1>Invoice #{{ $order->id }}</h1>
                                             <div class="d-flex gap-2 flex-column">
-                                                <span>Transaction ID: {{ $order->transaction_id }}</span>
-                                                <span>Payment Method: {{ $order->payment_method }}</span>
-                                                <span>Order Date: {{ date('Y-m-d', strtotime($order->created_at)) }}</span>
+                                                <span>ID de transacción: {{ $order->transaction_id }}</span>
+                                                <span>Método de pago: {{ $order->payment_method }}</span>
+                                                <span>Fecha del pedido: {{ date('Y-m-d', strtotime($order->created_at)) }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -100,10 +100,10 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center" style="width: 1%"></th>
-                                                <th>Product</th>
-                                                <th class="text-center" style="width: 5%">Qnt</th>
+                                                <th>Producto</th>
+                                                <th class="text-center" style="width: 5%">Cant.</th>
                                                 <th class="text-end" style="width: 10%">Unit ({{ $order->currency }})</th>
-                                                <th class="text-end" style="width: 10%">Amount ({{ $order->currency }})
+                                                <th class="text-end" style="width: 10%">Importe ({{ $order->currency }})
                                                 </th>
                                             </tr>
                                         </thead>
@@ -134,16 +134,16 @@
                                                 <td class="text-end">{{ $subtotal }}</td>
                                             </tr>
                                             <tr>
-                                                <td colspan="4" class="strong text-end">Discount</td>
+                                                <td colspan="4" class="strong text-end">Descuento</td>
                                                 <td class="text-end">{{ $order?->discount ?? 0 }}</td>
                                             </tr>
                                             <tr>
-                                                <td colspan="4" class="strong text-end">Shipping</td>
+                                                <td colspan="4" class="strong text-end">Envío</td>
                                                 <td class="text-end">{{ $order->shipping_charge ?? 0 }}</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="font-weight-bold text-uppercase text-end">Total
-                                                    Amount</td>
+                                                    Importe</td>
                                                 <td class="font-weight-bold text-end">{{ $order->currency }}
                                                     {{ $order->total }}</td>
                                             </tr>
@@ -162,15 +162,15 @@
                                 <form action="{{ route('admin.orders.update', $order) }}" method="POST">
                                     @csrf
                                     <div class="form-group mb-2">
-                                        <label for="">Order Status</label>
+                                        <label for="">Estado del pedido</label>
                                         <select name="order_status" id="" class="form-control">
                                             @foreach (config('order_status') as $key => $status)
                                                 <option @selected($order->order_status == $key) value="{{ $key }}">
-                                                    {{ str_replace('_', ' ', $key) }}</option>
+                                                    {{ __('statuses.' . $key) }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Save </button>
+                                    <button class="btn btn-primary" type="submit">Guardar </button>
                                 </form>
                             </div>
                         </div>

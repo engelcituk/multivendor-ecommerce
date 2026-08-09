@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dashboard</title>
+    <title>Panel</title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" href="{{ asset('assets/global/upload-preview/upload-preview.css') }}" />
 
@@ -49,7 +49,7 @@
                             <ul class="list-inline list-inline-dots mb-0">
                                 <li class="list-inline-item">
                                     Copyright &copy; 2025
-                                    <a href="https://www.shakilahmeed.com" class="link-secondary">Shakil Ahmed</a>. All
+                                    <a href="https://www.shakilahmeed.com" class="link-secondary">Shakil Ahmed</a>. Todos
                                     rights reserved.
                                 </li>
                                 <li class="list-inline-item">

@@ -1,7 +1,7 @@
  <div class="tab-pane fade" id="wishlist-tab" role="tabpanel" aria-labelledby="wishlist-detail-tab">
      <div class="card">
          <div class="card-header p-0">
-             <h4>Wishlist</h4>
+             <h4>Lista de deseos</h4>
          </div>
          <div class="card-body p-0 mt-20">
              <div class="table-responsive shopping-summery">
@@ -13,11 +13,11 @@
                                      value="">
                                  <label class="form-check-label" for="exampleCheckbox11"></label>
                              </th>
-                             <th scope="col" colspan="2">Product</th>
-                             <th scope="col">Price</th>
-                             <th scope="col">Stock Status</th>
-                             <th scope="col">Action</th>
-                             <th scope="col" class="end">Remove</th>
+                             <th scope="col" colspan="2">Producto</th>
+                             <th scope="col">Precio</th>
+                             <th scope="col">Estado del inventario</th>
+                             <th scope="col">Acción</th>
+                             <th scope="col" class="end">Eliminar</th>
                          </tr>
                      </thead>
                      <tbody>
@@ -41,17 +41,17 @@
                                          (4.0)</span>
                                  </div>
                              </td>
-                             <td class="price" data-title="Price">
+                             <td class="price" data-title="Precio">
                                  <h3 class="text-brand">$2.51</h3>
                              </td>
                              <td class="text-center detail-info" data-title="Stock">
-                                 <span class="stock-status in-stock mb-0"> In Stock
+                                 <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
                              <td class="text-right" data-title="Cart">
-                                 <button class="btn btn-sm">Add to cart</button>
+                                 <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
-                             <td class="action text-center" data-title="Remove">
+                             <td class="action text-center" data-title="Eliminar">
                                  <a href="#" class="text-body"><i class="fi-rs-trash"></i></a>
                              </td>
                          </tr>
@@ -75,17 +75,17 @@
                                          (4.0)</span>
                                  </div>
                              </td>
-                             <td class="price" data-title="Price">
+                             <td class="price" data-title="Precio">
                                  <h3 class="text-brand">$3.2</h3>
                              </td>
                              <td class="text-center detail-info" data-title="Stock">
-                                 <span class="stock-status in-stock mb-0"> In Stock
+                                 <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
                              <td class="text-right" data-title="Cart">
-                                 <button class="btn btn-sm">Add to cart</button>
+                                 <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
-                             <td class="action text-center" data-title="Remove">
+                             <td class="action text-center" data-title="Eliminar">
                                  <a href="#" class="text-body"><i class="fi-rs-trash"></i></a>
                              </td>
                          </tr>
@@ -109,17 +109,17 @@
                                          (4.0)</span>
                                  </div>
                              </td>
-                             <td class="price" data-title="Price">
+                             <td class="price" data-title="Precio">
                                  <h3 class="text-brand">$2.43</h3>
                              </td>
                              <td class="text-center detail-info" data-title="Stock">
-                                 <span class="stock-status in-stock mb-0"> In Stock
+                                 <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
                              <td class="text-right" data-title="Cart">
-                                 <button class="btn btn-sm">Add to cart</button>
+                                 <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
-                             <td class="action text-center" data-title="Remove">
+                             <td class="action text-center" data-title="Eliminar">
                                  <a href="#" class="text-body"><i class="fi-rs-trash"></i></a>
                              </td>
                          </tr>
@@ -143,18 +143,18 @@
                                          (4.0)</span>
                                  </div>
                              </td>
-                             <td class="price" data-title="Price">
+                             <td class="price" data-title="Precio">
                                  <h3 class="text-brand">$3.21</h3>
                              </td>
                              <td class="text-center detail-info" data-title="Stock">
-                                 <span class="stock-status out-stock mb-0"> Out Stock
+                                 <span class="stock-status out-stock mb-0"> Out Inventario
                                  </span>
                              </td>
                              <td class="text-right" data-title="Cart">
                                  <button class="btn btn-sm btn-secondary">Contact
                                      Us</button>
                              </td>
-                             <td class="action text-center" data-title="Remove">
+                             <td class="action text-center" data-title="Eliminar">
                                  <a href="#" class="text-body"><i class="fi-rs-trash"></i></a>
                              </td>
                          </tr>
@@ -178,17 +178,17 @@
                                          (4.0)</span>
                                  </div>
                              </td>
-                             <td class="price" data-title="Price">
+                             <td class="price" data-title="Precio">
                                  <h3 class="text-brand">$3.17</h3>
                              </td>
                              <td class="text-center detail-info" data-title="Stock">
-                                 <span class="stock-status in-stock mb-0"> In Stock
+                                 <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
                              <td class="text-right" data-title="Cart">
-                                 <button class="btn btn-sm">Add to cart</button>
+                                 <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
-                             <td class="action text-center" data-title="Remove">
+                             <td class="action text-center" data-title="Eliminar">
                                  <a href="#" class="text-body"><i class="fi-rs-trash"></i></a>
                              </td>
                          </tr>

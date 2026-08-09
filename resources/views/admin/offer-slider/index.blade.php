@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Offer Sliders</h3>
+                <h3 class="card-title">Todos los carruseles de ofertas</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.offer-sliders.create') }}" class="btn btn-primary">Create Page</a>
+                    <a href="{{ route('admin.offer-sliders.create') }}" class="btn btn-primary">Crear página</a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -14,9 +14,9 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Title</th>
-                                <th>Status</th>
+                                <th>N.º</th>
+                                <th>Título</th>
+                                <th>Estado</th>
                                 <th class="w-8"></th>
                             </tr>
                         </thead>
@@ -26,9 +26,9 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $offer->title }}</td>
                                     @if ($offer->is_active)
-                                        <td class="text-secondary"><span class="badge bg-success-lt">Active</span></td>
+                                        <td class="text-secondary"><span class="badge bg-success-lt">Activo</span></td>
                                     @else
-                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactive</span></td>
+                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactivo</span></td>
                                     @endif
                                     <td>
                                         <a href="{{ route('admin.offer-sliders.edit', $offer) }}"><i class="ti ti-edit"></i></a>
@@ -39,7 +39,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center">No Pages Found</td>
+                                    <td colspan="9" class="text-center">No se encontraron páginas</td>
                                 </tr>
                             @endforelse
 

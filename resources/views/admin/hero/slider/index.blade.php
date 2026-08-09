@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Sliders</h3>
+                <h3 class="card-title">Todos los carruseles</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.sliders.create') }}" class="btn btn-primary">Create Slider</a>
+                    <a href="{{ route('admin.sliders.create') }}" class="btn btn-primary">Crear carrusel</a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -14,11 +14,11 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
+                                <th>N.º</th>
                                 <th>Banner</th>
-                                <th>Title</th>
-                                <th>Subtitle</th>
-                                <th>Status</th>
+                                <th>Título</th>
+                                <th>Subtítulo</th>
+                                <th>Estado</th>
                                 <th class="w-8"></th>
                             </tr>
                         </thead>
@@ -30,9 +30,9 @@
                                     <td>{{ $slider->title }}</td>
                                     <td>{{ $slider->sub_title }}</td>
                                     @if ($slider->is_active)
-                                        <td class="text-secondary"><span class="badge bg-success-lt">Active</span></td>
+                                        <td class="text-secondary"><span class="badge bg-success-lt">Activo</span></td>
                                     @else
-                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactive</span></td>
+                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactivo</span></td>
                                     @endif
 
                                     <td>
@@ -44,7 +44,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center">No Sliders</td>
+                                    <td colspan="9" class="text-center">No hay carruseles</td>
                                 </tr>
                             @endforelse
 

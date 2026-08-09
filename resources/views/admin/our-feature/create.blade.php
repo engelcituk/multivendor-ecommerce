@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create Brand</h3>
+                <h3 class="card-title">Crear marca</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.our-features.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('admin.our-features.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="mb-3">
-                                <label for="" class="mb-2 form-label">Icon</label>
+                                <label for="" class="mb-2 form-label">Ícono</label>
                                 <x-input-image imageUploadId="image-upload" imagePreviewId="image-preview"
                                     imageLabelId="image-label" name="icon" />
                                 <x-input-error :messages="$errors->get('icon')" class="mt-2" />
@@ -23,14 +23,14 @@
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Title</label>
+                                <label class="form-label required">Título</label>
                                 <input type="text" class="form-control" name="title" placeholder="" value="">
                                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Subtitle</label>
+                                <label class="form-label required">Subtítulo</label>
                                 <input type="text" class="form-control" name="subtitle" placeholder="" value="">
                                 <x-input-error :messages="$errors->get('subtitle')" class="mt-2" />
                             </div>
@@ -40,7 +40,7 @@
                                 <label class="form-check form-switch form-switch-3">
                                     <input class="form-check-input" type="checkbox" value="1" checked="" name="status"
                                         id="status">
-                                    <span class="form-check-label">Active</span>
+                                    <span class="form-check-label">Activo</span>
                                 </label>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.brand-form').submit()">Create</button>
+                <button class="btn btn-primary mt-3" onclick="$('.brand-form').submit()">Crear</button>
             </div>
         </div>
     </div>
@@ -62,8 +62,8 @@
                 input_field: "#image-upload", // Default: .image-upload
                 preview_box: "#image-preview", // Default: .image-preview
                 label_field: "#image-label", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
         });

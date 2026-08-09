@@ -14,7 +14,7 @@
             </div>
             <div class="product-action-1">
 
-                <a aria-label="Add To Wishlist" class="action-btn wishlist-btn" data-id="{{ $product->id }}" href="">
+                <a aria-label="Agregar a favoritos" class="action-btn wishlist-btn" data-id="{{ $product->id }}" href="">
                     @if(in_array($product->id, $wishlistsProductIds))
                     <i class="fi fi-ss-heart"></i>
                     @else
@@ -26,10 +26,10 @@
             </div>
             <div class="product-badges product-badges-position product-badges-mrg">
                 @if ($product->is_hot == 1)
-                    <span class="hot">Hot</span>
+                    <span class="hot">Popular</span>
                 @endif
                 @if ($product->is_new == 1)
-                    <span class="hot ms-1">New</span>
+                    <span class="hot ms-1">Nuevo</span>
                 @endif
             </div>
         </div>
@@ -45,7 +45,7 @@
                 <span class="font-small ml-5 text-muted"> ({{ round($product->reviews_avg_rating, 2) ?? 0 }})</span>
             </div>
             <div>
-                <span class="font-small text-muted">By <a
+                <span class="font-small text-muted">Por <a
                         href="vendor-details-1.html">{{ $product->store->name }}</a></span>
             </div>
             <div class="product-card-bottom">
@@ -63,7 +63,7 @@
                             <span>${{ $price['price'] }}</span>
                         @endif
                     @else
-                        <span class="text-danger">Out of stock</span>
+                        <span class="text-danger">Agotado</span>
                     @endif
 
 
@@ -73,7 +73,7 @@
                 <div class="add-cart">
                     <a class="add add_to_cart" data-id="{{ $product->id }}"
                         data-modal="{{ $product->primaryVariant ? 'true' : 'false' }}" href=""><i
-                            class="fi-rs-shopping-cart mr-5"></i>Add to cart</a>
+                            class="fi-rs-shopping-cart mr-5"></i>Agregar al carrito</a>
                 </div>
                 @endif
             </div>

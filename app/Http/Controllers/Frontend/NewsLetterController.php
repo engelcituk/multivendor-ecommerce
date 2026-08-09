@@ -28,6 +28,6 @@ class NewsLetterController extends Controller
             'is_verified' => true
         ]);
 
-        return response()->json(['message' => 'Subscribed successfully.']);
+        return response()->json(['message' => 'Suscripción realizada correctamente.']);
     }
 }

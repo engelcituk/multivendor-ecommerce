@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Slider</h3>
+                <h3 class="card-title">Actualizar carrusel</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.sliders.index') }}" class="btn btn-primary">Back</a>
+                    <a href="{{ route('admin.sliders.index') }}" class="btn btn-primary">Volver</a>
                 </div>
             </div>
             <div class="card-body">
@@ -24,14 +24,14 @@
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Title</label>
+                                <label class="form-label required">Título</label>
                                 <input type="text" class="form-control" name="title" placeholder="" value="{{ $slider->title }}">
                                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Sub Title</label>
+                                <label class="form-label required">Subtítulo</label>
                                 <input type="text" class="form-control" name="sub_title" placeholder="" value="{{ $slider->sub_title }}">
                                 <x-input-error :messages="$errors->get('sub_title')" class="mt-2" />
                             </div>
@@ -39,7 +39,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Action Button Url</label>
+                                <label class="form-label required">URL del botón de acción</label>
                                 <input type="text" class="form-control" name="btn_url" placeholder="" value="{{ $slider->btn_url }}">
                                 <x-input-error :messages="$errors->get('btn_url')" class="mt-2" />
                             </div>
@@ -50,7 +50,7 @@
                                 <label class="form-check form-switch form-switch-3">
                                     <input class="form-check-input" type="checkbox" @checked($slider->is_active) name="status"
                                         id="status">
-                                    <span class="form-check-label">Active</span>
+                                    <span class="form-check-label">Activo</span>
                                 </label>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Update</button>
+                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Actualizar</button>
             </div>
         </div>
     </div>
@@ -75,8 +75,8 @@
                 input_field: "#image-upload", // Default: .image-upload
                 preview_box: "#image-preview", // Default: .image-preview
                 label_field: "#image-label", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
         });

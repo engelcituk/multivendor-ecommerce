@@ -82,6 +82,6 @@ class AddressController extends Controller
 
         $address->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Address deleted successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Dirección eliminada correctamente']);
     }
 }

@@ -4,14 +4,14 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create Slider</h3>
+                <h3 class="card-title">Crear carrusel</h3>
                 <div class="card-actions">
                 </div>
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.hero-banners.store') }}" method="POST" class="coupon-form" enctype="multipart/form-data">
                     @csrf
-                    <h3>Banner One</h3>
+                    <h3>Banner uno</h3>
                     <div class="row">
 
                         <div class="col-md-12">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Title</label>
+                                <label class="form-label required">Título</label>
                                 <input type="text" class="form-control" name="title_one" placeholder="" value="{{ $heroBanner?->title_one }}">
                                 <x-input-error :messages="$errors->get('title_one')" class="mt-2" />
                             </div>
@@ -32,7 +32,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Action Button Url</label>
+                                <label class="form-label required">URL del botón de acción</label>
                                 <input type="text" class="form-control" name="btn_url_one" placeholder="" value="{{ $heroBanner?->btn_url_one }}">
                                 <x-input-error :messages="$errors->get('btn_url_one')" class="mt-2" />
                             </div>
@@ -40,7 +40,7 @@
 
                     </div>
 
-                    <h3>Banner Two</h3>
+                    <h3>Banner dos</h3>
                     <div class="row">
 
                         <div class="col-md-12">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Title</label>
+                                <label class="form-label required">Título</label>
                                 <input type="text" class="form-control" name="title_two" placeholder="" value="{{ $heroBanner?->title_two }}">
                                 <x-input-error :messages="$errors->get('title_two')" class="mt-2" />
                             </div>
@@ -61,7 +61,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Action Button Url</label>
+                                <label class="form-label required">URL del botón de acción</label>
                                 <input type="text" class="form-control" name="btn_url_two" placeholder="" value="{{ $heroBanner?->btn_url_two }}">
                                 <x-input-error :messages="$errors->get('btn_url_two')" class="mt-2" />
                             </div>
@@ -87,16 +87,16 @@
                 input_field: "#image-upload", // Default: .image-upload
                 preview_box: "#image-preview", // Default: .image-preview
                 label_field: "#image-label", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
             $.uploadPreview({
                 input_field: "#image-upload-two", // Default: .image-upload
                 preview_box: "#image-preview-two", // Default: .image-preview
                 label_field: "#image-label-two", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
         });

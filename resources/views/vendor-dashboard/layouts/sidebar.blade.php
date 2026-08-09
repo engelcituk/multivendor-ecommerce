@@ -2,7 +2,7 @@
           <div class="container-fluid">
               <!-- BEGIN NAVBAR TOGGLER -->
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu"
-                  aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                  aria-controls="sidebar-menu" aria-expanded="false" aria-label="Alternar navegación">
                   <span class="navbar-toggler-icon"></span>
               </button>
               <!-- END NAVBAR TOGGLER -->
@@ -24,7 +24,7 @@
                                   <path
                                       d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
                               </svg>
-                              Source code
+                              Código fuente
                           </a>
                           <a href="https://github.com/sponsors/codecalm" class="btn btn-6" target="_blank"
                               rel="noreferrer">
@@ -35,13 +35,13 @@
                                   <path
                                       d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
                               </svg>
-                              Sponsor
+                              Patrocinar
                           </a>
                       </div>
                   </div>
                   <div class="d-none d-lg-flex">
                       <div class="nav-item">
-                          <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode"
+                          <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Activar modo oscuro"
                               data-bs-toggle="tooltip" data-bs-placement="bottom">
                               <!-- Download SVG icon from http://tabler.io/icons/icon/moon -->
                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -51,7 +51,7 @@
                                       d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
                               </svg>
                           </a>
-                          <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode"
+                          <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Activar modo claro"
                               data-bs-toggle="tooltip" data-bs-placement="bottom">
                               <!-- Download SVG icon from http://tabler.io/icons/icon/sun -->
                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -65,7 +65,7 @@
                       </div>
                       <div class="nav-item dropdown d-none d-md-flex">
                           <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
-                              aria-label="Show notifications" data-bs-auto-close="outside" aria-expanded="false">
+                              aria-label="Mostrar notificaciones" data-bs-auto-close="outside" aria-expanded="false">
                               <!-- Download SVG icon from http://tabler.io/icons/icon/bell -->
                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -79,7 +79,7 @@
                           <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
                               <div class="card">
                                   <div class="card-header d-flex">
-                                      <h3 class="card-title">Notifications</h3>
+                                      <h3 class="card-title">Notificaciones</h3>
                                       <div class="btn-close ms-auto" data-bs-dismiss="dropdown"></div>
                                   </div>
                                   <div class="list-group list-group-flush list-group-hoverable">
@@ -89,7 +89,7 @@
                                                       class="status-dot status-dot-animated bg-red d-block"></span>
                                               </div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 1</a>
+                                                  <a href="#" class="text-body d-block">Ejemplo 1</a>
                                                   <div class="d-block text-secondary text-truncate mt-n1">Change
                                                       deprecated html tags to text decoration classes (#29604)</div>
                                               </div>
@@ -112,7 +112,7 @@
                                           <div class="row align-items-center">
                                               <div class="col-auto"><span class="status-dot d-block"></span></div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 2</a>
+                                                  <a href="#" class="text-body d-block">Ejemplo 2</a>
                                                   <div class="d-block text-secondary text-truncate mt-n1">
                                                       justify-content:between ⇒ justify-content:space-between (#29734)
                                                   </div>
@@ -136,8 +136,8 @@
                                           <div class="row align-items-center">
                                               <div class="col-auto"><span class="status-dot d-block"></span></div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 3</a>
-                                                  <div class="d-block text-secondary text-truncate mt-n1">Update
+                                                  <a href="#" class="text-body d-block">Ejemplo 3</a>
+                                                  <div class="d-block text-secondary text-truncate mt-n1">Actualizar
                                                       change-version.js (#29736)</div>
                                               </div>
                                               <div class="col-auto">
@@ -161,7 +161,7 @@
                                                       class="status-dot status-dot-animated bg-green d-block"></span>
                                               </div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 4</a>
+                                                  <a href="#" class="text-body d-block">Ejemplo 4</a>
                                                   <div class="d-block text-secondary text-truncate mt-n1">Regenerate
                                                       package-lock.json (#29730)</div>
                                               </div>
@@ -184,10 +184,10 @@
                                   <div class="card-body">
                                       <div class="row">
                                           <div class="col">
-                                              <a href="#" class="btn btn-2 w-100"> Archive all </a>
+                                              <a href="#" class="btn btn-2 w-100"> Archivar todo </a>
                                           </div>
                                           <div class="col">
-                                              <a href="#" class="btn btn-2 w-100"> Mark all as read </a>
+                                              <a href="#" class="btn btn-2 w-100"> Marcar todo como leído </a>
                                           </div>
                                       </div>
                                   </div>
@@ -198,21 +198,21 @@
                   </div>
                   <div class="nav-item dropdown">
                       <a href="#" class="nav-link d-flex lh-1 p-0 px-2" data-bs-toggle="dropdown"
-                          aria-label="Open user menu">
+                          aria-label="Abrir menú de usuario">
                           <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)">
                           </span>
                           <div class="d-none d-xl-block ps-2">
                               <div>Paweł Kuna</div>
-                              <div class="mt-1 small text-secondary">UI Designer</div>
+                              <div class="mt-1 small text-secondary">Diseñador UI</div>
                           </div>
                       </a>
                       <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                          <a href="#" class="dropdown-item">Status</a>
-                          <a href="./profile.html" class="dropdown-item">Profile</a>
-                          <a href="#" class="dropdown-item">Feedback</a>
+                          <a href="#" class="dropdown-item">Estado</a>
+                          <a href="./profile.html" class="dropdown-item">Perfil</a>
+                          <a href="#" class="dropdown-item">Comentarios</a>
                           <div class="dropdown-divider"></div>
-                          <a href="./settings.html" class="dropdown-item">Settings</a>
-                          <a href="./sign-in.html" class="dropdown-item">Logout</a>
+                          <a href="./settings.html" class="dropdown-item">Configuración</a>
+                          <a href="./sign-in.html" class="dropdown-item">Cerrar sesión</a>
                       </div>
                   </div>
               </div>
@@ -225,7 +225,7 @@
                               <span class="nav-link-icon d-md-none d-lg-inline-block">
                                   <i class="ti ti-home"></i>
                               </span>
-                              <span class="nav-link-title"> Home </span>
+                              <span class="nav-link-title"> Inicio </span>
                           </a>
                       </li>
                       <li
@@ -234,7 +234,7 @@
                               data-bs-auto-close="false" role="button" aria-expanded="false">
                               <span class="nav-link-icon d-md-none d-lg-inline-block">
                                   <i class="ti ti-shopping-cart"></i></span>
-                              <span class="nav-link-title"> Ecommerce </span>
+                              <span class="nav-link-title"> Comercio electrónico </span>
                           </a>
                           <div
                               class="dropdown-menu {{ setActive(['vendor.products.*', 'vendor.digital-products.edit'], 'show') }}">
@@ -242,7 +242,7 @@
                                   <div class="dropdown-menu-column">
                                       <div class="dropend">
                                           <a class="dropdown-item {{ setActive(['vendor.products.*', 'vendor.digital-products.edit'], 'active') }}"
-                                              href="{{ route('vendor.products.index') }}">Products</a>
+                                              href="{{ route('vendor.products.index') }}">Productos</a>
                                       </div>
 
                                   </div>
@@ -256,41 +256,41 @@
                               <span class="nav-link-icon d-md-none d-lg-inline-block">
                                   <i class="ti ti-shopping-bag"></i>
                               </span>
-                              <span class="nav-link-title"> Orders </span>
+                              <span class="nav-link-title"> Pedidos </span>
                           </a>
                           <div class="dropdown-menu {{ setActive(['vendor.orders.*'], 'show') }}">
                               <div class="dropdown-menu-columns">
                                   <div class="dropdown-menu-column">
                                       <a class="dropdown-item" href="{{ route('vendor.orders.index') }}">
-                                          All Orders
+                                          Todos los pedidos
                                       </a>
                                   </div>
 
                                   <div class="dropdown-menu-column">
                                       <a class="dropdown-item"
                                           href="{{ route('vendor.orders.index', ['status' => 'pending']) }}">
-                                          Pending Orders
+                                          Pedidos pendientes
                                       </a>
                                   </div>
 
                                   <div class="dropdown-menu-column">
                                       <a class="dropdown-item"
                                           href="{{ route('vendor.orders.index', ['status' => 'processed']) }}">
-                                          Processed Orders
+                                          Processed Pedidos
                                       </a>
                                   </div>
 
                                   <div class="dropdown-menu-column">
                                       <a class="dropdown-item"
                                           href="{{ route('vendor.orders.index', ['status' => 'packed']) }}">
-                                          Packed Orders
+                                          Packed Pedidos
                                       </a>
                                   </div>
 
                                   <div class="dropdown-menu-column">
                                       <a class="dropdown-item"
                                           href="{{ route('vendor.orders.index', ['status' => 'shipped']) }}">
-                                          Shipped Orders
+                                          Shipped Pedidos
                                       </a>
                                   </div>
                               </div>
@@ -303,7 +303,7 @@
                               <span class="nav-link-icon d-md-none d-lg-inline-block">
                                   <i class="ti ti-basket-dollar"></i>
                               </span>
-                              <span class="nav-link-title"> Withdraws </span>
+                              <span class="nav-link-title"> Retiros </span>
                           </a>
                           <div
                               class="dropdown-menu {{ setActive(['vendor.withdraw-methods.*', 'vendor.withdraw-requests.*'], 'show') }}">
@@ -311,7 +311,7 @@
                                   <div class="dropdown-menu-column">
                                       <a class="dropdown-item {{ setActive(['vendor.withdraw-methods.*'], 'active') }}"
                                           href="{{ route('vendor.withdraw-methods.index') }}">
-                                          Withdraw Methods
+                                          Método de retiros
                                       </a>
                                   </div>
                                   <div class="dropdown-menu-column">
@@ -332,7 +332,7 @@
                                   class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
                                   <i class="ti ti-user-scan"></i>
                               </span>
-                              <span class="nav-link-title"> Store Profile </span>
+                              <span class="nav-link-title"> Perfil de la tienda </span>
                           </a>
                       </li>
 
@@ -342,7 +342,7 @@
                               <span
                                   class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
                                   <i class="ti ti-user-circle"></i></span>
-                              <span class="nav-link-title"> Settings </span>
+                              <span class="nav-link-title"> Configuración </span>
                           </a>
                       </li>
 
@@ -357,7 +357,7 @@
           <div class="container-xl">
               <!-- BEGIN NAVBAR TOGGLER -->
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
-                  aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                  aria-controls="navbar-menu" aria-expanded="false" aria-label="Alternar navegación">
                   <span class="navbar-toggler-icon"></span>
               </button>
               <!-- END NAVBAR TOGGLER -->
@@ -365,8 +365,8 @@
                   <div class="d-none d-md-flex">
                       <div class="nav-item">
                           <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" data-bs-toggle="tooltip"
-                              data-bs-placement="bottom" aria-label="Enable dark mode"
-                              data-bs-original-title="Enable dark mode">
+                              data-bs-placement="bottom" aria-label="Activar modo oscuro"
+                              data-bs-original-title="Activar modo oscuro">
                               <!-- Download SVG icon from http://tabler.io/icons/icon/moon -->
                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -377,8 +377,8 @@
                               </svg>
                           </a>
                           <a href="?theme=light" class="nav-link px-0 hide-theme-light" data-bs-toggle="tooltip"
-                              data-bs-placement="bottom" aria-label="Enable light mode"
-                              data-bs-original-title="Enable light mode">
+                              data-bs-placement="bottom" aria-label="Activar modo claro"
+                              data-bs-original-title="Activar modo claro">
                               <!-- Download SVG icon from http://tabler.io/icons/icon/sun -->
                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -392,7 +392,7 @@
                       </div>
                       {{-- <div class="nav-item dropdown d-none d-md-flex">
                           <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
-                              aria-label="Show notifications" data-bs-auto-close="outside" aria-expanded="false">
+                              aria-label="Mostrar notificaciones" data-bs-auto-close="outside" aria-expanded="false">
                               <!-- Download SVG icon from http://tabler.io/icons/icon/bell -->
                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -407,7 +407,7 @@
                           <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
                               <div class="card">
                                   <div class="card-header d-flex">
-                                      <h3 class="card-title">Notifications</h3>
+                                      <h3 class="card-title">Notificaciones</h3>
                                       <div class="btn-close ms-auto" data-bs-dismiss="dropdown"></div>
                                   </div>
                                   <div class="list-group list-group-flush list-group-hoverable">
@@ -417,7 +417,7 @@
                                                       class="status-dot status-dot-animated bg-red d-block"></span>
                                               </div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 1</a>
+                                                  <a href="#" class="text-body d-block">Ejemplo 1</a>
                                                   <div class="d-block text-secondary text-truncate mt-n1">Change
                                                       deprecated html tags to text decoration classes (#29604)</div>
                                               </div>
@@ -441,7 +441,7 @@
                                           <div class="row align-items-center">
                                               <div class="col-auto"><span class="status-dot d-block"></span></div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 2</a>
+                                                  <a href="#" class="text-body d-block">Ejemplo 2</a>
                                                   <div class="d-block text-secondary text-truncate mt-n1">
                                                       justify-content:between ⇒ justify-content:space-between (#29734)
                                                   </div>
@@ -466,8 +466,8 @@
                                           <div class="row align-items-center">
                                               <div class="col-auto"><span class="status-dot d-block"></span></div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 3</a>
-                                                  <div class="d-block text-secondary text-truncate mt-n1">Update
+                                                  <a href="#" class="text-body d-block">Ejemplo 3</a>
+                                                  <div class="d-block text-secondary text-truncate mt-n1">Actualizar
                                                       change-version.js (#29736)</div>
                                               </div>
                                               <div class="col-auto">
@@ -492,7 +492,7 @@
                                                       class="status-dot status-dot-animated bg-green d-block"></span>
                                               </div>
                                               <div class="col text-truncate">
-                                                  <a href="#" class="text-body d-block">Example 4</a>
+                                                  <a href="#" class="text-body d-block">Ejemplo 4</a>
                                                   <div class="d-block text-secondary text-truncate mt-n1">Regenerate
                                                       package-lock.json (#29730)</div>
                                               </div>
@@ -516,10 +516,10 @@
                                   <div class="card-body">
                                       <div class="row">
                                           <div class="col">
-                                              <a href="#" class="btn btn-2 w-100"> Archive all </a>
+                                              <a href="#" class="btn btn-2 w-100"> Archivar todo </a>
                                           </div>
                                           <div class="col">
-                                              <a href="#" class="btn btn-2 w-100"> Mark all as read </a>
+                                              <a href="#" class="btn btn-2 w-100"> Marcar todo como leído </a>
                                           </div>
                                       </div>
                                   </div>
@@ -529,21 +529,21 @@
                   </div>
                   <div class="nav-item dropdown">
                       <a href="#" class="nav-link d-flex lh-1 p-0 px-2" data-bs-toggle="dropdown"
-                          aria-label="Open user menu">
+                          aria-label="Abrir menú de usuario">
                           <span class="avatar avatar-sm" style="background-image: url({{ asset(user()->avatar) }})">
                           </span>
                           <div class="d-none d-xl-block ps-2">
                               <div>{{ user()->name }}</div>
-                              <div class="mt-1 small text-secondary">Vendor</div>
+                              <div class="mt-1 small text-secondary">Vendedor</div>
                           </div>
                       </a>
                       <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                          <a href="{{ route('vendor.store-profile.index') }}" class="dropdown-item">Store Profile</a>
+                          <a href="{{ route('vendor.store-profile.index') }}" class="dropdown-item">Perfil de la tienda</a>
                           <div class="dropdown-divider"></div>
-                          <a href="{{ route('vendor.profile.index') }}" class="dropdown-item">Settings</a>
+                          <a href="{{ route('vendor.profile.index') }}" class="dropdown-item">Configuración</a>
                           <a onclick="event.preventDefault();
                                 $('.logout-form').submit();"
-                              href="" class="dropdown-item">Logout</a>
+                              href="" class="dropdown-item">Cerrar sesión</a>
                           <form method="POST" action="{{ route('logout') }}" class="logout-form">
                               @csrf
                           </form>

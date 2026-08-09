@@ -96,6 +96,6 @@ class SliderController extends Controller implements HasMiddleware
     {
         $slider->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

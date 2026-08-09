@@ -54,7 +54,7 @@ class KycController extends Controller
 
         $kyc->save();
 
-        AlertService::created('Your KYC has been submitted successfully! Please wait for admin approval.');
+        AlertService::created('Tu verificación KYC se envió correctamente. Espera la aprobación del administrador.');
 
         return redirect()->route('vendor.dashboard');
     }

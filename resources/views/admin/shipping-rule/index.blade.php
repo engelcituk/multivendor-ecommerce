@@ -4,9 +4,9 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Shipping Rules</h3>
+                <h3 class="card-title">Todas las reglas de envío</h3>
                 <div class="card-actions">
-                    <a href="{{ route('admin.shipping-rules.create') }}" class="btn btn-primary">Create Shipping Rule</a>
+                    <a href="{{ route('admin.shipping-rules.create') }}" class="btn btn-primary">Crear regla de envío</a>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -14,12 +14,12 @@
                     <table class="table table-vcenter card-table">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Min Order</th>
-                                <th>Charge</th>
-                                <th>Status</th>
+                                <th>N.º</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Pedido mínimo</th>
+                                <th>Cargo</th>
+                                <th>Estado</th>
                                 <th class="w-8"></th>
                             </tr>
                         </thead>
@@ -29,17 +29,17 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $shippingRule->name }}</td>
                                     @if ($shippingRule->type == 'minimum_order_amount')
-                                        <td class="text-secondary"><span class="badge bg-info-lt">Minimum Order
-                                                Amount</span></td>
+                                        <td class="text-secondary"><span class="badge bg-info-lt">Minimum Pedido
+                                                Importe</span></td>
                                     @else
-                                        <td class="text-secondary"><span class="badge bg-info-lt">Flat Amount</span></td>
+                                        <td class="text-secondary"><span class="badge bg-info-lt">Importe fijo</span></td>
                                     @endif
                                     <td class="text-secondary">{{ $shippingRule->minimum_amount }}</td>
                                     <td class="text-secondary">{{ $shippingRule->charge }}</td>
                                     @if ($shippingRule->is_active == 1)
-                                        <td class="text-secondary"><span class="badge bg-success-lt">Active</span></td>
+                                        <td class="text-secondary"><span class="badge bg-success-lt">Activo</span></td>
                                     @else
-                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactive</span></td>
+                                        <td class="text-secondary"><span class="badge bg-danger-lt">Inactivo</span></td>
                                     @endif
                                     <td>
                                         <a href="{{ route('admin.shipping-rules.edit', $shippingRule) }}"><i class="ti ti-edit"></i></a>

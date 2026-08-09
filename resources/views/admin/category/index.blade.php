@@ -71,8 +71,8 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <span>Categories</span>
-                        <button class="btn btn-primary" id="btn-new">New</button>
+                        <span>Categorías</span>
+                        <button class="btn btn-primary" id="btn-new">Nuevo</button>
                     </div>
                     <div class="card-body">
                         <div id="category-tree" class="dd">
@@ -86,7 +86,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><span id="category-title">Create Category</span></div>
+                    <div class="card-header"><span id="category-title">Crear categoría</span></div>
                     <div class="card-body">
                         <form action="" id="category-form">
                             <input type="hidden" id="category-id">
@@ -94,7 +94,7 @@
 
                                 <div class="col-md-4">
                                     <div class="mb-2">
-                                        <label for="" class="form-label">Icon <span
+                                        <label for="" class="form-label">Ícono <span
                                                 class="text-danger"></span></label>
                                         <x-input-image imageUploadId="image-upload" imagePreviewId="image-preview"
                                             imageLabelId="image-label" name="icon" />
@@ -103,7 +103,7 @@
                                 <div class="col-md-4">
 
                                     <div class="mb-2">
-                                        <label for="" class="form-label">Image <span
+                                        <label for="" class="form-label">Imagen <span
                                                 class="text-danger"></span></label>
                                         <x-input-image imageUploadId="image-upload-two" imagePreviewId="image-preview-two"
                                             imageLabelId="image-label-two" name="image" />
@@ -111,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <label for="" class="form-label">Name <span class="text-danger">*</span></label>
+                                <label for="" class="form-label">Nombre <span class="text-danger">*</span></label>
                                 <input type="text" name="name" class="form-control" required id="name">
                             </div>
                             <div class="mb-2">
@@ -119,7 +119,7 @@
                                 <input type="text" name="slug" class="form-control" required id="slug">
                             </div>
                             <div class="mb-2">
-                                <label for="" class="form-label">Parent Category <span
+                                <label for="" class="form-label">Categoría superior <span
                                         class="text-danger">*</span></label>
                                 <select name="parent_id" class="form-select" id="parent_id">
                                 </select>
@@ -131,7 +131,7 @@
                                         <label class="form-check form-switch form-switch-3">
                                             <input class="form-check-input" type="checkbox" name="is_featured"
                                                 id="is_featured">
-                                            <span class="form-check-label">is featured</span>
+                                            <span class="form-check-label">Es destacada</span>
                                         </label>
                                     </div>
 
@@ -141,15 +141,15 @@
                                         <label class="form-check form-switch form-switch-3">
                                             <input class="form-check-input" type="checkbox" checked="" name="is_active"
                                                 id="is_active">
-                                            <span class="form-check-label">Active</span>
+                                            <span class="form-check-label">Activo</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="d-flex gap-2">
-                                <button type="submit" class="btn btn-primary" id="btn-save">Save</button>
-                                <button type="button" class="btn btn-danger d-none" id="btn-delete">Delete</button>
-                                <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
+                                <button type="submit" class="btn btn-primary" id="btn-save">Guardar</button>
+                                <button type="button" class="btn btn-danger d-none" id="btn-delete">Eliminar</button>
+                                <button type="button" class="btn btn-secondary" id="btn-cancel">Cancelar</button>
                             </div>
 
                         </form>
@@ -167,8 +167,8 @@
                 input_field: "#image-upload", // Default: .image-upload
                 preview_box: "#image-preview", // Default: .image-preview
                 label_field: "#image-label", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
 
@@ -176,8 +176,8 @@
                 input_field: "#image-upload-two", // Default: .image-upload
                 preview_box: "#image-preview-two", // Default: .image-preview
                 label_field: "#image-label-two", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
         });
@@ -333,13 +333,13 @@
 
             $('#btn-delete').on('click', function() {
                 Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
+                    title: "¿Estás seguro?",
+                    text: "No podrás revertir esta acción.",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
+                    confirmButtonText: "Sí, eliminar"
                 }).then((result) => {
                     if (result.isConfirmed) {
                         let id = $('#category-id').val();
@@ -397,7 +397,7 @@
 
             function fillForm(cat) {
                 let domain = "{{ url('/') }}";
-                $('#category-title').text('Edit Category');
+                $('#category-title').text('Editar categoría');
                 $('#name').val(cat.name);
                 $('#slug').val(cat.slug);
                 $('#is_active').prop('checked', cat.is_active);
@@ -412,7 +412,7 @@
             // clear form
             function clearForm() {
                 $('#category-form')[0].reset();
-                $('#category-title').text('Create Category');
+                $('#category-title').text('Crear categoría');
                 $('#name').val('');
                 $('#slug').val('');
                 $('#parent_id').val('');

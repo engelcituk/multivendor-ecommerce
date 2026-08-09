@@ -76,6 +76,6 @@ class ShippingRuleController extends Controller implements HasMiddleware
     {
         $shippingRule->delete();
         AlertService::deleted();
-        return response()->json(['status' => 'success', 'message' => 'Deleted Successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Eliminado correctamente']);
     }
 }

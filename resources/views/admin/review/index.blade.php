@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Product Tags</h3>
+                <h3 class="card-title">Etiquetas del producto</h3>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -13,10 +13,10 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th style="width: 300px">Product</th>
-                                    <th>Rating</th>
-                                    <th>Review</th>
-                                    <th>Date</th>
+                                    <th style="width: 300px">Producto</th>
+                                    <th>Calificación</th>
+                                    <th>Reseña</th>
+                                    <th>Fecha</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -53,7 +53,7 @@
                                     </tr>
                                     @empty
                                     <tr>
-                                        <td colspan="6" class="text-center">No data found</td></td>
+                                        <td colspan="6" class="text-center">No se encontraron datos</td></td>
                                     </tr>
                                 @endforelse
 

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Forgot Password']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Recuperar contraseña']]" />
 
     <div class="page-content pt-150 pb-135">
         <div class="container">
@@ -14,7 +14,7 @@
                             <div class="login_wrap widget-taber-content background-white">
                                 <div class="padding_eight_all bg-white">
                                     <div class="heading_s1">
-                                        <h3 class="mb-5">Forgot Password</h3>
+                                        <h3 class="mb-5">Olvidé mi contraseña</h3>
                                         <p class="mb-30">
                                             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
                                         </p>
@@ -22,7 +22,7 @@
                                     <form method="POST" action="{{ route('password.email') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" required="" name="email" placeholder="Your Email *"
+                                            <input type="email" required="" name="email" placeholder="Tu correo electrónico *"
                                                 value="{{ old('email') }}" />
                                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                         </div>

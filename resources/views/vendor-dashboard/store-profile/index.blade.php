@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Store Profile</h3>
+                <h3 class="card-title">Actualizar perfil de la tienda</h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('vendor.store-profile.update', 1) }}" method="POST" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="" class="form-label">Logo</label>
+                                <label for="" class="form-label">Logotipo</label>
                                 <x-input-image imageUploadId="image-upload" imagePreviewId="image-preview" imageLabelId="image-label" name="logo" :image="asset($store?->logo)" />
                                 <x-input-error :messages="$errors->get('logo')" class="mt-2" />
                             </div>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Name</label>
+                                <label class="form-label required">Nombre</label>
                                 <input type="text" class="form-control" name="name" placeholder="" value="{{ $store?->name }}">
                                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
                             </div>
@@ -36,7 +36,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label">Phone</label>
+                                <label class="form-label">Teléfono</label>
                                 <input type="text" class="form-control" name="phone" placeholder="" value="{{ $store?->phone }}">
                                 <x-input-error :messages="$errors->get('phone')" class="mt-2" />
                             </div>
@@ -44,7 +44,7 @@
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label ">Email</label>
+                                <label class="form-label ">Correo electrónico</label>
                                 <input type="text" class="form-control" name="email" placeholder="" value="{{ $store?->email }}">
                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
@@ -52,7 +52,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label">Address</label>
+                                <label class="form-label">Dirección</label>
                                 <input type="text" class="form-control" name="address" placeholder="" value="{{ $store?->address }}">
                                 <x-input-error :messages="$errors->get('address')" class="mt-2" />
                             </div>
@@ -60,7 +60,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label required">Short Description</label>
+                                <label class="form-label required">Descripción breve</label>
                                 <textarea name="short_description" class="form-control">{{ $store?->short_description }}</textarea>
                                 <x-input-error :messages="$errors->get('short_description')" class="mt-2" />
                             </div>
@@ -68,7 +68,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="form-label">Long Description</label>
+                                <label class="form-label">Descripción detallada</label>
                                 <textarea name="long_description" id="editor" class="form-control">{{ $store?->long_description }}</textarea>
                                 <x-input-error :messages="$errors->get('long_description')" class="mt-2" />
                             </div>
@@ -76,7 +76,7 @@
 
 
                     </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
                 </form>
             </div>
         </div>
@@ -92,16 +92,16 @@
                 input_field: "#image-upload", // Default: .image-upload
                 preview_box: "#image-preview", // Default: .image-preview
                 label_field: "#image-label", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
             $.uploadPreview({
                 input_field: "#image-upload-two", // Default: .image-upload
                 preview_box: "#image-preview-two", // Default: .image-preview
                 label_field: "#image-label-two", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
+                label_default: "Elegir archivo", // Default: Elegir archivo
+                label_selected: "Cambiar archivo", // Default: Cambiar archivo
                 no_label: false // Default: false
             });
         });

@@ -17,8 +17,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="alert-heading">Your KYC is Pending</h4>
-                    <div class="alert-description">Please wait for the admin to approve your KYC.</div>
+                    <h4 class="alert-heading">Tu verificación KYC está pendiente</h4>
+                    <div class="alert-description">Espera a que el administrador apruebe tu verificación KYC.</div>
                 </div>
                 <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
             </div>
@@ -36,11 +36,11 @@
                     </svg>
                 </div>
                 <div class="w-100">
-                    <h4 class="alert-heading">Please Submit Your KYC</h4>
+                    <h4 class="alert-heading">Envía tu verificación KYC</h4>
                     <div class="alert-description d-flex justify-content-between align-items-center ">
-                        <span>Please submit your KYC to get started.</span>
+                        <span>Envía tu verificación KYC para comenzar.</span>
                         <div>
-                            <a href="{{ route('kyc.index') }}" class="btn btn-6 btn-outline-light">Submit KYC</a>
+                            <a href="{{ route('kyc.index') }}" class="btn btn-6 btn-outline-light">Enviar verificación KYC</a>
                         </div>
                     </div>
                 </div>
@@ -61,8 +61,8 @@
                                             <i class="ti ti-shopping-bag-exclamation"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $pendingOrders }} Orders</div>
-                                        <div class="text-secondary">Total Pending Orders</div>
+                                        <div class="font-weight-medium">{{ $pendingOrders }} Pedidos</div>
+                                        <div class="text-secondary">Pedidos pendientes</div>
                                     </div>
                                 </div>
                             </div>
@@ -79,8 +79,8 @@
                                             <i class="ti ti-shopping-bag-heart"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $completedOrders }} Orders</div>
-                                        <div class="text-secondary">Total Completed Orders</div>
+                                        <div class="font-weight-medium">{{ $completedOrders }} Pedidos</div>
+                                        <div class="text-secondary">Pedidos completados</div>
                                     </div>
                                 </div>
                             </div>
@@ -98,8 +98,8 @@
                                         </span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $canceledOrders }} Orders</div>
-                                        <div class="text-secondary">Total Cancelled Orders</div>
+                                        <div class="font-weight-medium">{{ $canceledOrders }} Pedidos</div>
+                                        <div class="text-secondary">Pedidos cancelados</div>
                                     </div>
                                 </div>
                             </div>
@@ -116,8 +116,8 @@
                                             <i class="ti ti-shopping-bag-plus"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalOrders }} Orders</div>
-                                        <div class="text-secondary">Total Orders</div>
+                                        <div class="font-weight-medium">{{ $totalOrders }} Pedidos</div>
+                                        <div class="text-secondary">Total de pedidos</div>
                                     </div>
                                 </div>
                             </div>
@@ -134,8 +134,8 @@
                                             <i class="ti ti-box"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalProducts }} Items</div>
-                                        <div class="text-secondary">Total Products</div>
+                                        <div class="font-weight-medium">{{ $totalProducts }} artículos</div>
+                                        <div class="text-secondary">Total de productos</div>
                                     </div>
                                 </div>
                             </div>
@@ -152,8 +152,8 @@
                                             <i class="ti ti-box"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalDigitalProducts }} Items</div>
-                                        <div class="text-secondary">Total Digital Products</div>
+                                        <div class="font-weight-medium">{{ $totalDigitalProducts }} artículos</div>
+                                        <div class="text-secondary">Productos digitales</div>
                                     </div>
                                 </div>
                             </div>
@@ -169,8 +169,8 @@
                                             <i class="ti ti-box"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalPhysicalProducts }} Items</div>
-                                        <div class="text-secondary">Total Physical Products</div>
+                                        <div class="font-weight-medium">{{ $totalPhysicalProducts }} artículos</div>
+                                        <div class="text-secondary">Productos físicos</div>
                                     </div>
                                 </div>
                             </div>

@@ -71,7 +71,7 @@
         }
 
         .image-preview-loader::after {
-            content: "Uploading...";
+            content: "Subiendo...";
             color: #666;
         }
 
@@ -99,16 +99,16 @@
                 <div class="col-md-8">
                     <div class="card mb-3">
                         {{-- <div class="card-header">
-                        <h3 class="card-title">Create Roles</h3>
+                        <h3 class="card-title">Crear roles</h3>
                         <div class="card-actions">
-                            <a href="{{ route('admin.role.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('admin.role.index') }}" class="btn btn-primary">Volver</a>
                         </div>
                     </div> --}}
                         <div class="card-body">
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Name</label>
+                                    <label class="form-label required">Nombre</label>
                                     <input type="text" class="form-control" name="name" id="name" placeholder=""
                                         value="{{ $product->name }}">
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -126,7 +126,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Short Description</label>
+                                    <label class="form-label required">Descripción breve</label>
                                     <textarea name="short_description" id="short-editor">{!! $product->short_description !!}</textarea>
                                     <x-input-error :messages="$errors->get('short_description')" class="mt-2" />
                                 </div>
@@ -134,7 +134,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label required">Content</label>
+                                    <label class="form-label required">Contenido</label>
                                     <textarea name="content" id="editor">{!! $product->description !!}</textarea>
                                     <x-input-error :messages="$errors->get('content')" class="mt-2" />
                                 </div>
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label">Price</label>
+                                        <label class="form-label">Precio</label>
                                         <input type="text" class="form-control" name="price"
                                             value="{{ $product->price }}">
                                         <x-input-error :messages="$errors->get('price')" class="mt-2" />
@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label">Special Price</label>
+                                        <label class="form-label">Precio especial</label>
                                         <input type="text" class="form-control" name="special_price"
                                             value="{{ $product->special_price }}">
                                         <x-input-error :messages="$errors->get('special_price')" class="mt-2" />
@@ -178,7 +178,7 @@
 
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">From Date</label>
+                                        <label class="form-label">Fecha inicial</label>
                                         <input type="text" class="form-control datepicker" name="from_date"
                                             value="{{ $product->special_price_start }}">
                                         <x-input-error :messages="$errors->get('from_date')" class="mt-2" />
@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">To Date</label>
+                                        <label class="form-label">Fecha final</label>
                                         <input type="text" class="form-control datepicker" name="to_date"
                                             value="{{ $product->special_price_end }}" id="datepicker-tow">
                                         <x-input-error :messages="$errors->get('to_date')" class="mt-2" />
@@ -199,7 +199,7 @@
                                             <label class="form-check">
                                                 <input class="form-check-input manage-stock-check" name="manage_stock"
                                                     type="checkbox" @checked($product->manage_stock == 'yes')>
-                                                <span class="form-check-label">Manage Stock</span>
+                                                <span class="form-check-label">Administrar inventario</span>
                                             </label>
                                         </div>
                                     </div>
@@ -207,7 +207,7 @@
                                     <div
                                         class="col-md-12 manage-stock {{ $product->manage_stock == 'yes' ? '' : 'd-none' }}">
                                         <div class="mb-3">
-                                            <label class="form-label">Quantity</label>
+                                            <label class="form-label">Cantidad</label>
                                             <input type="text" class="form-control" name="quantity"
                                                 value="{{ $product->qty }}">
                                             <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
@@ -218,7 +218,7 @@
                                 <div class="rwo">
                                     <div class="card mb-3">
                                         <div class="card-header">
-                                            <h3 class="card-title">Stock Status</h3>
+                                            <h3 class="card-title">Estado del inventario</h3>
                                         </div>
                                         <div class="card-body">
                                             <div class="col-md-12">
@@ -227,12 +227,12 @@
                                                         <input class="form-check-input" type="radio"
                                                             name="stock_status" @checked($product->in_stock == 1)
                                                             value="in_stock">
-                                                        <span class="form-check-label">In Stock</span>
+                                                        <span class="form-check-label">Disponible</span>
                                                     </label>
                                                     <label class="form-check">
                                                         <input class="form-check-input" @checked($product->in_stock == 0)
                                                             type="radio" name="stock_status" value="out_of_stock">
-                                                        <span class="form-check-label">Out Of Stock</span>
+                                                        <span class="form-check-label">Agotado</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -245,7 +245,7 @@
 
                     <div class="card mt-3" id="product-images">
                         <div class="card-header">
-                            <h3 class="card-title">Product Image</h3>
+                            <h3 class="card-title">Imagen del producto</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
@@ -267,7 +267,7 @@
 
                     <div class="card mt-3" id="product-images">
                         <div class="card-header">
-                            <h3 class="card-title">Product Attributes</h3>
+                            <h3 class="card-title">Atributos del producto</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
@@ -280,7 +280,7 @@
                                     @endforeach
                                 </div>
 
-                                <button class="btn btn-primary mt-3" type="button" id="add-attribute-btn">Add
+                                <button class="btn btn-primary mt-3" type="button" id="add-attribute-btn">Agregar
                                     Attribute</button>
                             </div>
                         </div>
@@ -288,7 +288,7 @@
 
                     <div class="card mt-3" id="product-images">
                         <div class="card-header">
-                            <h3 class="card-title">Product Variants</h3>
+                            <h3 class="card-title">Variantes del producto</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
@@ -304,15 +304,15 @@
                 <div class="col-md-4">
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Approve Status</h3>
+                            <h3 class="card-title">Estado de aprobación</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <select name="approved_status" class="form-control" id="">
-                                        <option @selected($product->approved_status == 'pending') value="pending">Pending</option>
-                                        <option @selected($product->approved_status == 'approved') value="approved">Approved</option>
-                                        <option @selected($product->approved_status == 'rejected') value="rejected">Rejected</option>
+                                        <option @selected($product->approved_status == 'pending') value="pending">Pendiente</option>
+                                        <option @selected($product->approved_status == 'approved') value="approved">Aprobado</option>
+                                        <option @selected($product->approved_status == 'rejected') value="rejected">Rechazado</option>
                                     </select>
                                     <x-input-error :messages="$errors->get('status')" class="mt-2" />
                                 </div>
@@ -322,15 +322,15 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Status</h3>
+                            <h3 class="card-title">Estado</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <select name="status" class="form-control" id="">
-                                        <option @selected($product->status == 'active') value="active">Active</option>
-                                        <option @selected($product->status == 'inactive') value="inactive">Inactive</option>
-                                        <option @selected($product->status == 'draft') value="draft">Draft</option>
+                                        <option @selected($product->status == 'active') value="active">Activo</option>
+                                        <option @selected($product->status == 'inactive') value="inactive">Inactivo</option>
+                                        <option @selected($product->status == 'draft') value="draft">Borrador</option>
                                     </select>
                                     <x-input-error :messages="$errors->get('status')" class="mt-2" />
                                 </div>
@@ -340,13 +340,13 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Store</h3>
+                            <h3 class="card-title">Tienda</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <select name="store" class="form-control select2" id="">
-                                        <option value="published">Select a store</option>
+                                        <option value="published">Seleccionar una tienda</option>
                                         @foreach ($stores as $store)
                                             <option @selected($product->store_id == $store->id) value="{{ $store->id }}">
                                                 {{ $store->name }}</option>
@@ -361,7 +361,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Is Featured</h3>
+                            <h3 class="card-title">Es destacado</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
@@ -369,7 +369,7 @@
                                     <label class="form-check form-switch form-switch-3">
                                         <input class="form-check-input" @checked($product->is_featured == 1) type="checkbox"
                                             name="is_featured">
-                                        <span class="form-check-label">Enable</span>
+                                        <span class="form-check-label">Habilitar</span>
                                     </label>
                                     <x-input-error :messages="$errors->get('is_featured')" class="mt-2" />
                                 </div>
@@ -380,7 +380,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Categories</h3>
+                            <h3 class="card-title">Categorías</h3>
                         </div>
                         <div class="card-body" style="height: 400px; overflow-y: scroll;">
                             <div class="col-md-12">
@@ -448,13 +448,13 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Brand</h3>
+                            <h3 class="card-title">Marca</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <select name="brand" class="form-control select2" id="">
-                                        <option value="">Select a brand</option>
+                                        <option value="">Seleccionar una marca</option>
                                         @foreach ($brands as $brand)
                                             <option value="{{ $brand->id }}" @selected($product->brand_id == $brand->id)>
                                                 {{ $brand->name }}</option>
@@ -469,7 +469,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Label</h3>
+                            <h3 class="card-title">Etiqueta</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
@@ -477,12 +477,12 @@
                                     <label class="form-check">
                                         <input class="form-check-input" type="checkbox" name="is_hot"
                                             @checked($product->is_hot)>
-                                        <span class="form-check-label">Hot</span>
+                                        <span class="form-check-label">Popular</span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="checkbox" name="is_new"
                                             @checked($product->is_new)>
-                                        <span class="form-check-label">New</span>
+                                        <span class="form-check-label">Nuevo</span>
                                     </label>
                                 </div>
                             </div>
@@ -491,7 +491,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h3 class="card-title">Tags</h3>
+                            <h3 class="card-title">Etiquetas</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-12">
@@ -516,7 +516,7 @@
                         <div class="card-body">
                             <div class="col-md-12">
                                 <div class="mb-3 row">
-                                    <button class="btn btn-primary mt-3" type="submit">Update</button>
+                                    <button class="btn btn-primary mt-3" type="submit">Actualizar</button>
                                 </div>
                             </div>
                         </div>
@@ -605,7 +605,7 @@
     <div class="accordion-header" id="${headerId}">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#${collapseId}" aria-controls="${collapseId}" aria-expanded="false">
-            New Attribute #${count}
+            Nuevo atributo #${count}
             <div class="accordion-button-toggle">
                 <!-- Download SVG icon from http://tabler.io/icons/icon/chevron-down -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -625,13 +625,13 @@
                 @csrf
             <div class="row">
                 <div class="col-md-6">
-                    <label for="" class="form-label">Name</label>
+                    <label for="" class="form-label">Nombre</label>
                     <input type="text" class="form-control" value="" name="attribute_name">
                 </div>
                 <div class="col-md-6">
-                    <label for="" class="form-label">Type</label>
+                    <label for="" class="form-label">Tipo</label>
                     <select name="attribute_type" class="form-control main-type" id="">
-                        <option value="text">Text</option>
+                        <option value="text">Texto</option>
                         <option value="color">Color</option>
                     </select>
                 </div>
@@ -639,16 +639,16 @@
             <table class="table table-bordered section-table mt-3" style="display: none;">
                 <thead>
                     <tr>
-                        <th>Label</th>
-                        <th class="value-header">Value</th>
+                        <th>Etiqueta</th>
+                        <th class="value-header">Valor</th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
             <div class="mt-2">
-                <button class="btn btn-sm btn-primary add-row-btn" type="button">Add Row</button>
-                <button class="btn btn-sm btn-success save-btn" type="button">Save</button>
+                <button class="btn btn-sm btn-primary add-row-btn" type="button">Agregar fila</button>
+                <button class="btn btn-sm btn-success save-btn" type="button">Guardar</button>
             </div>
         </div>
         </form>
@@ -809,13 +809,13 @@
 
 
                 Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
+                    title: "¿Estás seguro?",
+                    text: "No podrás revertir esta acción.",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
+                    confirmButtonText: "Sí, eliminar"
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({

@@ -5,7 +5,7 @@
             <section class="section-paddingm flash_sell_section pb-5">
                 <div class="container">
                     <div class="section-title wow animate__animated animate__fadeIn">
-                        <h3 class="">Daily Best Sells</h3>
+                        <h3 class="">Lo más vendido del día</h3>
                         <div class="flash_countdown">
                             <div class="deals-countdown"
                                 data-countdown="{{ date('Y/m/d', strtotime($flashSale->sale_end)) }} 00:00:00"></div>

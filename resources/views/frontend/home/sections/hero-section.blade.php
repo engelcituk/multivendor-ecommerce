@@ -53,7 +53,7 @@
                                 <div class="slider-content">
                                     <h1 class="display-2 mb-15">{{ $slider->title }}</h1>
                                     <p>{{ $slider->sub_title }}</p>
-                                    <a href="{{ $slider->btn_url }}" class="btn">Shop Now <i
+                                    <a href="{{ $slider->btn_url }}" class="btn">Comprar ahora <i
                                             class="fi-rs-arrow-small-right"></i></a>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <img src="{{ asset($heroBanner?->banner_one) }}" alt="" />
                             <div class="banner-text">
                                 <h4 class="mb-30">{{ $heroBanner?->title_one }}</h4>
-                                <a href="{{ $heroBanner?->btn_url_one }}" class="btn btn-xs mb-50">Shop Now <i
+                                <a href="{{ $heroBanner?->btn_url_one }}" class="btn btn-xs mb-50">Comprar ahora <i
                                         class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             <img src="{{ asset($heroBanner?->banner_two) }}" alt="" />
                             <div class="banner-text">
                                 <h5 class="mb-20">{{ $heroBanner?->title_two }}</h5>
-                                <a href="{{ $heroBanner?->btn_url_two }}" class="btn btn-xs">Shop Now <i
+                                <a href="{{ $heroBanner?->btn_url_two }}" class="btn btn-xs">Comprar ahora <i
                                         class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>

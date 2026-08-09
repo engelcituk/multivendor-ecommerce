@@ -96,6 +96,6 @@ class OurFeatureController extends Controller implements HasMiddleware
 
         AlertService::deleted();
 
-        return response()->json(['status' => 'success', 'message' => 'Feature deleted successfully']);
+        return response()->json(['status' => 'success', 'message' => 'Característica eliminada correctamente']);
     }
 }

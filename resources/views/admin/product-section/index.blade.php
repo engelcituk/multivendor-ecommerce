@@ -4,7 +4,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Product Section</h3>
+                <h3 class="card-title">Actualizar sección de productos</h3>
                 <div class="card-actions">
                 </div>
             </div>
@@ -14,9 +14,9 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label class="form-label required">Section One Category</label>
+                                <label class="form-label required">Categoría de la sección uno</label>
                                 <select name="category_one" id="" class="form-control select2   ">
-                                    <option value="">No Category</option>
+                                    <option value="">Sin categoría</option>
                                     @foreach (getNestedCategories() as $category)
                                         <option @selected($category->id == $sectionCategory?->category_one) value="{{ $category->id }}">{{ $category->name }}</option>
                                         @if (count($category->children_nested) > 0)
@@ -38,9 +38,9 @@
 
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label class="form-label required">Section Two Category</label>
+                                <label class="form-label required">Categoría de la sección dos</label>
                                 <select name="category_two" id="" class="form-control select2">
-                                    <option value="">No Category</option>
+                                    <option value="">Sin categoría</option>
                                     @foreach (getNestedCategories() as $category)
                                         <option @selected($category->id == $sectionCategory?->category_two) value="{{ $category->id }}">{{ $category->name }}</option>
                                         @if (count($category->children_nested) > 0)
@@ -62,9 +62,9 @@
 
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label class="form-label required">Section Three Category</label>
+                                <label class="form-label required">Categoría de la sección tres</label>
                                 <select name="category_three" id="" class="form-control select2">
-                                    <option value="">No Category</option>
+                                    <option value="">Sin categoría</option>
                                     @foreach (getNestedCategories() as $category)
                                         <option @selected($category->id == $sectionCategory?->category_three) value="{{ $category->id }}">{{ $category->name }}</option>
                                         @if (count($category->children_nested) > 0)
@@ -88,7 +88,7 @@
                 </form>
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Update</button>
+                <button class="btn btn-primary mt-3" onclick="$('.coupon-form').submit()">Actualizar</button>
             </div>
         </div>
     </div>

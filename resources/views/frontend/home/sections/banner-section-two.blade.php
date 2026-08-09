@@ -6,7 +6,7 @@
                             <img src="{{ asset(data_get($ads, 'banner_four.0.image', '')) }}" alt="" />
                             <div class="banner-text">
                                 <h6 class="mb-10 mt-30">{{ data_get($ads, 'banner_four.0.title', '') }}</h6>
-                                <a href="{{ data_get($ads, 'banner_four.0.url', '') }}">View All</a>
+                                <a href="{{ data_get($ads, 'banner_four.0.url', '') }}">Ver todo</a>
                             </div>
                         </div>
                     </div>
@@ -15,7 +15,7 @@
                             <img src="{{ asset(data_get($ads, 'banner_five.0.image', '')) }}" alt="" />
                             <div class="banner-text">
                                 <h6 class="mb-10 mt-30">{{ data_get($ads, 'banner_five.0.title', '') }}</h6>
-                                <a href="{{ data_get($ads, 'banner_five.0.url', '') }}">View All</a>
+                                <a href="{{ data_get($ads, 'banner_five.0.url', '') }}">Ver todo</a>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                             <img src="{{ asset(data_get($ads, 'banner_six.0.image', '')) }}" alt="" />
                             <div class="banner-text">
                                 <h6 class="mb-10 mt-30">{{ data_get($ads, 'banner_six.0.title', '') }}</h6>
-                                <a href="{{ data_get($ads, 'banner_six.0.url', '') }}">View All</a>
+                                <a href="{{ data_get($ads, 'banner_six.0.url', '') }}">Ver todo</a>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                             <img src="{{ asset(data_get($ads, 'banner_seven.0.image', '')) }}" alt="" />
                             <div class="banner-text">
                                 <h6 class="mb-10 mt-30">{{ data_get($ads, 'banner_seven.0.title', '') }}</h6>
-                                <a href="{{ data_get($ads, 'banner_seven.0.url', '') }}">View All</a>
+                                <a href="{{ data_get($ads, 'banner_seven.0.url', '') }}">Ver todo</a>
                             </div>
                         </div>
                     </div>

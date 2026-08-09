@@ -1,23 +1,23 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Wishlist']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Lista de deseos']]" />
 
     <div class="container mb-60 mt-60">
         <div class="row">
             <div class="col-xl-12">
                 <div class="mb-50">
-                    <h1 class="heading-2 mb-10">Your Wishlist</h1>
-                    <h6 class="text-body">There are <span class="text-brand">5</span> products in this list</h6>
+                    <h1 class="heading-2 mb-10">Tu lista de deseos</h1>
+                    <h6 class="text-body">Hay <span class="text-brand">5</span> productos en esta lista</h6>
                 </div>
                 <div class="table-responsive shopping-summery">
                     <table class="table table-wishlist mb-0">
                         <thead>
                             <tr class="main-heading">
-                                <th scope="col" colspan="2">Product</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Stock Status</th>
-                                <th scope="col" class="end">Remove</th>
+                                <th scope="col" colspan="2">Producto</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Estado del inventario</th>
+                                <th scope="col" class="end">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,7 +39,7 @@
                                         <span class="font-small ml-5 text-muted"> ({{ $rating }})</span>
                                     </div>
                                 </td>
-                                <td class="price" data-title="Price">
+                                <td class="price" data-title="Precio">
                                     @php
                                         $price = $item->product?->getEffectivePriceAndStock();
                                     @endphp
@@ -47,13 +47,13 @@
                                 </td>
                                 <td class="text-center detail-info" data-title="Stock">
                                     @if($price['in_stock'])
-                                    <span class="stock-status in-stock mb-0"> In Stock </span>
+                                    <span class="stock-status in-stock mb-0"> Disponible </span>
                                     @else
-                                    <span class="stock-status in-stock mb-0"> Out of Stock </span>
+                                    <span class="stock-status in-stock mb-0"> Agotado </span>
                                     @endif
                                 </td>
 
-                                <td class="action text-center" data-title="Remove">
+                                <td class="action text-center" data-title="Eliminar">
                                     <a href="{{ route('wishlist.destroy', $item->id) }}" class="text-body delete-item"><i class="fi-rs-trash"></i></a>
                                 </td>
                             </tr>

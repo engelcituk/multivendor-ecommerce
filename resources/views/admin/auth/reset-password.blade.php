@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Reset Password</title>
+    <title>Restablecer contraseña</title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="{{ asset('assets/admin/dist/css/tabler.css') }}" rel="stylesheet" />
     <!-- END GLOBAL MANDATORY STYLES -->
@@ -37,7 +37,7 @@
             </div>
             <div class="card card-md">
                 <div class="card-body">
-                    <h2 class="h2 text-center mb-4">Reset your password</h2>
+                    <h2 class="h2 text-center mb-4">Restablece tu contraseña</h2>
 
                     <!-- Session Status -->
                     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -49,7 +49,7 @@
                         <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
                         <div class="mb-3">
-                            <label class="form-label">Email address</label>
+                            <label class="form-label">Correo electrónico</label>
                             <input type="email" name="email" value="{{ old('email', $request->email) }}"
                                 class="form-control" placeholder="your@email.com" autocomplete="off" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -59,10 +59,10 @@
 
                         <div class="mb-2">
                             <label class="form-label">
-                                Password
+                                Contraseña
                             </label>
                             <div class="input-group input-group-flat">
-                                <input type="password" name="password" class="form-control" placeholder="Your password"
+                                <input type="password" name="password" class="form-control" placeholder="Tu contraseña"
                                     autocomplete="off" />
                                 <span class="input-group-text">
                                     <a href="#" class="link-secondary" title="Show password"
@@ -82,10 +82,10 @@
 
                         <div class="mb-2">
                             <label class="form-label">
-                                Confirm Password
+                                Confirmar contraseña
                             </label>
                             <div class="input-group input-group-flat">
-                                <input type="password" name="password_confirmation" class="form-control" placeholder="Your password"
+                                <input type="password" name="password_confirmation" class="form-control" placeholder="Tu contraseña"
                                     autocomplete="off" />
                                 <span class="input-group-text">
                                     <a href="#" class="link-secondary" title="Show password"

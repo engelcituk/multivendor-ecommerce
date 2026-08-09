@@ -3,8 +3,8 @@
 @section('dashboard_contents')
     <div class="tab-pane fade active show" id="address" role="tabpanel" aria-labelledby="address-tab">
         <div class="wsus__shipping_address mb_40">
-            <h4>Billing Address
-                <a href="{{ route('address.create') }}" class="btn btn-primary">add new address</a>
+            <h4>Billing Dirección
+                <a href="{{ route('address.create') }}" class="btn btn-primary">agregar nueva dirección</a>
             </h4>
 
             <div class="row">
@@ -20,7 +20,7 @@
                             <a href="javascript:;">{{ $address->email }}</a>
                             <a href="javascript:;">{{ $address->phone }}</a>
                             @if($address->is_default == 1)
-                            <span class="text-success">(Default)</span>
+                            <span class="text-success">(Predeterminada)</span>
                             @endif
                         </div>
                         <ul class="btn_list">
@@ -38,14 +38,14 @@
                     </div>
                 </div>
                 @empty
-                    <h6 class="text-center py-5">No address found</h6>
+                    <h6 class="text-center py-5">No se encontraron direcciones</h6>
                 @endforelse
 
             </div>
 
             <div class="panel-collapse collapse login_form" id="loginform">
                 <div class="panel-body">
-                    <h4>Add New Address</h4>
+                    <h4>Agregar nueva dirección</h4>
                     <form>
                         <div class="row mt-20">
                             <div class="col-md-12">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-0">
-                            <button class="btn btn-md" name="login">Save</button>
+                            <button class="btn btn-md" name="login">Guardar</button>
                         </div>
                     </form>
                 </div>
