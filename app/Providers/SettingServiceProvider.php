@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\SettingService;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class SettingServiceProvider extends ServiceProvider
@@ -12,7 +13,7 @@ class SettingServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(SettingService::class, fn () => new SettingService());
+        $this->app->singleton(SettingService::class, fn () => new SettingService);
     }
 
     /**
@@ -20,16 +21,20 @@ class SettingServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (app()->runningInConsole() && ! $this->app->runningUnitTests()) {
+        if ($this->app->runningInConsole() && ! $this->app->runningUnitTests()) {
+            $command = request()->server('argv')[1] ?? null;
 
-        // No intentes cargar la configuración si estamos migrando
-        // o si estamos en cualquier otro comando de Artisan
-        // que no sea un test.
-        // Hacemos una excepción: si el comando es 'config:clear', DEBE ejecutarse.
-        if (request()->server('argv')[1] !== 'config:clear') {
+            if ($command !== 'config:clear') {
+                return;
+            }
+        }
+
+        // The table is unavailable during fresh migrations and before the
+        // test database has been prepared by RefreshDatabase.
+        if (! Schema::hasTable('settings')) {
             return;
         }
-    }
+
         $settings = $this->app->make(SettingService::class);
         $settings->setSettings();
     }
