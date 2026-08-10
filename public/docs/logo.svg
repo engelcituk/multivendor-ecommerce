@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Plazora</title>
+  <desc id="desc">Bolsa de compras con la letra P</desc>
+  <defs><linearGradient id="g" x1="18" y1="14" x2="108" y2="116" gradientUnits="userSpaceOnUse"><stop stop-color="#3156d3"/><stop offset="1" stop-color="#ea8917"/></linearGradient></defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#g)"/>
+  <path d="M38 47h52l-5 50H43l-5-50Z" fill="#fff" opacity=".96"/>
+  <path d="M49 50V39c0-10 7-18 16-18s16 8 16 18v11" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M55 61h13c10 0 17 6 17 15s-7 15-17 15h-5v9h-8V61Zm8 8v14h5c5 0 9-2 9-7s-4-7-9-7h-5Z" fill="#3156d3"/>
+</svg>

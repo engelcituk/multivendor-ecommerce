@@ -35,7 +35,7 @@
     <meta name="twitter:description" content="{{ $pageDescription }}">
     <meta name="twitter:image" content="{{ $socialImage }}">
 
-    <link rel="icon" href="{{ asset(config('settings.favicon')) }}">
+    @include('partials.favicon')
     <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">

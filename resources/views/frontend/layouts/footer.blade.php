@@ -79,6 +79,7 @@
                             <li><a href="{{ route('register') }}">Conviértete en Vendedor</a></li>
                             <li><a href="{{ route('contact.index') }}">Contáctanos</a></li>
                             <li><a href="{{ route('flash-sales.index') }}">Ventas Flash</a></li>
+                            <li><a href="{{ url('/docs/') }}">Documentación</a></li>
                         </ul>
                     </div>
                 </div>

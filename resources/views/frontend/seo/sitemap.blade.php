@@ -15,6 +15,11 @@
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>{{ url('/docs/') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
     @foreach ($products as $product)
         <url>
             <loc>{{ route('products.show', $product->slug) }}</loc>

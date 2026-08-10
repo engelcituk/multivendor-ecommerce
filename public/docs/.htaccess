@@ -1,0 +1,5 @@
+DirectoryIndex index.html
+
+<IfModule mod_negotiation.c>
+    Options -MultiViews -Indexes
+</IfModule>

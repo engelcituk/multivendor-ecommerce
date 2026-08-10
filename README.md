@@ -1,3 +1,22 @@
+# Plazora
+
+Marketplace multivendedor basado en Laravel 13, con tienda pública, panel de vendedor, administración, pagos, KYC, comisiones y retiros.
+
+Plazora se entrega completamente en español, exige PHP 8.5, utiliza un stack moderno y cuenta con documentación técnica, funcional y operativa propia. El entorno de producción recomendado es una VPS Ubuntu Server con Nginx administrada por el propietario; el hosting compartido no forma parte de la arquitectura objetivo.
+
+La documentación completa vive en [`docs/`](docs/) y se publica en `/docs/`.
+
+```bash
+composer install
+npm install
+php artisan key:generate
+npm run build
+```
+
+Empieza en [Inicio rápido](docs/guia/inicio-rapido.md) y revisa [SQL frente a seeders](docs/decisiones/001-sql-vs-seeders.md) antes de preparar la base.
+
+<!-- Referencias del framework conservadas a continuación. -->
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

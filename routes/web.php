@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\PaymentSettingController;
+use App\Http\Controllers\DocumentationController;
 use App\Http\Controllers\Frontend\AddressController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
@@ -30,6 +31,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
+Route::get('/docs/{path?}', DocumentationController::class)
+    ->where('path', '.*')
+    ->name('docs.index');
 
 
 /** Products routes */
