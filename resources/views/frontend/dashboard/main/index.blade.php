@@ -4,14 +4,13 @@
 <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
     <div class="card">
         <div class="card-header p-0 pb-10">
-            <h3 class="mb-0">Hello {{ user()->name }}!</h3>
+            <h3 class="mb-0">¡Hola, {{ user()->name }}!</h3>
         </div>
         <div class="card-body p-0">
             <p>
-                From your account dashboard. you can easily check &amp; view your <a href="{{ route('orders.index') }}">recent
-                    orders</a>,<br />
-                administrar tus <a href="{{ route('address.index') }}">direcciones de envío y facturación</a> y <a href="{{ route('profile') }}">cambiar tu contraseña
-                    y account details.</a>
+                Desde el panel de tu cuenta puedes consultar tus <a href="{{ route('orders.index') }}">pedidos
+                    recientes</a>, administrar tus <a href="{{ route('address.index') }}">direcciones de envío y facturación</a>
+                y <a href="{{ route('profile') }}">actualizar tu contraseña y los datos de tu cuenta</a>.
             </p>
         </div>
     </div>
@@ -27,14 +26,14 @@
             <div class="dashboard_card red">
                 <span><i class="fa-solid fa-xmark"></i></span>
                 <h3>{{ $totalCanceledOrders }}</h3>
-                <p>Cancelar pedido</p>
+                <p>Pedidos cancelados</p>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="dashboard_card orange">
                 <span><i class="fa-solid fa-spinner"></i></span>
                 <h3>{{ $totalPendingOrders }}</h3>
-                <p>Pedido pendiente</p>
+                <p>Pedidos pendientes</p>
             </div>
         </div>
         <div class="col-lg-4 col-sm-6">

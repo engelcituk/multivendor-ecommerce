@@ -5,7 +5,7 @@
         $cartSubTotal = 0;
     @endphp
 
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Carrito']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Carrito']]" />
     <div class="container mb-60 mt-55">
         <div class="row">
             <div class="col-lg-8 mb-40">
@@ -118,7 +118,7 @@
                     <form action="#" class="coupon-form">
                         @csrf
                         <div class="d-flex justify-content-between">
-                            <input class="font-medium mr-15 coupon" name="coupon_code" placeholder="Enter Your Coupon"
+                            <input class="font-medium mr-15 coupon" name="coupon_code" placeholder="Ingresa tu cupón"
                                 value="{{ session()->has('coupon') ? session('coupon')['code'] : old('coupon_code') }}">
                             @if (session()->has('coupon'))
                                 <button class="btn bg-danger remove-coupon" type="button"><i

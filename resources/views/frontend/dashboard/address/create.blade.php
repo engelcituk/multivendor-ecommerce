@@ -98,47 +98,47 @@
                     <div class="row mt-20">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" placeholder="First Name" name="first_name">
+                                <input type="text" placeholder="Nombre" name="first_name">
                                 <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" placeholder="Last Name" name="last_name">
+                                <input type="text" placeholder="Apellidos" name="last_name">
 
                                 <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" placeholder="Phone " name="phone">
+                                <input type="text" placeholder="Teléfono" name="phone">
                                 <x-input-error :messages="$errors->get('phone')" class="mt-2" />
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" placeholder="Email " name="email">
+                                <input type="text" placeholder="Correo electrónico" name="email">
                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" placeholder="City" name="city">
+                                <input type="text" placeholder="Ciudad" name="city">
                                 <x-input-error :messages="$errors->get('city')" class="mt-2" />
                             </div>
                         </div>
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" placeholder="State" name="state">
+                                <input type="text" placeholder="Estado" name="state">
                                 <x-input-error :messages="$errors->get('state')" class="mt-2" />
                             </div>
                         </div>
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" placeholder="Zip" name="zip">
+                                <input type="text" placeholder="Código postal" name="zip">
                                 <x-input-error :messages="$errors->get('zip')" class="mt-2" />
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" placeholder="Address" name="address">
+                                <input type="text" placeholder="Dirección" name="address">
                                 <x-input-error :messages="$errors->get('address')" class="mt-2" />
                             </div>
                         </div>

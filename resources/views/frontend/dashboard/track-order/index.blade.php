@@ -8,9 +8,9 @@
                 <h3 class="mb-0">Seguimiento de pedidos</h3>
             </div>
             <div class="card-body p-0 contact-from-area">
-                <p>To track your order please enter your PedidoID in the box below y
-                    press "Track" button. This was given to you on your receipt y in
-                    the confirmation email you should have received.</p>
+                <p>Para rastrear tu pedido, escribe el ID en el campo de abajo y pulsa
+                    “Rastrear”. Encontrarás este dato en tu recibo y en el correo de
+                    confirmación del pedido.</p>
                 <div class="row">
                     <div class="col-lg-8">
                         <form class="contact-form-style mt-30 mb-50" action="{{ route('track.order.index') }}"
@@ -76,7 +76,7 @@
                                                     <th class="text-center" style="width: 1%"></th>
                                                     <th>Producto</th>
                                                     <th class="text-center" style="width: 5%">Cant.</th>
-                                                    <th class="text-end" style="width: 10%">Unit ({{ $order->currency }})
+                                                    <th class="text-end" style="width: 10%">Unidad ({{ $order->currency }})
                                                     </th>
                                                     <th class="text-end" style="width: 10%">Importe ({{ $order->currency }})
                                                     </th>

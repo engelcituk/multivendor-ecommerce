@@ -9,7 +9,7 @@
 @php
     $contactSection = \App\Models\ContactSectionSetting::first();
 @endphp
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Contacto']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Contacto']]" />
     <div class="page-content pt-70">
         <div class="container">
             <div class="row">
@@ -64,16 +64,15 @@
                                         <div class="contact-from-area padding-20-row-col">
                                             <h5 class="text-brand mb-10">Formulario de contacto</h5>
                                             <h2 class="mb-10">Escríbenos</h2>
-                                            <p class="text-muted mb-30 font-sm">Your email address will not be
-                                                published.
-                                                Required fields are marked *</p>
+                                            <p class="text-muted mb-30 font-sm">Tu correo electrónico no se publicará.
+                                                Los campos obligatorios están marcados con *.</p>
                                             <form class="contact-form-style mt-30" id="contact-form" action="{{ route('contact.store') }}"
                                                 method="POST">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="input-style mb-20">
-                                                            <input name="name" placeholder="First Name" type="text" />
+                                                            <input name="name" placeholder="Nombre" type="text" />
                                                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                                         </div>
                                                     </div>
@@ -86,13 +85,13 @@
 
                                                     <div class="col-md-12">
                                                         <div class="input-style mb-20">
-                                                            <input name="subject" placeholder="Subject" type="text" />
+                                                            <input name="subject" placeholder="Asunto" type="text" />
                                                             <x-input-error :messages="$errors->get('subject')" class="mt-2" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="textarea-style mb-30">
-                                                            <textarea rows="6" name="message" placeholder="Message"></textarea>
+                                                            <textarea rows="6" name="message" placeholder="Mensaje"></textarea>
                                                             <x-input-error :messages="$errors->get('message')" class="mt-2" />
                                                         </div>
                                                         <button class="btn" type="submit">Enviar mensaje</button>

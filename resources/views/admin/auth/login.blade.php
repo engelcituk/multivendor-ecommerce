@@ -18,7 +18,7 @@
     <div class="page page-center">
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
-                <a href="javascript:;" aria-label="Tabler" class="navbar-brand navbar-brand-autodark"><img
+                <a href="javascript:;" aria-label="Plazora" class="navbar-brand navbar-brand-autodark"><img
                         src="{{ asset(config('settings.site_logo')) }}" alt="">
                 </a>
                 </div>

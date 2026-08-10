@@ -28,7 +28,7 @@
             currency: "{{ config('settings.razorpay_currency') }}",
             amount: "{{ $payableAmount }}",
             name: "{{ config('settings.site_name') }}",
-            description: "payment for the product",
+            description: "Pago de productos",
             image: "",
             theme: {
                 color: "#F37254"

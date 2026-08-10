@@ -160,7 +160,7 @@ class CategoryController extends Controller implements HasMiddleware
     {
         $category = Category::findOrFail($id);
         if ($category->children()->count() > 0) {
-            return response()->json(['error' => true, 'message' => 'Category has children and cannot be deleted'], 422);
+            return response()->json(['error' => true, 'message' => 'La categoría tiene subcategorías y no se puede eliminar'], 422);
         }
 
         $category->delete();

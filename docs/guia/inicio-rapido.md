@@ -75,3 +75,5 @@ npm run build
 ```
 
 Comprueba manualmente catálogo, autenticación, panel vendedor, panel administrativo y un checkout en modo sandbox.
+
+Para recorrer cada panel utiliza las [cuentas demo incluidas](/guia/cuentas-demo). Son exclusivas del entorno local y deben retirarse antes de producción.

@@ -27,7 +27,7 @@
                                 @csrf
                                 <div class="from-group">
                                     <label for="subject" class="form-label">Asunto</label>
-                                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject">
+                                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto">
                                     <x-input-error for="subject" class="mt-2" :messages="$errors->get('subject')" />
                                 </div>
                                 <div class="from-group mt-3">
@@ -56,7 +56,7 @@
                         <table class="order_table table m-0 mt-20">
                             <thead>
                                 <tr>
-                                    <th>No</th>
+                                    <th>N.º</th>
                                     <th>Correo electrónico</th>
                                     <th>Estado</th>
                                     <th>Fecha de creación</th>

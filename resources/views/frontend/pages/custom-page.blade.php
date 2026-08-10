@@ -5,7 +5,7 @@
 @section('canonical', route('custom-page.index', $page->slug))
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => $page->title]]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => $page->title]]" />
 
     <div class="page-content pt-70">
         <div class="container">

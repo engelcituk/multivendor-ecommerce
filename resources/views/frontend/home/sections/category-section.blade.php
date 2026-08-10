@@ -15,7 +15,7 @@
                         <a href="{{ route('products.index', ['category' => $category->slug]) }}"><img src="{{ asset($category->image) }}" alt="{{ $category->name }}" width="200" height="200" loading="lazy" decoding="async" /></a>
                     </figure>
                     <h6><a href="{{ route('products.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></h6>
-                    <span>{{ $category->products_count }} items</span>
+                    <span>{{ $category->products_count }} artículos</span>
                 </div>
                 @endforeach
             </div>

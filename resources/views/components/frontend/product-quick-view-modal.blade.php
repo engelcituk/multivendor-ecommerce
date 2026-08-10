@@ -1,6 +1,6 @@
  <div class="modal-dialog">
      <div class="modal-content">
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
          <div class="modal-body">
              <div class="row">
                  <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
@@ -18,7 +18,7 @@
                          <!-- THUMBNAILS -->
                          <div class="slider-nav-thumbnails">
                              @foreach ($product->images as $image)
-                                 <div><img src="{{ asset($image->path) }}" alt="product image" /></div>
+                                 <div><img src="{{ asset($image->path) }}" alt="Imagen de {{ $product->name }}" /></div>
                              @endforeach
                          </div>
                      </div>
@@ -33,7 +33,7 @@
                                  <div class="product-rate d-inline-block">
                                      <div class="product-rating" style="width: 90%"></div>
                                  </div>
-                                 <span class="font-small ml-5 text-muted"> (32 reviews)</span>
+                                 <span class="font-small ml-5 text-muted"> (32 reseñas)</span>
                              </div>
                          </div>
                          <div class="clearfix product-price-cover">

@@ -20,7 +20,7 @@
                     <h4 class="alert-heading">Tu verificación KYC está pendiente</h4>
                     <div class="alert-description">Espera a que el administrador apruebe tu verificación KYC.</div>
                 </div>
-                <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+                <a class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></a>
             </div>
         @endif
         @if (auth('web')->user()->kyc?->status == 'rejected' || auth('web')->user()->kyc?->status == null)
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+                <a class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></a>
             </div>
         @endif
 

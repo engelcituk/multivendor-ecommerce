@@ -77,7 +77,7 @@
                                 <div class="d-flex justify-content-between align-items-end mb-30">
                                     <div>
                                         <div class="product-category">
-                                            <span class="text-muted">Since {{ date('Y', strtotime($vendor?->store?->created_at)) }}</span>
+                                            <span class="text-muted">Desde {{ date('Y', strtotime($vendor?->store?->created_at)) }}</span>
                                         </div>
                                         <h4 class="mb-5"><a href="{{ route('vendors.show', $vendor->id) }}">{{ $vendor?->store?->name }}</a></h4>
                                         <div class="product-rate-cover">
@@ -91,14 +91,13 @@
                                         </div>
                                     </div>
                                     <div class="mb-10">
-                                        <span class="font-small total-product">{{ $vendor->products_count }} products</span>
+                                        <span class="font-small total-product">{{ $vendor->products_count }} productos</span>
                                     </div>
                                 </div>
                                 <div class="vendor-info mb-30">
                                     <ul class="contact-infor text-muted">
                                         <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-location.svg') }}" alt=""><strong>Dirección: </strong> <span>{{ $vendor?->store?->address }}</span></li>
-                                        <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}" alt=""><strong>Call
-                                                Us:</strong><span> {{ $vendor?->store?->phone }}</span></li>
+                                        <li><img src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-contact.svg') }}" alt=""><strong>Teléfono:</strong><span> {{ $vendor?->store?->phone }}</span></li>
                                     </ul>
                                 </div>
                                 <a href="{{ route('vendors.show', $vendor->id) }}" class="btn btn-xs">Visitar tienda <i class="fi-rs-arrow-small-right"></i></a>

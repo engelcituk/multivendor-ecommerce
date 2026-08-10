@@ -14,7 +14,7 @@
                 </div>
                 <div class="vendor-content">
                     <div class="product-category">
-                        <span class="text-muted">Since {{ date('Y', strtotime($store->created_at)) }}</span>
+                        <span class="text-muted">Desde {{ date('Y', strtotime($store->created_at)) }}</span>
                     </div>
                     <h1 class="mb-5 text-white">{{ $store->name }}</h1>
                     <div class="product-rate-cover mb-15">

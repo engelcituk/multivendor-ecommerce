@@ -81,12 +81,8 @@
             <div class="modal-dialog">
                 <div class="modal-content rounded-0">
                     <div class="modal_payment_popup">
-                        <p>From sleek racing flats to burly hiking boots, there are plenty of options to keep your
-                            feet
-                            comfortable during any activity. Read on to learn how to determine the right athletic
-                            shoes
-                            to
-                            wear for whatever athletic pursuit you're embarking on.</p>
+                        <p>Revisa la información de tu compra y confirma que los productos, el envío y el importe
+                            sean correctos antes de continuar con el pago.</p>
 
                         <ul class="modal_iteam">
                             <li>Contrario a la creencia popular, Lorem Ipsum no es un texto aleatorio.</li>

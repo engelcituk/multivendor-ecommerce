@@ -74,7 +74,7 @@
                                         <div class="product-rate d-inline-block">
                                             <div class="product-rating" style="width: {{ ratingPercent($product->reviews_avg_rating) }}%"></div>
                                         </div>
-                                        <span class="font-small ml-5 text-muted"> ({{ $product->reviews_count }} reviews)</span>
+                                        <span class="font-small ml-5 text-muted"> ({{ $product->reviews_count }} reseñas)</span>
                                     </div>
                                 </div>
                                 <div class="clearfix product-price-cover">
@@ -227,7 +227,7 @@
                                                 <div class="product-rate d-inline-block">
                                                     <div class="product-rating" style="width: 90%"></div>
                                                 </div>
-                                                <span class="font-small ml-5 text-muted"> (32 reviews)</span>
+                                                <span class="font-small ml-5 text-muted"> (32 reseñas)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -270,7 +270,7 @@
                                                             <div class="desc">
                                                                 <div class="d-flex justify-content-between mb-10">
                                                                     <div class="d-flex align-items-center">
-                                                                        <span class="font-xs text-muted"> {{ date('F d Y', strtotime($review->created_at)) }}</span>
+                                                                        <span class="font-xs text-muted"> {{ $review->created_at->translatedFormat('d \d\e F \d\e Y') }}</span>
                                                                     </div>
                                                                     <div class="product-rate d-inline-block">
                                                                         <div class="product-rating" style="width: {{ $review->rating * 2 }}0%">
@@ -334,7 +334,7 @@
                                                         <div class="col-12">
                                                             <div class="form-group">
                                                                 <textarea class="form-control w-100" name="review" id="comment" cols="30" rows="9"
-                                                                    placeholder="Write Comment"></textarea>
+                                                                        placeholder="Escribe tu comentario"></textarea>
                                                                 <x-input-error :messages="$errors->get('review')" class="mt-2" />
                                                             </div>
                                                         </div>
@@ -488,7 +488,7 @@
                 } else if (errors?.error) {
                     Object.values(errors.errors).forEach((err) => notyf.error(err[0]));
                 } else {
-                    notyf.error('Something went wrong');
+                    notyf.error('Ocurrió un error. Inténtalo de nuevo.');
                 }
             }
 

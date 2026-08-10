@@ -141,7 +141,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            Overview
+                            Resumen
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -298,7 +298,7 @@
                                 <div class="mb-3">
                                     <div class="mb-3">
                                         <input type="text" class="form-control" id="category-search"
-                                            placeholder="Search Category">
+                                            placeholder="Buscar categoría">
 
                                     </div>
 

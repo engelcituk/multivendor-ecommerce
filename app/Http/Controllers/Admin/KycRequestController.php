@@ -63,14 +63,14 @@ class KycRequestController extends Controller implements HasMiddleware
         if ($kyc_request->status == 'approved') {
             MailService::send(
                 to: $kyc_request->user->email,
-                subject: 'KYC Application Has Been Approved',
-                body: 'Congratulations! Your KYC Application Has Been Approved.'
+                subject: 'Tu verificación KYC fue aprobada',
+                body: '¡Felicidades! Tu solicitud de verificación KYC fue aprobada.'
             );
         } elseif ($kyc_request->status == 'rejected') {
             MailService::send(
                 to: $kyc_request->user->email,
-                subject: 'KYC Application Has Been Rejected',
-                body: 'Sorry! Your KYC Application Has Been Rejected.'
+                subject: 'Tu verificación KYC fue rechazada',
+                body: 'Lo sentimos. Tu solicitud de verificación KYC fue rechazada.'
             );
         }
 

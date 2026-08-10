@@ -36,6 +36,7 @@ export default withMermaid({
         items: [
           { text: 'Introducción', link: '/guia/introduccion' },
           { text: 'Entrega y versionado', link: '/guia/entrega-y-versionado' },
+          { text: 'Cuentas demo', link: '/guia/cuentas-demo' },
           { text: 'Inicio rápido', link: '/guia/inicio-rapido' },
           { text: 'Instalación local', link: '/guia/instalacion-local' },
           { text: 'Configuración', link: '/guia/configuracion' }

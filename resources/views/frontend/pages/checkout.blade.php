@@ -60,8 +60,8 @@
                                             name="checkbox" id="differentaddress">
                                         <label class="form-check-label label_info" data-bs-toggle="collapse"
                                             data-target="#collapseAddress" href="#collapseAddress"
-                                            aria-controls="collapseAddress" for="differentaddress"><span>Ship to a
-                                                different address?</span></label>
+                                            aria-controls="collapseAddress" for="differentaddress"><span>¿Enviar a una
+                                                dirección diferente?</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -149,11 +149,11 @@
                         </div>
                         <hr>
                         {{-- <form method="post" class="apply-coupon mb-10">
-                                <input type="text" placeholder="Enter Coupon Code...">
+                                <input type="text" placeholder="Ingresa el código del cupón">
                                 <button class="btn  btn-md" name="login">Aplicar cupón</button>
                             </form> --}}
                         {{-- <div class="show_coupon">
-                                <p>Coupon code
+                                <p>Código del cupón
                                     <span>#154HGJ</span>
                                     <a href="#"><i class="fi fi-rs-trash"></i></a>
                                 </p>

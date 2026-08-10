@@ -25,7 +25,7 @@
     <div class="page page-center">
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
-                <!-- BEGIN NAVBAR LOGO --><a href="." aria-label="Tabler"
+                <!-- BEGIN NAVBAR LOGO --><a href="." aria-label="Plazora"
                     class="navbar-brand navbar-brand-autodark"><svg xmlns="http://www.w3.org/2000/svg" width="110"
                         height="32" viewBox="0 0 232 68" class="navbar-brand-image">
                         <path
@@ -52,7 +52,7 @@
                         <div class="mb-3">
                             <label class="form-label">Correo electrónico</label>
                             <input type="email" name="email" value="{{ old('email', $request->email) }}"
-                                class="form-control" placeholder="your@email.com" autocomplete="off" />
+                                class="form-control" placeholder="correo@ejemplo.com" autocomplete="off" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
                         </div>
@@ -66,7 +66,7 @@
                                 <input type="password" name="password" class="form-control" placeholder="Tu contraseña"
                                     autocomplete="off" />
                                 <span class="input-group-text">
-                                    <a href="#" class="link-secondary" title="Show password"
+                                    <a href="#" class="link-secondary" title="Mostrar contraseña"
                                         data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler.io/icons/icon/eye -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -89,7 +89,7 @@
                                 <input type="password" name="password_confirmation" class="form-control" placeholder="Tu contraseña"
                                     autocomplete="off" />
                                 <span class="input-group-text">
-                                    <a href="#" class="link-secondary" title="Show password"
+                                    <a href="#" class="link-secondary" title="Mostrar contraseña"
                                         data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler.io/icons/icon/eye -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

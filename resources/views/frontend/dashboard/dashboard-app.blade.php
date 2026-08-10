@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Panel']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Panel']]" />
     <div class="page-content pt-70 pb-60">
         <div class="container">
             <div class="row">
@@ -37,18 +37,17 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link {{ setActive(['wishlist.index']) }}" href="{{ route('wishlist.index') }}">
-                                            <i class="fi fi-rs-star mr-10"></i> Wishlist
+                                            <i class="fi fi-rs-star mr-10"></i> Lista de deseos
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link {{ setActive(['address.*']) }}"
-                                            href="{{ route('address.index') }}"><i class="fi-rs-marker mr-10"></i>My
-                                            Dirección</a>
+                                            href="{{ route('address.index') }}"><i class="fi-rs-marker mr-10"></i>Mis
+                                            direcciones</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link {{ setActive(['profile']) }}" href="{{ route('profile') }}"><i
-                                                class="fi-rs-user mr-10"></i>Account
-                                            details</a>
+                                                class="fi-rs-user mr-10"></i>Datos de la cuenta</a>
                                     </li>
 
                                     <li class="nav-item">

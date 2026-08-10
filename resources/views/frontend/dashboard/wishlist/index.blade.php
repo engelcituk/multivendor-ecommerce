@@ -48,7 +48,7 @@
                                  <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
-                             <td class="text-right" data-title="Cart">
+                             <td class="text-right" data-title="Carrito">
                                  <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
                              <td class="action text-center" data-title="Eliminar">
@@ -82,7 +82,7 @@
                                  <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
-                             <td class="text-right" data-title="Cart">
+                             <td class="text-right" data-title="Carrito">
                                  <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
                              <td class="action text-center" data-title="Eliminar">
@@ -116,7 +116,7 @@
                                  <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
-                             <td class="text-right" data-title="Cart">
+                             <td class="text-right" data-title="Carrito">
                                  <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
                              <td class="action text-center" data-title="Eliminar">
@@ -147,12 +147,11 @@
                                  <h3 class="text-brand">$3.21</h3>
                              </td>
                              <td class="text-center detail-info" data-title="Stock">
-                                 <span class="stock-status out-stock mb-0"> Out Inventario
+                                 <span class="stock-status out-stock mb-0"> Agotado
                                  </span>
                              </td>
-                             <td class="text-right" data-title="Cart">
-                                 <button class="btn btn-sm btn-secondary">Contact
-                                     Us</button>
+                             <td class="text-right" data-title="Carrito">
+                                 <button class="btn btn-sm btn-secondary">Contáctanos</button>
                              </td>
                              <td class="action text-center" data-title="Eliminar">
                                  <a href="#" class="text-body"><i class="fi-rs-trash"></i></a>
@@ -185,7 +184,7 @@
                                  <span class="stock-status in-stock mb-0"> Disponible
                                  </span>
                              </td>
-                             <td class="text-right" data-title="Cart">
+                             <td class="text-right" data-title="Carrito">
                                  <button class="btn btn-sm">Agregar al carrito</button>
                              </td>
                              <td class="action text-center" data-title="Eliminar">

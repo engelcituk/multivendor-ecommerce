@@ -30,7 +30,7 @@
                                     <td>{{ $kycRequest->full_name }}</td>
                                     <td class="text-secondary">{{ $kycRequest->user->email }}</td>
                                     <td class="text-secondary">{{ $kycRequest->date_of_birth }}</td>
-                                    <td class="text-secondary">{{ $kycRequest->gender }}</td>
+                                    <td class="text-secondary">{{ $kycRequest->gender === 'male' ? 'Hombre' : 'Mujer' }}</td>
                                     @if ($kycRequest->status == 'pending')
                                         <td class="text-secondary"><span class="badge bg-warning-lt">Pendiente</span></td>
                                     @elseif($kycRequest->status == 'approved')

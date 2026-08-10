@@ -31,7 +31,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $coupon->code }}</td>
                                     <td class="text-secondary">{{ $coupon->value }}</td>
-                                    <td class="text-info">{{ $coupon->is_percent ? '%' : 'Fixed' }}</td>
+                                    <td class="text-info">{{ $coupon->is_percent ? 'Porcentaje' : 'Importe fijo' }}</td>
                                     <td class="text-secondary">{{ $coupon->used }}</td>
                                     <td class="text-secondary">{{ $coupon->start_date }}</td>
                                     <td class="text-secondary">{{ $coupon->end_date }}</td>

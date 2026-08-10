@@ -157,7 +157,7 @@
                                             <i class="ti ti-user"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalPendingKycRequests }} Kyc's</div>
+                                        <div class="font-weight-medium">{{ $totalPendingKycRequests }} solicitudes KYC</div>
                                         <div class="text-secondary">Solicitudes pendientes</div>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@
                                         </span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalApprovedKycRequests }} Kyc's</div>
+                                        <div class="font-weight-medium">{{ $totalApprovedKycRequests }} solicitudes KYC</div>
                                         <div class="text-secondary">Solicitudes aprobadas</div>
                                     </div>
                                 </div>
@@ -191,7 +191,7 @@
                                             <i class="ti ti-user-x"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalRejectedKycRequests }} Kyc's</div>
+                                        <div class="font-weight-medium">{{ $totalRejectedKycRequests }} solicitudes KYC</div>
                                         <div class="text-secondary">Solicitudes rechazadas</div>
                                     </div>
                                 </div>
@@ -208,7 +208,7 @@
                                             <i class="ti ti-user"></i></span>
                                     </div>
                                     <div class="col">
-                                        <div class="font-weight-medium">{{ $totalKycRequests }} Kyc's</div>
+                                        <div class="font-weight-medium">{{ $totalKycRequests }} solicitudes KYC</div>
                                         <div class="text-secondary">Total de solicitudes</div>
                                     </div>
                                 </div>
@@ -372,7 +372,7 @@
                 type: 'line',
                 data: @json($amountData)
             }, {
-                name: "Commission",
+                name: "Comisión",
                 type: 'line',
                 data: @json($commissionData)
             }],

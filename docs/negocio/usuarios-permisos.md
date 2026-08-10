@@ -45,3 +45,5 @@ El seeder define permisos para KYC, roles, usuarios de rol, categorías, etiquet
 - Mantén el guard correcto al crear roles o permisos.
 - Audita cambios sensibles y accesos a documentos KYC.
 - No documentes ni publiques contraseñas creadas por seeders; rótalas al instalar.
+
+La entrega local constituye una excepción controlada: sus [cuentas demo](/guia/cuentas-demo) son públicas, están identificadas como no productivas y deben eliminarse o rotarse antes del despliegue.

@@ -210,7 +210,7 @@
                 categories.forEach(function(cat) {
                     html += `<li class="dd-item custom-cat-item" data-id="${cat.id}">
                                     <div class="dd-item-row custom-cat-row">
-                                        <div class="dd-handle custom-cat-handle" title="Drag to reorder">
+                                        <div class="dd-handle custom-cat-handle" title="Arrastra para reordenar">
                                             <i class="ti ti-grip-horizontal"></i>
                                         </div>
                                         <i class="ti ti-folder cat-folder-icon"></i>
@@ -308,7 +308,7 @@
             // load parent dropdown
             function loadParentDropdown(selectedId, excludeId) {
                 $.get("{{ route('admin.categories.nested') }}", function(data) {
-                    let options = '<option value="">None (Root)</option>';
+                    let options = '<option value="">Ninguna (raíz)</option>';
 
                     function addOptions(cats, prefix, depth) {
                         cats.forEach(function(cat) {

@@ -50,15 +50,15 @@ class StoreWithdrawRequestController extends Controller
         }
 
         if ($wallet < $requestedAmount) {
-            AlertService::error('Insufficient balance.');
+            AlertService::error('Saldo insuficiente.');
             return back();
         }
         if ($requestedAmount < $method->withdrawMethod->minimum_amount) {
-            AlertService::error('Minimum withdraw amount is ' . $method->withdrawMethod->minimum_amount);
+            AlertService::error('El importe mínimo de retiro es ' . $method->withdrawMethod->minimum_amount);
             return back();
         }
         if ($requestedAmount > $method->withdrawMethod->maximum_amount) {
-            AlertService::error('Maximum withdraw amount is ' . $method->withdrawMethod->maximum_amount);
+            AlertService::error('El importe máximo de retiro es ' . $method->withdrawMethod->maximum_amount);
             return back();
         }
 

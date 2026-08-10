@@ -12,7 +12,7 @@
                         <table class="order_table table m-0 mt-20">
                             <thead>
                                 <tr>
-                                    <th>No</th>
+                                    <th>N.º</th>
                                     <th style="width: 300px">Producto</th>
                                     <th>Calificación</th>
                                     <th>Reseña</th>

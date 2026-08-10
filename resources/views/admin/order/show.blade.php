@@ -12,7 +12,7 @@
             <div class="card-body p-0">
                 <div class="page-wrapper">
                     <!-- BEGIN PAGE HEADER -->
-                    <div class="page-header d-print-none" aria-label="Page header">
+                    <div class="page-header d-print-none" aria-label="Encabezado de página">
                         <div class="container-xl">
                             <div class="row g-2 align-items-center">
                                 <div class="col">
@@ -33,7 +33,7 @@
                                                 d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z">
                                             </path>
                                         </svg>
-                                        Print Factura
+                                        Imprimir factura
                                     </button>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                             </address>
                                         </div>
                                         <div class="col-12 my-5">
-                                            <h1>Invoice #{{ $order->id }}</h1>
+                                            <h1>Factura #{{ $order->id }}</h1>
                                             <div class="d-flex gap-2 flex-column">
                                                 <span>ID de transacción: {{ $order->transaction_id }}</span>
                                                 <span>Método de pago: {{ $order->payment_method }}</span>
@@ -102,7 +102,7 @@
                                                 <th class="text-center" style="width: 1%"></th>
                                                 <th>Producto</th>
                                                 <th class="text-center" style="width: 5%">Cant.</th>
-                                                <th class="text-end" style="width: 10%">Unit ({{ $order->currency }})</th>
+                                                <th class="text-end" style="width: 10%">Unidad ({{ $order->currency }})</th>
                                                 <th class="text-end" style="width: 10%">Importe ({{ $order->currency }})
                                                 </th>
                                             </tr>
@@ -149,8 +149,8 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <p class="text-secondary text-center mt-5">Thank you very much for doing business with
-                                        us. We look forward to working with you again!</p>
+                                    <p class="text-secondary text-center mt-5">Gracias por comprar en Plazora.
+                                        ¡Esperamos verte de nuevo!</p>
                                 </div>
                             </div>
                         </div>

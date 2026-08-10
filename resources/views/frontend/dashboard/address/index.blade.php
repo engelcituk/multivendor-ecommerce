@@ -50,22 +50,22 @@
                         <div class="row mt-20">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Name ">
+                                    <input type="text" placeholder="Nombre">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="email" placeholder="Email ">
+                                    <input type="email" placeholder="Correo electrónico">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Phone ">
+                                    <input type="text" placeholder="Teléfono">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea placeholder="Address" rows="3"></textarea>
+                                    <textarea placeholder="Dirección" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>

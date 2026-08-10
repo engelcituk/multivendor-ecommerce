@@ -8,7 +8,7 @@
               <!-- END NAVBAR TOGGLER -->
               <!-- BEGIN NAVBAR LOGO -->
               <div class="navbar-brand navbar-brand-autodark">
-                  <a href="{{ route('vendor.dashboard') }}" aria-label="Tabler"><img
+                  <a href="{{ route('vendor.dashboard') }}" aria-label="Plazora"><img
                           style="width: 100px; width: 100px; background: #fafafa; padding: 10px; border-radius: 5px;"
                           src="{{ asset(config('settings.site_logo')) }}" alt=""></a>
               </div>

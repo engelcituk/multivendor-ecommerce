@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Oferta relámpago']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Oferta relámpago']]" />
     <div class="container mt-70">
         <div class="section-title wow animate__ animate__fadeIn animated"
             style="visibility: visible; animation-name: fadeIn;">

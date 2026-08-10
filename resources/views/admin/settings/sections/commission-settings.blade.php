@@ -9,7 +9,7 @@
             @method('PUT')
             <div class="row g-3">
                 <div class="col-md-12">
-                    <div class="form-label required">Comisión administrativa por Order (%)</div>
+                    <div class="form-label required">Comisión administrativa por pedido (%)</div>
                     <input type="text" class="form-control " value="{{ config('settings.admin_commission') }}" name="admin_commission">
                     <x-input-error :messages="$errors->get('admin_commission')" class="mt-2" />
                 </div>

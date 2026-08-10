@@ -25,7 +25,7 @@
     <div class="page page-center">
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
-                <a href="javascript:;" aria-label="Tabler" class="navbar-brand navbar-brand-autodark"><img
+                <a href="javascript:;" aria-label="Plazora" class="navbar-brand navbar-brand-autodark"><img
                         src="{{ asset(config('settings.site_logo')) }}" alt="">
                 </a>
             </div>
@@ -43,7 +43,7 @@
                         <div class="mb-3">
                             <label class="form-label">Correo electrónico</label>
                             <input type="email" name="email" :value="old('email')" class="form-control"
-                                placeholder="your@email.com" autocomplete="off" />
+                                placeholder="correo@ejemplo.com" autocomplete="off" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
                         </div>

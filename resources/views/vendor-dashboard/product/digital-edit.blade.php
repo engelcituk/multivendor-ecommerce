@@ -197,7 +197,7 @@
                         <div class="disabled-placeholder" style="{{ count($product->attributes) ? '' : 'display: none' }}">
                         </div>
                         <div class="card-header">
-                            Overview
+                            Resumen
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -415,7 +415,7 @@
                                 <div class="mb-3">
                                     <div class="mb-3">
                                         <input type="text" class="form-control" id="category-search"
-                                            placeholder="Search Category">
+                                            placeholder="Buscar categoría">
 
                                     </div>
 

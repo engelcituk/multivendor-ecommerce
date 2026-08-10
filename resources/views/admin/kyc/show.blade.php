@@ -33,7 +33,7 @@
 
                             <tr>
                                 <td>Género</td>
-                                <td>{{ $kyc_request->gender }}</td>
+                                <td>{{ $kyc_request->gender === 'male' ? 'Hombre' : 'Mujer' }}</td>
                             </tr>
 
                             <tr>
@@ -43,7 +43,12 @@
 
                             <tr>
                                 <td>Tipo de documento</td>
-                                <td>{{ $kyc_request->document_type }}</td>
+                                <td>{{ match ($kyc_request->document_type) {
+                                    'id_card' => 'Identificación oficial',
+                                    'passport' => 'Pasaporte',
+                                    'driving_license' => 'Licencia de conducir',
+                                    default => $kyc_request->document_type,
+                                } }}</td>
                             </tr>
 
                             <tr>

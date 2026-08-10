@@ -2,7 +2,7 @@
 
 @section('contents')
 
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Pago completado']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Pago cancelado']]" />
     <div class="container mb-60 mt-55">
         <div class="text-center mt-100 mb-100">
             <i class="fa-solid fa-circle-xmark fa-10x text-danger"></i>
@@ -12,4 +12,3 @@
         </div>
     </div>
 @endsection
-

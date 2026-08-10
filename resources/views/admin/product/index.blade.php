@@ -54,8 +54,9 @@
                                             </a>
                                             @endif
                                         </div>
-                                        <small
-                                            class="text-muted text-sm text-capitalize">{{ $product->product_type }}</small>
+                                        <small class="text-muted text-sm">
+                                            {{ $product->product_type === 'physical' ? 'Físico' : 'Digital' }}
+                                        </small>
                                     </td>
                                     <td>
                                         @if ($product->primaryVariant)
