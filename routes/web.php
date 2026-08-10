@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ProductPageController;
 use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\SitemapController;
 use App\Http\Controllers\Frontend\StoreController;
 use App\Http\Controllers\Frontend\StoreWithdrawMethodController;
 use App\Http\Controllers\Frontend\StoreWithdrawRequestController;
@@ -28,6 +29,7 @@ use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
 
 
 /** Products routes */

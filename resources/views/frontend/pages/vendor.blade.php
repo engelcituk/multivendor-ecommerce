@@ -1,7 +1,12 @@
 @extends('frontend.layouts.app')
 
+@section('title', 'Vendedores | ' . config('settings.site_name'))
+@section('meta_description', 'Conoce las tiendas y vendedores disponibles en ' . config('settings.site_name') . '.')
+@section('canonical', route('vendors.index'))
+
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Vendedores']]" />
+    <h1 class="visually-hidden">Vendedores</h1>
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Vendedores']]" />
 
 <div class="page-content pt-70">
             <div class="container">

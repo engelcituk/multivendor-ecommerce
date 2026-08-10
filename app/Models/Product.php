@@ -79,7 +79,7 @@ class Product extends Model
 
     function getEffectivePriceAndStock(): array
     {
-        $getPriceData = function ($id = null, $price, $special_price, $in_stock, $qty) {
+        $getPriceData = function ($id = null, $price = 0, $special_price = null, $in_stock = false, $qty = null) {
             return [
                 'id' => $id,
                 'price' => $special_price > 0 ? $special_price : $price,
@@ -89,8 +89,12 @@ class Product extends Model
             ];
         };
 
-        if ($this->variants()->exists()) {
-            $variants = $this->variants()->where('in_stock', 1)->orderBy('is_default', 'asc')->get();
+        $allVariants = $this->relationLoaded('variants')
+            ? $this->variants->sortBy('is_default')
+            : $this->variants()->orderBy('is_default')->get();
+
+        if ($allVariants->isNotEmpty()) {
+            $variants = $allVariants->where('in_stock', 1);
 
             foreach ($variants as $variant) {
                 if ($variant->manage_stock) {
@@ -130,7 +134,7 @@ class Product extends Model
 
     function getVariantOrProductPriceAndStock(?int $variantId = null): array
     {
-        $getPriceData = function ($id = null, $price, $special_price, $in_stock, $qty) {
+        $getPriceData = function ($id = null, $price = 0, $special_price = null, $in_stock = false, $qty = null) {
             return [
                 'id' => $id,
                 'price' => $special_price > 0 ? $special_price : $price,
@@ -141,7 +145,9 @@ class Product extends Model
         };
 
         if ($variantId) {
-            $variant = $this->variants()->where('id', $variantId)->first();
+            $variant = $this->relationLoaded('variants')
+                ? $this->variants->firstWhere('id', $variantId)
+                : $this->variants()->where('id', $variantId)->first();
 
             if ($variant) {
                 if ($variant->manage_stock && $variant->in_stock) {

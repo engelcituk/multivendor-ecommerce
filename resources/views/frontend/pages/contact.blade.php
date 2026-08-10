@@ -1,6 +1,11 @@
 @extends('frontend.layouts.app')
 
+@section('title', 'Contacto | ' . config('settings.site_name'))
+@section('meta_description', 'Ponte en contacto con el equipo de ' . config('settings.site_name') . ' para recibir atención y soporte.')
+@section('canonical', route('contact.index'))
+
 @section('contents')
+    <h1 class="visually-hidden">Contacto</h1>
 @php
     $contactSection = \App\Models\ContactSectionSetting::first();
 @endphp

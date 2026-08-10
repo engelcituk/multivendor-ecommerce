@@ -61,7 +61,7 @@
                                               </div>
                                               <div>
                                                   <span class="font-small text-muted">Por <a
-                                                          href="vendor-details-1.html">ShopX</a></span>
+                                                          href="vendor-details-1.html">Plazora</a></span>
                                               </div>
                                               <div class="product-card-bottom">
                                                   <div class="product-price">

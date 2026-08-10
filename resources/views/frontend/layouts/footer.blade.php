@@ -1,10 +1,3 @@
-@php
-    $ourFeatures = App\Models\OurFeature::whereStatus(true)->get();
-    $socialLinks = App\Models\SocialLink::whereStatus(true)->get();
-    $pages = App\Models\CustomPage::whereIsActive(true)->latest()->take(5)->get();
-    $featuredCategories = App\Models\Category::withCount('products')->whereIsFeatured(true)->latest()->take(5)->get();
-@endphp
-
 <footer class="main pt-10">
     <section class="newsletter mb-15 wow animate__animated animate__fadeIn">
         <div class=" container">
@@ -15,11 +8,12 @@
                             <div class=" newsletter-content">
                                 <h2 class="mb-20">Mantente a la Moda en Casa Compra <br> los Últimos Estilos Online</h2>
                                 <p class="mb-45">Comienza tus Compras Diarias con <span
-                                        class="text-brand">ShopX</span>
+                                        class="text-brand">Plazora</span>
                                 </p>
-                                <form class="form-subcriber d-flex">
+                                <form class="form-subcriber d-flex" aria-label="Suscripción al boletín">
                                     @csrf
-                                    <input type="email" placeholder="Tu dirección de correo electrónico" name="email" />
+                                    <label class="visually-hidden" for="newsletter-email">Correo electrónico</label>
+                                    <input id="newsletter-email" type="email" placeholder="Tu dirección de correo electrónico" name="email" autocomplete="email" required />
                                     <button class="btn" type="submit">Suscribirse</button>
                                 </form>
                             </div>
@@ -37,7 +31,7 @@
                     <div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
                         data-wow-delay="0">
                         <div class="banner-icon">
-                            <img src="{{ asset($feature->icon) }}" alt="" />
+                            <img src="{{ asset($feature->icon) }}" alt="" aria-hidden="true" width="60" height="60" loading="lazy" decoding="async" />
                         </div>
                         <div class="banner-text">
                             <h3 class="icon-box-title">{{ $feature->title }}</h3>
@@ -56,8 +50,8 @@
                     <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0 wow animate__animated animate__fadeInUp"
                         data-wow-delay="0">
                         <div class="logo mb-30">
-                            <a href="{{ url('/') }}" class="mb-15"><img src="{{ asset(config('settings.site_logo')) }}"
-                                    alt="logo" /></a>
+                            <a href="{{ url('/') }}" class="mb-15" aria-label="Ir al inicio"><img src="{{ asset(config('settings.site_logo')) }}"
+                                    alt="{{ config('settings.site_name') }}" width="180" height="60" loading="lazy" decoding="async" /></a>
                             <p class="font-lg text-heading">{{ config('settings.site_short_description') }}</p>
                         </div>
                         <ul class="contact-infor">
@@ -105,8 +99,8 @@
                         data-wow-delay=".3s">
                         <h4 class="widget-title">Categorías Populares</h4>
                         <ul class="footer-list mb-sm-5 mb-md-0">
-                            @foreach($featuredCategories as $category)
-                            <li><a href="{{ route('products.index', $category->slug ?? '') }}">{{ $category->name }}</a></li>
+                            @foreach($footerFeaturedCategories as $category)
+                            <li><a href="{{ route('products.index', ['category' => $category->slug ?? '']) }}">{{ $category->name }}</a></li>
                             @endforeach
 
                         </ul>
@@ -133,8 +127,8 @@
                 <div class="mobile-social-icon">
                     <h6>Síguenos</h6>
                     @foreach($socialLinks as $link)
-                    <a href="{{ $link->url }}"><img src="{{ asset($link->icon) }}"
-                            alt="" /></a>
+                    <a href="{{ $link->url }}" aria-label="Visitar nuestra red social" rel="noopener noreferrer"><img src="{{ asset($link->icon) }}"
+                            alt="" aria-hidden="true" width="24" height="24" loading="lazy" decoding="async" /></a>
                     @endforeach
 
                 </div>

@@ -4,16 +4,21 @@
         duration: 3000
     });
 
+    function announce(message) {
+        $('#ui-status').text(message || '');
+    }
 
         $(function() {
 
             function handleErrors(errors) {
                 if (errors?.message) {
                     notyf.error(errors.message);
-                } else if (errors?.error) {
+                    announce(errors.message);
+                } else if (errors?.errors) {
                     Object.values(errors.errors).forEach((err) => notyf.error(err[0]));
                 } else {
-                    notyf.error('Something went wrong');
+                    notyf.error('Ocurrió un error. Inténtalo de nuevo.');
+                    announce('Ocurrió un error. Inténtalo de nuevo.');
                 }
             }
 
@@ -25,6 +30,7 @@
                 const quantity = $('.qty-val').val();
                 const variantId = $(this).attr('data-variant');
                 const modal = $(this).data('modal');
+                const originalContent = self.html();
 
 
                 $.ajax({
@@ -38,8 +44,9 @@
                         modal: modal
                     },
                     beforeSend: function() {
+                        self.attr({ 'aria-busy': 'true', 'aria-disabled': 'true' });
                         self.html(
-                            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
+                            '<span class="spinner-border spinner-border-sm" aria-hidden="true"></span><span class="visually-hidden">Agregando al carrito</span>'
                         );
                     },
                     success: function(response) {
@@ -53,11 +60,12 @@
                         if (response.status == 'success' && !response.show_modal) {
                             $('.cart-count').html(response.cart_count);
                             notyf.success(response.message);
+                            announce(response.message);
                         }
                     },
                     error: (errors) => handleErrors(errors.responseJSON),
                     complete: function() {
-                        self.html('<i class="fi-rs-shopping-cart mr-5"></i>Add to cart');
+                        self.removeAttr('aria-busy aria-disabled').html(originalContent);
                     }
                 })
             })
@@ -116,7 +124,6 @@
                 //  })
 
                 $(document).on('click', '.attribute-badge', function() {
-                    console.log('working');
                     const $attributeGroup = $(this).closest('.attribute-group');
 
                     selectedValues = new Set(
@@ -146,7 +153,7 @@
                         if (matchingVariant.quantity > 0 && matchingVariant.manage_stock == 1) {
                             $('.stock-qty').text(matchingVariant.quantity);
                         } else if (matchingVariant.manage_stock == 0 && matchingVariant.in_stock == 1) {
-                            $('.stock-qty').text('Unlimited');
+                            $('.stock-qty').text('Ilimitado');
                         } else {
                             $('.stock-qty').text('0');
                         }
@@ -196,6 +203,7 @@
             e.preventDefault();
             let productId = $(this).data('id');
             let element = $(this);
+            const originalLabel = element.attr('aria-label');
 
             $.ajax({
                 url: "{{ route('wishlist.store') }}",
@@ -205,9 +213,9 @@
                     product_id: productId
                 },
                 beforeSend: function() {
-                    // Optionally, show a loading indicator
+                    element.attr({ 'aria-busy': 'true', 'aria-disabled': 'true' });
                     element.html(
-                        `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`
+                        `<span class="spinner-border spinner-border-sm" aria-hidden="true"></span><span class="visually-hidden">Actualizando favoritos</span>`
                     );
                 },
                 success: function(response) {
@@ -218,10 +226,11 @@
                     }
 
                     notyf.success(response.message);
+                    announce(response.message);
+                    element.removeAttr('aria-busy aria-disabled').attr('aria-label', originalLabel);
                 },
                 error: function(xhr, status, error) {
                     let errors = xhr.responseJSON;
-                    console.log(errors);
                     if (errors) {
                         Object.values(errors).forEach(function(message) {
 
@@ -231,6 +240,7 @@
                         notyf.error("Ocurrió un error. Inténtalo de nuevo.");
                     }
                     element.html(`<i class="fi fi-rs-heart"></i>`);
+                    element.removeAttr('aria-busy aria-disabled').attr('aria-label', originalLabel);
                 }
             })
         })
@@ -239,18 +249,22 @@
         // subscribe form
         $('.form-subcriber').on('submit', function(e) {
             e.preventDefault();
-            let data = $(this).serialize();
+            const form = $(this);
+            const button = form.find('button[type="submit"]');
+            const originalText = button.text();
+            let data = form.serialize();
 
             $.ajax({
                 url: "{{ route('newsletter.subscribe') }}",
                 method: "POST",
                 data: data,
                 beforeSend: function() {
-                    // Optionally, show a loading indicator
+                    button.prop('disabled', true).attr('aria-busy', 'true').text('Enviando...');
                 },
                 success: function(response) {
                     notyf.success(response.message);
-                    $('.form-subcriber')[0].reset();
+                    announce(response.message);
+                    form[0].reset();
                 },
                 error: function(xhr, status, error) {
                     let errors = xhr.responseJSON.errors;
@@ -262,6 +276,9 @@
                     } else {
                         notyf.error("Ocurrió un error. Inténtalo de nuevo.");
                     }
+                },
+                complete: function() {
+                    button.prop('disabled', false).removeAttr('aria-busy').text(originalText);
                 }
             })
         })

@@ -12,7 +12,7 @@
                 @foreach ($featuredCategories as $category)
                 <div class="card-2 bg-9 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                     <figure class="img-hover-scale overflow-hidden">
-                        <a href="{{ route('products.index', ['category' => $category->slug]) }}"><img src="{{ asset($category->image) }}" alt="" /></a>
+                        <a href="{{ route('products.index', ['category' => $category->slug]) }}"><img src="{{ asset($category->image) }}" alt="{{ $category->name }}" width="200" height="200" loading="lazy" decoding="async" /></a>
                     </figure>
                     <h6><a href="{{ route('products.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></h6>
                     <span>{{ $category->products_count }} items</span>

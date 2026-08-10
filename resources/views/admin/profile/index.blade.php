@@ -47,7 +47,7 @@
                 <h3 class="card-title">Actualizar contraseña</h3>
             </div>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.password.update') }}">
+                <form method="post" action="{{ route('admin.profile.password.update') }}">
                     @csrf
                     @method('PUT')
                     <div class="row mt-30">

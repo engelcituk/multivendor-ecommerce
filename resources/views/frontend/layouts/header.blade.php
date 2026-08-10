@@ -1,8 +1,3 @@
-@php
-    $customPages = \App\Models\CustomPage::where('is_active', true)->get();
-    $offerSliders = \App\Models\OfferSlider::where('is_active', true)->get();
-@endphp
-
 <header class="header-area header-style-1 header-style-5 header-height-2 d-print-none">
 
 
@@ -56,13 +51,14 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{{ url('/') }}"><img src="{{ asset(config('settings.site_logo')) }}"
-                            alt="logo" /></a>
+                    <a href="{{ url('/') }}" aria-label="Ir al inicio"><img src="{{ asset(config('settings.site_logo')) }}"
+                            alt="{{ config('settings.site_name') }}" width="180" height="60" decoding="async" /></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-2">
                         <form action="{{ route('products.index') }}">
-                            <select class="select-active" name="category">
+                            <label class="visually-hidden" for="desktop-search-category">Categoría</label>
+                            <select id="desktop-search-category" class="select-active" name="category" aria-label="Filtrar por categoría">
                                 <option value="">Todas las Categorías</option>
                                 @foreach (getNestedCategories() as $category)
                                     <option @selected(request('category') == $category->slug) value="{{ $category->slug }}">
@@ -70,7 +66,8 @@
                                 @endforeach
 
                             </select>
-                            <input type="text" name="search" placeholder="Buscar artículos..."
+                            <label class="visually-hidden" for="desktop-site-search">Buscar productos</label>
+                            <input id="desktop-site-search" type="search" name="search" placeholder="Buscar artículos..."
                                 value="{{ request('search') }}" />
                         </form>
                     </div>
@@ -78,16 +75,16 @@
                         <div class="header-action-2">
 
                             <div class="header-action-icon-2">
-                                <a href="#">
-                                    <img class="svgInject" alt="ShopX"
+                                <a href="{{ route('wishlist.index') }}" aria-label="Ver lista de deseos">
+                                    <img class="svgInject" alt="" aria-hidden="true" width="24" height="24"
                                         src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-heart.svg') }}" />
                                     <span class="pro-count blue">{{ wishlistCount() }}</span>
                                 </a>
                                 <a href="{{ route('wishlist.index') }}"><span class="lable">Lista de Deseos</span></a>
                             </div>
                             <div class="header-action-icon-2">
-                                <a class="mini-cart-icon" href="#">
-                                    <img alt="ShopX"
+                                <a class="mini-cart-icon" href="{{ route('cart.index') }}" aria-label="Ver carrito">
+                                    <img alt="" aria-hidden="true" width="24" height="24"
                                         src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-cart.svg') }}" />
                                     <span class="pro-count blue cart-count">{{ cartCount() }}</span>
                                 </a>
@@ -95,11 +92,11 @@
 
                             </div>
                             <div class="header-action-icon-2">
-                                <a href="{{ route('login') }}">
-                                    <img class="svgInject" alt="ShopX"
+                                <a href="{{ Auth::guard('web')->check() ? route('dashboard') : route('login') }}" aria-label="Abrir cuenta">
+                                    <img class="svgInject" alt="" aria-hidden="true" width="24" height="24"
                                         src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-user.svg') }}" />
                                 </a>
-                                <a href=""><span class="lable ml-0">Cuenta</span></a>
+                                <a href="{{ Auth::guard('web')->check() ? route('dashboard') : route('login') }}"><span class="lable ml-0">Cuenta</span></a>
                                 @if (Auth::guard('web')->check())
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                         <ul>
@@ -156,23 +153,23 @@
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="{{ url('/') }}"><img src="{{ asset(config('settings.site_logo')) }}" alt="logo" /></a>
+                    <a href="{{ url('/') }}" aria-label="Ir al inicio"><img src="{{ asset(config('settings.site_logo')) }}" alt="{{ config('settings.site_name') }}" width="180" height="60" decoding="async" /></a>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">
-                        <a class="categories-button-active" href="#">
+                        <button class="categories-button-active" type="button" aria-expanded="false" aria-controls="popular-categories-menu">
                             <span class="fi-rs-apps"></span> Categorías Populares
                             <i class="fi-rs-angle-down"></i>
-                        </a>
+                        </button>
                         <div
-                            class="categories-dropdown-wrap style-2 font-heading categories-dropdown-active-large font-heading">
+                            id="popular-categories-menu" class="categories-dropdown-wrap style-2 font-heading categories-dropdown-active-large font-heading">
                             <div class="d-flex categori-dropdown-inner">
                                 <ul>
                                     @foreach (getNestedCategories() as $category)
                                         @if($loop->iteration <= 11)
                                         <li>
                                             <a href="{{ route('products.index', ['category' => $category->slug]) }}">
-                                                <img src="{{ asset($category->icon) }}" alt="" />
+                                                <img src="{{ asset($category->icon) }}" alt="" aria-hidden="true" width="24" height="24" loading="lazy" decoding="async" />
                                                 <span>{{ $category->name }}</span>
                                             </a>
                                             @if (count($category->children_nested) > 0)
@@ -208,7 +205,7 @@
                         </div>
                     </div>
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
-                        <nav>
+                        <nav aria-label="Navegación principal">
                             <ul>
                                 <li>
                                     <a class="active" href="{{ url('/') }}">Inicio</a>
@@ -248,31 +245,31 @@
                     <p>{{ config('settings.site_phone') }}<span>Soporte 24/7</span></p>
                 </div>
                 <div class="header-action-icon-2 d-block d-lg-none">
-                    <div class="burger-icon burger-icon-white">
+                    <button type="button" class="burger-icon burger-icon-white burger-menu-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-navigation">
                         <span class="burger-icon-top"></span>
                         <span class="burger-icon-mid"></span>
                         <span class="burger-icon-bottom"></span>
-                    </div>
+                    </button>
                 </div>
                 <div class="header-action-right d-block d-lg-none">
                     <div class="header-action-2">
                         <div class="header-action-icon-2">
-                            <a href="{{ route('wishlist.index') }}">
-                                <img alt="ShopX"
+                            <a href="{{ route('wishlist.index') }}" aria-label="Ver lista de deseos">
+                                <img alt="" aria-hidden="true" width="24" height="24"
                                     src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-heart.svg') }}" />
                                 <span class="pro-count white">{{ wishlistCount() }}</span>
                             </a>
                         </div>
                         <div class="header-action-icon-2">
-                            <a class="mini-cart-icon" href="{{ route('cart.index') }}">
-                                <img alt="ShopX"
+                            <a class="mini-cart-icon" href="{{ route('cart.index') }}" aria-label="Ver carrito">
+                                <img alt="" aria-hidden="true" width="24" height="24"
                                     src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-cart.svg') }}" />
                                 <span class="pro-count white cart-count">{{ cartCount() }}</span>
                             </a>
                         </div>
                         <div class="header-action-icon-2">
-                            <a class="mini-cart-icon" href="{{ route('login') }}">
-                                <img alt="ShopX" src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-user.svg') }}" />
+                            <a class="mini-cart-icon" href="{{ Auth::guard('web')->check() ? route('dashboard') : route('login') }}" aria-label="Abrir cuenta">
+                                <img alt="" aria-hidden="true" width="24" height="24" src="{{ asset('assets/frontend/dist/imgs/theme/icons/icon-user.svg') }}" />
                             </a>
                         </div>
                     </div>
@@ -281,15 +278,15 @@
         </div>
     </div>
 </header>
-<div class="mobile-header-active mobile-header-wrapper-style">
+<div id="mobile-navigation" class="mobile-header-active mobile-header-wrapper-style" aria-hidden="true">
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
             <div class="mobile-header-logo">
-                <a href="{{ url('/') }}"><img src="{{ asset(config('settings.site_logo')) }}"
-                        alt="logo" /></a>
+                <a href="{{ url('/') }}" aria-label="Ir al inicio"><img src="{{ asset(config('settings.site_logo')) }}"
+                        alt="{{ config('settings.site_name') }}" width="180" height="60" decoding="async" /></a>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
-                <button class="close-style search-close">
+                <button type="button" class="close-style search-close" aria-label="Cerrar menú">
                     <i class="icon-top"></i>
                     <i class="icon-bottom"></i>
                 </button>
@@ -298,12 +295,13 @@
         <div class="mobile-header-content-area">
             <div class="mobile-search search-style-3 mobile-header-border">
                 <form action="{{ route('products.index') }}">
-                    <input type="text" placeholder="Buscar artículos..." name="search" />
-                    <button type="submit"><i class="fi-rs-search"></i></button>
+                    <label class="visually-hidden" for="mobile-site-search">Buscar productos</label>
+                    <input id="mobile-site-search" type="search" placeholder="Buscar artículos..." name="search" value="{{ request('search') }}" autocomplete="off" />
+                    <button type="submit" aria-label="Buscar"><i class="fi-rs-search" aria-hidden="true"></i></button>
                 </form>
             </div>
             <div class="mobile-menu-wrap mobile-header-border">
-                <nav>
+                <nav aria-label="Navegación móvil">
                     <ul class="mobile-menu font-heading">
                         <li class="">
                             <a href="{{ route('home.index') }}">Inicio</a>
@@ -336,14 +334,11 @@
                     </ul>
                 </nav>
                 </div>
-            @php
-                $socialLinks = App\Models\SocialLink::whereStatus(true)->get();
-            @endphp
             <div class="mobile-social-icon mb-50">
                 <h6 class="mb-15">Síguenos</h6>
                 @foreach ($socialLinks as $socialLink)
-                    <a href="{{ $socialLink->url }}"><img src="{{ asset($socialLink->icon) }}"
-                            alt="" /></a>
+                    <a href="{{ $socialLink->url }}" aria-label="Visitar nuestra red social" rel="noopener noreferrer"><img src="{{ asset($socialLink->icon) }}"
+                            alt="" aria-hidden="true" width="24" height="24" loading="lazy" decoding="async" /></a>
                 @endforeach
             </div>
             <div class="site-copyright">{{ config('settings.site_copyright') }}</div>

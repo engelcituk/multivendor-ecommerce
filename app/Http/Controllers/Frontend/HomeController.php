@@ -26,15 +26,28 @@ class HomeController extends Controller
 {
     function index(): View
     {
-        $featuredCategories = Category::withCount('products')->whereIsFeatured(true)->take(15)->get();
-        $sliders = Slider::whereIsActive(true)->get();
-        $heroBanner = HeroBanner::first();
-        $popularCategoriesIds = PopularCategory::first()?->categories ?? [];
+        $staticContent = [
+            'featuredCategories' => Category::withCount('products')->whereIsFeatured(true)->take(15)->get(),
+            'sliders' => Slider::whereIsActive(true)->get(),
+            'heroBanner' => HeroBanner::first(),
+            'popularCategoriesIds' => PopularCategory::first()?->categories ?? [],
+            'flashSale' => FlashSale::first(),
+            'productSections' => ProductSection::first(),
+        ];
+
+        $featuredCategories = $staticContent['featuredCategories'];
+        $sliders = $staticContent['sliders'];
+        $heroBanner = $staticContent['heroBanner'];
+        $popularCategoriesIds = $staticContent['popularCategoriesIds'];
         $popularCategories = Category::whereIn('id', $popularCategoriesIds)->get();
-        $popularProducts = $this->productsByCategory($popularCategoriesIds);
-        $flashSale = FlashSale::first();
-        $flashSaleProducts = Product::withAvg('reviews', 'rating')->whereIn('id', $flashSale?->products ?? [])->get();
-        $productSections = ProductSection::first();
+        $popularProducts = $this->productsByCategory($popularCategoriesIds, true, 4);
+        $flashSale = $staticContent['flashSale'];
+        $flashSaleProducts = Product::with([
+            'images' => fn ($query) => $query->limit(2),
+            'store:id,name,seller_id',
+            'variants',
+        ])->withAvg('reviews', 'rating')->whereIn('id', $flashSale?->products ?? [])->take(8)->get();
+        $productSections = $staticContent['productSections'];
 
         $productSectionsIds = [
             $productSections?->category_one,
@@ -43,12 +56,17 @@ class HomeController extends Controller
         ];
 
 
-        $hotProducts = Product::with('primaryImage')->withAvg('reviews', 'rating')->whereIsHot(true)->latest()->take(4)->get();
-        $newProducts = Product::with('primaryImage')->withAvg('reviews', 'rating')->whereIsNew(true)->latest()->take(4)->get();
-        $featuredProducts = Product::with('primaryImage')->withAvg('reviews', 'rating')->whereIsFeatured(true)->latest()->take(4)->get();
-        $topRatedProducts = Product::with('primaryImage')->whereHas('reviews')->withAvg('reviews', 'rating')->orderBy('reviews_avg_rating', 'desc')->take(4)->get();
+        $cardRelations = [
+            'images' => fn ($query) => $query->limit(2),
+            'store:id,name,seller_id',
+            'variants',
+        ];
+        $hotProducts = Product::with($cardRelations)->withAvg('reviews', 'rating')->whereIsHot(true)->latest()->take(4)->get();
+        $newProducts = Product::with($cardRelations)->withAvg('reviews', 'rating')->whereIsNew(true)->latest()->take(4)->get();
+        $featuredProducts = Product::with($cardRelations)->withAvg('reviews', 'rating')->whereIsFeatured(true)->latest()->take(4)->get();
+        $topRatedProducts = Product::with($cardRelations)->whereHas('reviews')->withAvg('reviews', 'rating')->orderBy('reviews_avg_rating', 'desc')->take(4)->get();
 
-        $productSectionsProducts = $this->productsByCategory($productSectionsIds, false);
+        $productSectionsProducts = $this->productsByCategory($productSectionsIds, false, 4);
 
         return view('frontend.home.index', compact(
             'featuredCategories',
@@ -69,18 +87,36 @@ class HomeController extends Controller
     function productsByCategory(array $categoryIds, $featured = true, $limit = 12)
     {
         $results = [];
+        $allCategories = once(fn () => Category::query()->select(['id', 'parent_id'])->get());
+        $childrenByParent = $allCategories->groupBy('parent_id');
+        $categoryIdsSet = $allCategories->pluck('id')->flip();
+
+        $descendantIds = function (int $categoryId) use (&$descendantIds, $childrenByParent): array {
+            $ids = [];
+            foreach ($childrenByParent->get($categoryId, collect()) as $child) {
+                $ids[] = $child->id;
+                $ids = array_merge($ids, $descendantIds($child->id));
+            }
+
+            return $ids;
+        };
 
         foreach ($categoryIds as $categoryId) {
-            $category = Category::find($categoryId);
-            if ($category) {
-                $ids = [$category->id];
-                $ids = array_merge($ids, $category->allChildrenIds());
+            $categoryId = (int) $categoryId;
+            if ($categoryIdsSet->has($categoryId)) {
+                $ids = array_merge([$categoryId], $descendantIds($categoryId));
+                $cardQuery = Product::with([
+                    'images' => fn ($query) => $query->limit(2),
+                    'store:id,name,seller_id',
+                    'variants',
+                ])->withAvg('reviews', 'rating');
+
                 if ($featured)
-                    $products = Product::withAvg('reviews', 'rating')->whereHas('categories', function ($query) use ($ids) {
+                    $products = $cardQuery->whereHas('categories', function ($query) use ($ids) {
                         $query->whereIn('categories.id', $ids);
-                    })->whereIsFeatured(true)->take(12)->get();
+                    })->whereIsFeatured(true)->take($limit)->get();
                 else {
-                    $products = Product::withAvg('reviews', 'rating')->whereHas('categories', function ($query) use ($ids) {
+                    $products = $cardQuery->whereHas('categories', function ($query) use ($ids) {
                         $query->whereIn('categories.id', $ids);
                     })->latest()->take($limit)->get();
                 }
@@ -137,7 +173,11 @@ class HomeController extends Controller
     function flashSales(): View
     {
         $flashSale = FlashSale::first();
-        $flashSaleProducts = Product::withAvg('reviews', 'rating')->whereIn('id', $flashSale?->products ?? [])->paginate(20);
+        $flashSaleProducts = Product::with([
+            'images' => fn ($query) => $query->limit(2),
+            'store:id,name,seller_id',
+            'variants',
+        ])->withAvg('reviews', 'rating')->whereIn('id', $flashSale?->products ?? [])->paginate(20);
         return view('frontend.pages.flash-sale', compact('flashSale', 'flashSaleProducts'));
     }
 }

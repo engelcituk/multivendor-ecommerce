@@ -19,7 +19,7 @@ class ProductPageController extends Controller
         $productQuery = Product::query();
         $productQuery->with(['images' => function ($query) {
             $query->limit(2);
-        }, 'store:id,name', 'primaryVariant']);
+        }, 'store:id,name,seller_id', 'variants']);
 
         $productQuery->withAvg('reviews', 'rating');
 
@@ -111,7 +111,11 @@ class ProductPageController extends Controller
             ->withCount('reviews')
             ->withAvg('reviews', 'rating')
             ->where('slug', $slug)->firstOrFail();
-        $relatedProducts = Product::whereHas('categories', function ($query) use ($product) {
+        $relatedProducts = Product::with([
+            'images' => fn ($query) => $query->limit(2),
+            'store:id,name,seller_id',
+            'variants',
+        ])->withAvg('reviews', 'rating')->whereHas('categories', function ($query) use ($product) {
             $query->whereIn('categories.id', $product->categories->pluck('id')->toArray());
         })
             ->where('id', '!=', $product->id)

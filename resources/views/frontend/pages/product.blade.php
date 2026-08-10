@@ -1,7 +1,12 @@
 @extends('frontend.layouts.app')
 
+@section('title', (request('search') ? 'Resultados para “' . request('search') . '”' : 'Productos') . ' | ' . config('settings.site_name'))
+@section('meta_description', 'Explora productos, marcas y ofertas disponibles en ' . config('settings.site_name') . '.')
+@section('canonical', route('products.index'))
+
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Productos']]" />
+    <h1 class="visually-hidden">Catálogo de productos</h1>
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Productos']]" />
     <div class="container mt-70 mb-60">
         <div class="row">
 

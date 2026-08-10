@@ -26,7 +26,11 @@ class VendorPageController extends Controller
     function show(int $id) : View
     {
         $store = Store::with(['products' => function($query) {
-            $query->withAvg('reviews', 'rating');
+            $query->with([
+                'images' => fn ($imageQuery) => $imageQuery->limit(2),
+                'store:id,name,seller_id',
+                'variants',
+            ])->withAvg('reviews', 'rating');
         }])->withAvg('reviews', 'rating')->where('seller_id', $id)->firstOrFail();
         return view('frontend.pages.vendor-detail', compact('store'));
     }

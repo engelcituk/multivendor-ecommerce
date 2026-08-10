@@ -1,6 +1,8 @@
 
 // Datepicker init
-$('.datepicker').datepicker();
+if ($.fn.datepicker && $('.datepicker').length) {
+    $('.datepicker').datepicker();
+}
 
 // notif init
 // notyf init

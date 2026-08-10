@@ -7,21 +7,21 @@
                 <a href="{{ route('products.show', $product->slug) }}">
                     @foreach ($product->images as $key => $image)
                         <img class="{{ $key == 0 ? 'default-img' : 'hover-img' }}" src="{{ asset($image->path) }}"
-                            alt="" />
+                            alt="{{ $key === 0 ? $product->name : '' }}" width="500" height="500" loading="lazy" decoding="async" />
                     @endforeach
                     {{-- <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" /> --}}
                 </a>
             </div>
             <div class="product-action-1">
 
-                <a aria-label="Agregar a favoritos" class="action-btn wishlist-btn" data-id="{{ $product->id }}" href="">
+                <a aria-label="Agregar {{ $product->name }} a favoritos" class="action-btn wishlist-btn" data-id="{{ $product->id }}" href="#">
                     @if(in_array($product->id, $wishlistsProductIds))
                     <i class="fi fi-ss-heart"></i>
                     @else
                     <i class="fi-rs-heart"></i>
                     @endif
                     </a>
-                <a href="{{ route('products.show', $product->slug) }}" aria-label="Quick view" class="action-btn" ><i
+                <a href="{{ route('products.show', $product->slug) }}" aria-label="Ver detalles de {{ $product->name }}" class="action-btn" ><i
                         class="fi-rs-eye"></i></a>
             </div>
             <div class="product-badges product-badges-position product-badges-mrg">
@@ -38,15 +38,15 @@
                 {{-- <a href="shop-grid-right.html">{{ $product->category->name }}</a> --}}
             </div>
             <h2><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h2>
-            <div class="product-rate-cover">
-                <div class="product-rate d-inline-block">
+            <div class="product-rate-cover" aria-label="Calificación: {{ round($product->reviews_avg_rating ?? 0, 1) }} de 5">
+                <div class="product-rate d-inline-block" aria-hidden="true">
                     <div class="product-rating" style="width: {{ ratingPercent($product->reviews_avg_rating) }}%"></div>
                 </div>
-                <span class="font-small ml-5 text-muted"> ({{ round($product->reviews_avg_rating, 2) ?? 0 }})</span>
+                <span class="font-small ml-5 text-muted"> ({{ round($product->reviews_avg_rating ?? 0, 2) }})</span>
             </div>
             <div>
                 <span class="font-small text-muted">Por <a
-                        href="vendor-details-1.html">{{ $product->store->name }}</a></span>
+                        href="{{ route('vendors.show', $product->store->seller_id) }}">{{ $product->store->name }}</a></span>
             </div>
             <div class="product-card-bottom">
                 <div class="product-price">
@@ -72,7 +72,7 @@
                 @if ($price['in_stock'])
                 <div class="add-cart">
                     <a class="add add_to_cart" data-id="{{ $product->id }}"
-                        data-modal="{{ $product->primaryVariant ? 'true' : 'false' }}" href=""><i
+                        data-modal="{{ $product->variants->isNotEmpty() ? 'true' : 'false' }}" href="#" aria-label="Agregar {{ $product->name }} al carrito"><i
                             class="fi-rs-shopping-cart mr-5"></i>Agregar al carrito</a>
                 </div>
                 @endif

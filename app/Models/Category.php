@@ -47,14 +47,30 @@ class Category extends Model
 
     static function getNested($parentId = null, $depth = 0, $maxDepth = 3)
     {
-        if($depth >= $maxDepth) return [];
-        $categories = self::where('parent_id', $parentId)->orderBy('position')->get();
-
-        foreach ($categories as $cat) {
-            $cat->children_nested = self::getNested($cat->id, $depth + 1, $maxDepth);
+        if ($depth >= $maxDepth) {
+            return collect();
         }
 
-        return $categories;
+        $categoriesByParent = once(fn () => self::query()
+            ->orderBy('position')
+            ->get()
+            ->groupBy(fn (Category $category) => $category->parent_id === null ? 'root' : (string) $category->parent_id));
+
+        $buildTree = function ($currentParentId, $currentDepth) use (&$buildTree, $categoriesByParent, $maxDepth) {
+            if ($currentDepth >= $maxDepth) {
+                return collect();
+            }
+
+            $key = $currentParentId === null ? 'root' : (string) $currentParentId;
+
+            return $categoriesByParent->get($key, collect())->map(function (Category $category) use (&$buildTree, $currentDepth) {
+                $category->setAttribute('children_nested', $buildTree($category->id, $currentDepth + 1));
+
+                return $category;
+            });
+        };
+
+        return $buildTree($parentId, $depth);
 
     }
 

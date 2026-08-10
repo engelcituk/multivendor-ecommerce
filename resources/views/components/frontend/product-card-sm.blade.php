@@ -1,6 +1,6 @@
 <article class="row align-items-center hover-up">
     <figure class="col-sm-4 mb-0">
-        <a href="#"><img src="{{ asset($product?->primaryImage?->path) }}" alt="" /></a>
+        <a href="{{ route('products.show', $product->slug) }}"><img src="{{ asset($product->images->first()?->path) }}" alt="{{ $product->name }}" width="160" height="160" loading="lazy" decoding="async" /></a>
     </figure>
     <div class="col-sm-8 mb-0">
         <h6>
@@ -10,7 +10,7 @@
             <div class="product-rate d-inline-block">
                 <div class="product-rating" style="width: {{ ratingPercent($product->reviews_avg_rating) }}%"></div>
             </div>
-            <span class="font-small ml-5 text-muted"> ({{ round($product->reviews_avg_rating, 2) }})</span>
+            <span class="font-small ml-5 text-muted"> ({{ round($product->reviews_avg_rating ?? 0, 2) }})</span>
         </div>
         <div class="product-price">
             @php

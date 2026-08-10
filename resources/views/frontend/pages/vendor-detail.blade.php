@@ -1,18 +1,22 @@
 @extends('frontend.layouts.app')
 
+@section('title', $store->name . ' | ' . config('settings.site_name'))
+@section('meta_description', \Illuminate\Support\Str::limit(strip_tags($store->short_description), 155))
+@section('canonical', route('vendors.show', $store->seller_id))
+@section('og_image', asset($store->logo))
+
 @section('contents')
     <div class="container mb-30" style="transform: none;">
         <div class="archive-header-3 mt-70 mb-70" style="background-image: url({{ asset($store->banner) }})">
             <div class="archive-header-3-inner">
                 <div class="vendor-logo mr-50">
-                    <img src="{{ asset($store->logo) }}" alt="">
+                    <img src="{{ asset($store->logo) }}" alt="Logo de {{ $store->name }}" width="160" height="160" decoding="async">
                 </div>
                 <div class="vendor-content">
                     <div class="product-category">
                         <span class="text-muted">Since {{ date('Y', strtotime($store->created_at)) }}</span>
                     </div>
-                    <h3 class="mb-5 text-white"><a href="vendor-details-1.html" class="text-white">{{ $store->name }}</a>
-                    </h3>
+                    <h1 class="mb-5 text-white">{{ $store->name }}</h1>
                     <div class="product-rate-cover mb-15">
                         @php
                             $ratingPercent = $store->reviews_avg_rating ? ($store->reviews_avg_rating / 5) * 100 : 0;

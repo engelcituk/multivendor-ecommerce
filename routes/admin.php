@@ -100,7 +100,7 @@ Route::middleware('auth:admin')
         /** Profile Routes */
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
         Route::put('/profile', [ProfileController::class, 'profileUpdate'])->name('profile.update');
-        Route::put('/profile/password', [ProfileController::class, 'passwordUpdate'])->name('password.update');
+        Route::put('/profile/password', [ProfileController::class, 'passwordUpdate'])->name('profile.password.update');
 
         /** Kyc routes */
         Route::get('/kyc-requests', [KycRequestController::class, 'index'])->name('kyc.index');

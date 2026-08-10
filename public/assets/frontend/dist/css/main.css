@@ -1,17 +1,3 @@
-@import url(https://fonts.bunny.net/css?family=lato:400,700,900|quicksand:400,500,600,700);
-/*import vendors*/
-@import url(vendors/normalize.css);
-@import url(vendors/bootstrap.min.css);
-@import url(vendors/uicons-regular-straight.css);
-/*import plugins*/
-@import url(plugins/magnific-popup.css);
-@import url(plugins/select2.min.css);
-@import url(plugins/slick.css);
-@import url(plugins/perfect-scrollbar.css);
-@import url(plugins/animate.min.css);
-@import url(plugins/slider-range.css);
-@import url(plugins/jquery-ui.css);
-
 /*RESET*/
 html,
 body,
@@ -4827,7 +4813,8 @@ table.clean th {
     padding: 8px 40px;
 }
 
-.product-extra-link2 a {
+.product-extra-link2 a,
+.product-extra-link2 button.action-btn {
     background: #fff none repeat scroll 0 0;
     border: 1px solid #f1f1f1;
     color: #333;
@@ -4844,16 +4831,19 @@ table.clean th {
     -webkit-transition: all 0.5s ease-out 0s;
 }
 
-.product-extra-link2 a:hover {
+.product-extra-link2 a:hover,
+.product-extra-link2 button.action-btn:hover {
     background-color: #3BB77E;
     color: #fff;
 }
 
-.product-extra-link2 a:hover i {
+.product-extra-link2 a:hover i,
+.product-extra-link2 button.action-btn:hover i {
     opacity: 1;
 }
 
-.product-extra-link2 a i {
+.product-extra-link2 a i,
+.product-extra-link2 button.action-btn i {
     font-size: 18px;
     opacity: 0.6;
 }

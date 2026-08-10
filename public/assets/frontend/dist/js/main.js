@@ -261,7 +261,7 @@
         var $this = $(this),
             finalDate = $(this).data("countdown");
         $this.countdown(finalDate, function (event) {
-            $(this).html(event.strftime("" + '<span class="countdown-section"><span class="countdown-amount hover-up">%D</span><span class="countdown-period"> days </span></span>' + '<span class="countdown-section"><span class="countdown-amount hover-up">%H</span><span class="countdown-period"> hours </span></span>' + '<span class="countdown-section"><span class="countdown-amount hover-up">%M</span><span class="countdown-period"> mins </span></span>' + '<span class="countdown-section"><span class="countdown-amount hover-up">%S</span><span class="countdown-period"> sec </span></span>'));
+            $(this).html(event.strftime("" + '<span class="countdown-section"><span class="countdown-amount hover-up">%D</span><span class="countdown-period"> días </span></span>' + '<span class="countdown-section"><span class="countdown-amount hover-up">%H</span><span class="countdown-period"> horas </span></span>' + '<span class="countdown-section"><span class="countdown-amount hover-up">%M</span><span class="countdown-period"> min </span></span>' + '<span class="countdown-section"><span class="countdown-amount hover-up">%S</span><span class="countdown-period"> seg </span></span>'));
         });
     });
 
@@ -422,9 +422,11 @@
         e.preventDefault();
         if ($(this).hasClass("open")) {
             $(this).removeClass("open");
+            $(this).attr("aria-expanded", "false");
             $(this).siblings(".categories-dropdown-active-large").removeClass("open");
         } else {
             $(this).addClass("open");
+            $(this).attr("aria-expanded", "true");
             $(this).siblings(".categories-dropdown-active-large").addClass("open");
         }
     });
@@ -515,12 +517,14 @@
     /*-----------------------
         Magnific Popup
     ------------------------*/
-    $(".img-popup").magnificPopup({
-        type: "image",
-        gallery: {
-            enabled: true
-        }
-    });
+    if ($.fn.magnificPopup && $(".img-popup").length) {
+        $(".img-popup").magnificPopup({
+            type: "image",
+            gallery: {
+                enabled: true
+            }
+        });
+    }
 
     $('.btn-close').on('click', function (e) {
         $('.zoomContainer').remove();
@@ -580,24 +584,28 @@
     }
 
     /*---- CounterUp ----*/
-    $(".count").counterUp({
-        delay: 10,
-        time: 2000
-    });
+    if ($.fn.counterUp && $(".count").length) {
+        $(".count").counterUp({
+            delay: 10,
+            time: 2000
+        });
+    }
 
     // Isotope active
-    $(".grid").imagesLoaded(function () {
+    if ($.fn.imagesLoaded && $.fn.isotope && $(".grid").length) {
+        $(".grid").imagesLoaded(function () {
         // init Isotope
-        var $grid = $(".grid").isotope({
-            itemSelector: ".grid-item",
-            percentPosition: true,
-            layoutMode: "masonry",
-            masonry: {
-                // use outer width of grid-sizer for columnWidth
-                columnWidth: ".grid-item"
-            }
+            $(".grid").isotope({
+                itemSelector: ".grid-item",
+                percentPosition: true,
+                layoutMode: "masonry",
+                masonry: {
+                    // use outer width of grid-sizer for columnWidth
+                    columnWidth: ".grid-item"
+                }
+            });
         });
-    });
+    }
 
     /*====== SidebarSearch ======*/
     function sidebarSearch() {
@@ -628,16 +636,24 @@
         navbarTrigger.on("click", function (e) {
             e.preventDefault();
             container.addClass("sidebar-visible");
+            container.attr("aria-hidden", "false");
+            navbarTrigger.attr("aria-expanded", "true");
             wrapper4.addClass("mobile-menu-active");
+            container.find("a, button, input").first().trigger("focus");
         });
 
         endTrigger.on("click", function () {
             container.removeClass("sidebar-visible");
+            container.attr("aria-hidden", "true");
+            navbarTrigger.attr("aria-expanded", "false");
             wrapper4.removeClass("mobile-menu-active");
+            navbarTrigger.trigger("focus");
         });
 
         $(".body-overlay-1").on("click", function () {
             container.removeClass("sidebar-visible");
+            container.attr("aria-hidden", "true");
+            navbarTrigger.attr("aria-expanded", "false");
             wrapper4.removeClass("mobile-menu-active");
         });
     }
@@ -791,4 +807,3 @@
 
 
 })(jQuery);
-

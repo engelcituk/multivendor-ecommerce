@@ -33,13 +33,23 @@ if (!function_exists('user')) {
 if (!function_exists('cartCount')) {
     function cartCount(): int
     {
-        return Cart::where('user_id', user()?->id)->count();
+        $userId = user()?->id;
+        if (!$userId) {
+            return 0;
+        }
+
+        return once(fn () => Cart::where('user_id', $userId)->count());
     }
 }
 if (!function_exists('wishlistCount')) {
     function wishlistCount(): int
     {
-        return Wishlist::where('user_id', user()?->id)->count();
+        $userId = user()?->id;
+        if (!$userId) {
+            return 0;
+        }
+
+        return once(fn () => Wishlist::where('user_id', $userId)->count());
     }
 }
 
@@ -113,14 +123,13 @@ if (!function_exists('truncate')) {
 if (!function_exists('getNestedCategories')) {
     function getNestedCategories()
     {
-        $categories = Category::getNested();
-        return $categories;
+        return Category::getNested();
     }
 }
 
 if(!function_exists('ratingPercent')) {
     function ratingPercent($rating) {
-        return $rating / 5 * 100;
+        return (float) ($rating ?? 0) / 5 * 100;
     }
 }
 

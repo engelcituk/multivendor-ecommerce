@@ -1,7 +1,45 @@
 @extends('frontend.layouts.app')
 
+@php
+    $seoDescription = \Illuminate\Support\Str::limit(trim(strip_tags($product->short_description ?: $product->description)), 155);
+    $seoImage = $product->images->first()?->path ? asset($product->images->first()->path) : asset(config('settings.site_logo'));
+    $effectivePrice = $product->primaryVariant
+        ? ($product->primaryVariant->special_price > 0 ? $product->primaryVariant->special_price : $product->primaryVariant->price)
+        : ($product->special_price > 0 ? $product->special_price : $product->price);
+    $productSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Product',
+        'name' => $product->name,
+        'image' => [$seoImage],
+        'description' => $seoDescription,
+        'sku' => $product->primaryVariant?->sku ?: $product->sku,
+        'offers' => [
+            '@type' => 'Offer',
+            'url' => route('products.show', $product->slug),
+            'priceCurrency' => 'MXN',
+            'price' => (float) $effectivePrice,
+            'availability' => 'https://schema.org/' . ($product->getEffectivePriceAndStock()['in_stock'] ? 'InStock' : 'OutOfStock'),
+        ],
+    ];
+    if ($product->reviews_count > 0) {
+        $productSchema['aggregateRating'] = [
+            '@type' => 'AggregateRating',
+            'ratingValue' => round((float) $product->reviews_avg_rating, 1),
+            'reviewCount' => $product->reviews_count,
+        ];
+    }
+@endphp
+@section('title', $product->name . ' | ' . config('settings.site_name'))
+@section('meta_description', $seoDescription)
+@section('canonical', route('products.show', $product->slug))
+@section('og_type', 'product')
+@section('og_image', $seoImage)
+@section('structured_data')
+    <script type="application/ld+json">{!! json_encode($productSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+@endsection
+
 @section('contents')
-    <x-frontend.breadcrumb :items="[['label' => 'Home', 'url' => '/'], ['label' => 'Productos']]" />
+    <x-frontend.breadcrumb :items="[['label' => 'Inicio', 'url' => '/'], ['label' => 'Productos']]" />
     <div class="container mb-30">
         <div class="row">
             <div class="col-xl-12">
@@ -14,14 +52,14 @@
                                 <div class="product-image-slider">
                                     @foreach ($product->images as $image)
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset($image->path) }}" alt=" product image" />
+                                            <img src="{{ asset($image->path) }}" alt="{{ $product->name }}" width="800" height="800" @if ($loop->first) fetchpriority="high" loading="eager" @else loading="lazy" @endif decoding="async" />
                                         </figure>
                                     @endforeach
                                 </div>
                                 <!-- THUMBNAILS -->
                                 <div class="slider-nav-thumbnails">
                                     @foreach ($product->images as $image)
-                                        <div><img src="{{ asset($image->path) }}" alt="product image" /></div>
+                                        <div><img src="{{ asset($image->path) }}" alt="Vista {{ $loop->iteration }} de {{ $product->name }}" width="160" height="160" loading="lazy" decoding="async" /></div>
                                     @endforeach
 
                                 </div>
@@ -30,7 +68,7 @@
                         </div>
                         <div class="col-md-6 col-lg-7 col-sm-12 col-xs-12">
                             <div class="detail-info pr-30 pl-30">
-                                <h2 class="title-detail">{{ $product->name }}</h2>
+                                <h1 class="title-detail">{{ $product->name }}</h1>
                                 <div class="product-detail-rating">
                                     <div class="product-rate-cover text-end">
                                         <div class="product-rate d-inline-block">
@@ -119,8 +157,7 @@
                                         <button type="submit" data-variant="" data-id="{{ $product->id }}"
                                             data-modal="false" class="button button-add-to-cart add_to_cart"><i
                                                 class="fi-rs-shopping-cart"></i>Agregar al carrito</button>
-                                        <a aria-label="Agregar a favoritos" class="action-btn hover-up wishlist-btn" data-id="{{ $product->id }}"
-                                            href="" ><i class="fi-rs-heart"></i></a>
+                                        <button type="button" aria-label="Agregar {{ $product->name }} a favoritos" class="action-btn hover-up wishlist-btn" data-id="{{ $product->id }}"><i class="fi-rs-heart" aria-hidden="true"></i></button>
 
                                     </div>
                                 </div>
@@ -144,7 +181,7 @@
                                                     @if ($product->manage_stock == 1)
                                                         {{ $product->qty }}
                                                     @else
-                                                        Unlimited
+                                                        Ilimitado
                                                     @endif
                                                 </span>
                                                 artículos disponibles</span>
@@ -184,7 +221,7 @@
                                         <img src="{{ asset($product->store->logo) }}" alt="" />
                                         <div class="vendor-name ml-15">
                                             <h6>
-                                                <a href="vendor-details-2.html">{{ $product->store->name }}</a>
+                                                <a href="{{ route('vendors.show', $product->store->seller_id) }}">{{ $product->store->name }}</a>
                                             </h6>
                                             <div class="product-rate-cover text-end">
                                                 <div class="product-rate d-inline-block">
@@ -401,7 +438,7 @@
                     if (matchingVariant.quantity > 0 && matchingVariant.manage_stock == 1) {
                         $('.stock-qty').text(matchingVariant.quantity);
                     } else if (matchingVariant.manage_stock == 0 && matchingVariant.in_stock == 1) {
-                        $('.stock-qty').text('Unlimited');
+                        $('.stock-qty').text('Ilimitado');
                     } else {
                         $('.stock-qty').text('0');
                     }
